@@ -93,8 +93,10 @@ with st.spinner("Cargando datasets..."):
 # Live data
 bloques_live = apis.get_bloques_camara()
 ipc_df       = apis.get_ipc(months=13)
+dolares_hoy  = apis.get_dolares_hoy()
+rp_ultimo    = apis.get_riesgo_pais_ultimo()
 
-# ── KPI Cards ──────────────────────────────────────────────────────────
+# ── KPI Cards – fila política ───────────────────────────────────────────
 col1, col2, col3, col4, col5 = st.columns(5)
 
 cards = [
@@ -112,6 +114,31 @@ for col, val, label, color, icon in cards:
         <div class='metric-card' style='border-left-color:{color};'>
           <p class='metric-label'>{icon} {label}</p>
           <p class='metric-value' style='color:{color};'>{val}</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+# ── KPI Cards – fila económica (ArgentinaDatos) ─────────────────────────
+ec1, ec2, ec3, ec4, ec5 = st.columns(5)
+
+_blue  = dolares_hoy[dolares_hoy['casa']=='blue'].iloc[0]   if dolares_hoy is not None and 'blue'   in dolares_hoy['casa'].values else None
+_ofic  = dolares_hoy[dolares_hoy['casa']=='oficial'].iloc[0] if dolares_hoy is not None and 'oficial' in dolares_hoy['casa'].values else None
+_ccl   = dolares_hoy[dolares_hoy['casa']=='contadoconliqui'].iloc[0] if dolares_hoy is not None and 'contadoconliqui' in dolares_hoy['casa'].values else None
+_tarj  = dolares_hoy[dolares_hoy['casa']=='tarjeta'].iloc[0] if dolares_hoy is not None and 'tarjeta' in dolares_hoy['casa'].values else None
+
+eco_cards = [
+    (ec1, f"${_blue['venta']:,.0f}"  if _blue  is not None else "–", "Dólar Blue ●",     "#1E40AF", "💵"),
+    (ec2, f"${_ofic['venta']:,.0f}"  if _ofic  is not None else "–", "Dólar Oficial ●",  "#065F46", "🏦"),
+    (ec3, f"${_ccl['venta']:,.0f}"   if _ccl   is not None else "–", "Dólar CCL ●",      "#7C3AED", "📊"),
+    (ec4, f"${_tarj['venta']:,.0f}"  if _tarj  is not None else "–", "Dólar Tarjeta ●",  "#9A3412", "💳"),
+    (ec5, f"{rp_ultimo['valor']:,} pb" if rp_ultimo else "–",        "Riesgo País ●",    "#B91C1C", "🌡"),
+]
+
+for col, val, label, color, icon in eco_cards:
+    with col:
+        st.markdown(f"""
+        <div class='metric-card' style='border-left-color:{color};'>
+          <p class='metric-label'>{icon} {label}</p>
+          <p class='metric-value' style='color:{color};font-size:1.6rem;'>{val}</p>
         </div>
         """, unsafe_allow_html=True)
 

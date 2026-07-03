@@ -1,5 +1,8 @@
 """
-Live API connectors – HCDN (Congreso Nacional) + INDEC (datos económicos).
+Live API connectors:
+  - HCDN      (Congreso Nacional)
+  - INDEC     (series de tiempo)
+  - ArgentinaDatos  (dólar, riesgo país, inflación BCRA, senadores)
 Todos usan st.cache_data con TTL para no saturar los servidores.
 """
 import requests
@@ -8,6 +11,7 @@ from io import StringIO
 import streamlit as st
 
 TIMEOUT = 12
+_AD_BASE = "https://api.argentinadatos.com/v1"
 
 # ── HCDN – Cámara de Diputados de la Nación ──────────────────────────
 _HCDN = {
@@ -142,3 +146,117 @@ def get_dolar_oficial(months: int = 24):
 def get_emae(months: int = 36):
     """Estimador Mensual de Actividad Económica (EMAE)."""
     return _fetch_series(_SERIES['emae'], months)
+
+
+# ── ArgentinaDatos API ────────────────────────────────────────────────
+def _ad_get(path: str):
+    try:
+        r = requests.get(f"{_AD_BASE}{path}", timeout=TIMEOUT)
+        r.raise_for_status()
+        return r.json()
+    except Exception:
+        return None
+
+
+@st.cache_data(ttl=900, show_spinner=False)
+def get_dolares_hoy():
+    """Cotización actual de cada tipo de dólar (último valor disponible por casa)."""
+    data = _ad_get("/cotizaciones/dolares")
+    if not data:
+        return None
+    df = pd.DataFrame(data)
+    df['fecha'] = pd.to_datetime(df['fecha'])
+    latest = df.sort_values('fecha').groupby('casa').last().reset_index()
+    LABELS = {
+        'oficial':        'Oficial',
+        'blue':           'Blue',
+        'bolsa':          'Bolsa (MEP)',
+        'contadoconliqui':'CCL',
+        'mayorista':      'Mayorista',
+        'cripto':         'Cripto',
+        'tarjeta':        'Tarjeta',
+        'solidario':      'Solidario',
+    }
+    latest['label'] = latest['casa'].map(lambda x: LABELS.get(x, x.title()))
+    return latest[['casa', 'label', 'compra', 'venta', 'fecha']]
+
+
+@st.cache_data(ttl=900, show_spinner=False)
+def get_dolares_historico(casa: str = 'blue', dias: int = 365):
+    """Serie histórica de cotización de un tipo de dólar."""
+    data = _ad_get(f"/cotizaciones/dolares/{casa}")
+    if not data:
+        return None
+    df = pd.DataFrame(data)
+    df['fecha'] = pd.to_datetime(df['fecha'])
+    df = df.sort_values('fecha').tail(dias)
+    return df
+
+
+@st.cache_data(ttl=900, show_spinner=False)
+def get_riesgo_pais(dias: int = 365):
+    """Serie histórica del riesgo país (EMBI Argentina)."""
+    data = _ad_get("/finanzas/indices/riesgo-pais")
+    if not data:
+        return None
+    df = pd.DataFrame(data)
+    df['fecha'] = pd.to_datetime(df['fecha'])
+    df = df.sort_values('fecha').tail(dias)
+    return df
+
+
+@st.cache_data(ttl=900, show_spinner=False)
+def get_riesgo_pais_ultimo():
+    """Último valor del riesgo país."""
+    return _ad_get("/finanzas/indices/riesgo-pais/ultimo")
+
+
+@st.cache_data(ttl=3600, show_spinner=False)
+def get_inflacion_bcra(meses: int = 36):
+    """Inflación mensual según BCRA vía ArgentinaDatos."""
+    data = _ad_get("/finanzas/indices/inflacion")
+    if not data:
+        return None
+    df = pd.DataFrame(data)
+    df['fecha'] = pd.to_datetime(df['fecha'])
+    df = df.sort_values('fecha').tail(meses)
+    df.rename(columns={'valor': 'var_mensual_pct'}, inplace=True)
+    return df
+
+
+@st.cache_data(ttl=3600, show_spinner=False)
+def get_inflacion_interanual_bcra():
+    """Último valor de inflación interanual según BCRA."""
+    data = _ad_get("/finanzas/indices/inflacionInteranual")
+    if not data:
+        return None
+    df = pd.DataFrame(data)
+    df['fecha'] = pd.to_datetime(df['fecha'])
+    return df.sort_values('fecha').iloc[-1] if not df.empty else None
+
+
+@st.cache_data(ttl=1800, show_spinner=False)
+def get_senadores_actuales():
+    """Senadores con mandato vigente (periodoReal.fin is null)."""
+    data = _ad_get("/senado/senadores")
+    if not data:
+        return None
+    rows = []
+    for s in data:
+        fin = s.get('periodoReal', {}).get('fin')
+        legal_fin = s.get('periodoLegal', {}).get('fin', '')
+        try:
+            fin_year = int(str(legal_fin)[:4]) if legal_fin else 0
+        except Exception:
+            fin_year = 0
+        if fin is None and fin_year >= 2024:
+            rows.append({
+                'nombre':    s.get('nombre', ''),
+                'provincia': s.get('provincia', ''),
+                'partido':   s.get('partido', ''),
+                'inicio':    s.get('periodoReal', {}).get('inicio', ''),
+                'fin_legal': legal_fin,
+                'foto':      s.get('foto'),
+                'email':     s.get('email'),
+            })
+    return pd.DataFrame(rows) if rows else None
