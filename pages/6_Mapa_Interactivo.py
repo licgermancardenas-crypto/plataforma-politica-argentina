@@ -257,10 +257,11 @@ def find_muni_by_point(lat, lng):
     return closest if min_dist < 0.05 else None
 
 # ═══════════════════════════════════════════════════════════════════════════
-# ÍNDICE DE CENTROIDES (para zoom al buscar)
+# ÍNDICE DE BOUNDS (para fit_bounds al seleccionar municipio)
 # ═══════════════════════════════════════════════════════════════════════════
 @st.cache_data(show_spinner=False)
-def build_centroid_index():
+def build_bounds_index():
+    """Devuelve [[lat_min, lng_min], [lat_max, lng_max]] por municipio."""
     index = {}
     for feat in geojson_data['features']:
         geom = feat.get('geometry')
@@ -268,13 +269,13 @@ def build_centroid_index():
         if not geom or geom['type'] not in ('Polygon', 'MultiPolygon'):
             continue
         try:
-            c = shape(geom).centroid
-            index[muni] = [c.y, c.x]
+            b = shape(geom).bounds  # (minx, miny, maxx, maxy)
+            index[muni] = [[b[1], b[0]], [b[3], b[2]]]
         except Exception:
             pass
     return index
 
-centroid_index = build_centroid_index()
+bounds_index = build_bounds_index()
 
 # ═══════════════════════════════════════════════════════════════════════════
 # SESSION STATE
@@ -317,9 +318,6 @@ with st.sidebar:
     )
     if muni_search and muni_search != st.session_state.selected_muni:
         st.session_state.selected_muni = muni_search
-        if muni_search in centroid_index:
-            st.session_state.map_center = centroid_index[muni_search]
-            st.session_state.map_zoom = 13
         st.rerun()
 
     st.markdown("---")
@@ -546,7 +544,7 @@ def make_popup(props):
 # ═══════════════════════════════════════════════════════════════════════════
 # CONSTRUIR MAPA FOLIUM
 # ═══════════════════════════════════════════════════════════════════════════
-def build_map(visible_munis_tuple, capa_mode, show_labels_, show_disputes_, center=None, zoom=7, radios_gj=None):
+def build_map(visible_munis_tuple, capa_mode, show_labels_, show_disputes_, center=None, zoom=7, radios_gj=None, fit_bounds=None):
     visible = set(visible_munis_tuple)
 
     m = folium.Map(
@@ -555,6 +553,9 @@ def build_map(visible_munis_tuple, capa_mode, show_labels_, show_disputes_, cent
         tiles=None,
         prefer_canvas=True,
     )
+
+    if fit_bounds:
+        m.fit_bounds(fit_bounds, padding=(40, 40))
 
     # Base tiles
     folium.TileLayer(
@@ -709,6 +710,8 @@ with st.spinner("Renderizando mapa..."):
         with st.spinner(f"Cargando radios de {sel_muni}..."):
             radios_data = load_radios_by_partido(sel_muni)
 
+    sel_bounds = bounds_index.get(sel_muni) if sel_muni else None
+
     folium_map = build_map(
         tuple(sorted(visible_munis)),
         capa,
@@ -717,6 +720,7 @@ with st.spinner("Renderizando mapa..."):
         center=st.session_state.map_center,
         zoom=st.session_state.map_zoom,
         radios_gj=radios_data,
+        fit_bounds=sel_bounds,
     )
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -727,7 +731,7 @@ map_result = st_folium(
     width="100%",
     height=920,
     returned_objects=["last_object_clicked_popup", "last_object_clicked"],
-    key=f"map_{capa}_{tuple(sorted(visible_munis))}_{show_labels}_{show_disputes}_{show_radios}_{sel_muni}_{st.session_state.map_center[0]:.4f}_{st.session_state.map_zoom}",
+    key=f"map_{capa}_{tuple(sorted(visible_munis))}_{show_labels}_{show_disputes}_{show_radios}_{sel_muni}",
 )
 
 # Detectar municipio clickeado via lat/lng → point-in-polygon
