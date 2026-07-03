@@ -749,120 +749,160 @@ with st.sidebar:
     sel_row = df_all[df_all['municipio'] == sel].iloc[0] if sel and sel in df_all['municipio'].values else None
 
     st.markdown("""
-    <div style="font-size:.6rem;font-weight:700;color:#1E3A5F;text-transform:uppercase;
-                letter-spacing:.14em;margin:12px 0 6px;padding-bottom:5px;
-                border-bottom:1px solid #0F172A;">Municipio seleccionado</div>
+    <div style="font-size:.58rem;font-weight:700;color:#1E3A5F;text-transform:uppercase;
+                letter-spacing:.14em;margin:10px 0 5px;padding-bottom:4px;
+                border-bottom:1px solid #0F172A;">▸ Municipio seleccionado</div>
     """, unsafe_allow_html=True)
 
     if sel_row is None:
         st.markdown("""
-        <div style="background:#0F172A;border:1px dashed #1E293B;border-radius:10px;
-                    padding:24px 16px;text-align:center;margin-top:4px;">
-          <div style="font-size:1.4rem;opacity:.4;margin-bottom:8px;">🗺</div>
-          <div style="color:#334155;font-size:.75rem;line-height:1.5;">
+        <div style="background:#0A1628;border:1px dashed #1E293B;border-radius:10px;
+                    padding:20px 14px;text-align:center;">
+          <div style="font-size:1.6rem;opacity:.25;margin-bottom:6px;">🗺</div>
+          <div style="color:#334155;font-size:.73rem;line-height:1.6;">
             Hacé click en un municipio<br>o buscalo arriba
           </div>
         </div>""", unsafe_allow_html=True)
     else:
-        color  = BLOQUE_HEX.get(sel_row['bloque'], DEFAULT_CLR)
-        cat    = sel_row['categoria']
-        cat_c  = CAT_HEX.get(cat, DEFAULT_CLR)
-        pct_gd = sel_row['ganador_pct'] or 0
-        marg   = sel_row['margen'] or 0
-        pop    = sel_row['poblacion_2022'] or 0
-        km2    = sel_row['superficie_km2'] or 0
+        color   = BLOQUE_HEX.get(sel_row['bloque'], DEFAULT_CLR)
+        cat     = sel_row['categoria']
+        cat_c   = CAT_HEX.get(cat, DEFAULT_CLR)
+        pct_gd  = sel_row['ganador_pct'] or 0
+        marg    = sel_row['margen'] or 0
+        pop     = sel_row['poblacion_2022'] or 0
+        km2     = sel_row['superficie_km2'] or 0
+        seg_pct = sel_row.get('segundo_pct') or 0
+        seg_nom = (sel_row.get('segundo') or 'Oposición')
+        padron  = sel_row['padron'] or 0
+        dens    = f"{pop/km2:.0f}" if km2 else "S/D"
 
-        # Header del municipio
+        # ── Header ──────────────────────────────────────────
+        partido_short = sel_row['partido'][:28] + ('…' if len(sel_row['partido']) > 28 else '')
         st.markdown(f"""
-        <div style="background:linear-gradient(135deg,{color}CC,{color}88);
-                    border:1px solid {color}66;border-radius:10px;
-                    padding:12px 14px;margin-bottom:8px;">
-          <div style="font-size:1rem;font-weight:800;color:white;letter-spacing:-.01em;">{sel}</div>
-          <div style="font-size:.7rem;color:rgba(255,255,255,.6);margin-top:1px;">{sel_row['seccion_nombre']}</div>
-          <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap;">
+        <div style="background:linear-gradient(150deg,{color}E0 0%,{color}55 100%);
+                    border:1px solid {color}55;border-radius:11px;
+                    padding:11px 13px 10px;margin-bottom:7px;">
+          <div style="font-size:1.05rem;font-weight:800;color:#fff;letter-spacing:-.01em;
+                      line-height:1.1;">{sel}</div>
+          <div style="font-size:.68rem;color:rgba(255,255,255,.55);margin-top:2px;">{sel_row['seccion_nombre']}</div>
+          <div style="font-size:.82rem;font-weight:700;color:rgba(255,255,255,.9);
+                      margin:7px 0 6px;">{sel_row['intendente']}</div>
+          <div style="font-size:.62rem;color:rgba(255,255,255,.5);margin-bottom:7px;">{partido_short}</div>
+          <div style="display:flex;gap:4px;flex-wrap:wrap;">
             <span style="background:rgba(0,0,0,.35);color:rgba(255,255,255,.85);
-                         padding:2px 8px;border-radius:20px;font-size:.62rem;font-weight:700;
-                         letter-spacing:.03em;">{sel_row['bloque']}</span>
-            <span style="background:{cat_c}33;color:{cat_c};border:1px solid {cat_c}66;
-                         padding:2px 8px;border-radius:20px;font-size:.62rem;font-weight:700;
-                         letter-spacing:.03em;">{cat}</span>
+                         padding:2px 8px;border-radius:20px;font-size:.6rem;font-weight:700;">{sel_row['bloque']}</span>
+            <span style="background:{cat_c}33;color:{cat_c};border:1px solid {cat_c}55;
+                         padding:2px 8px;border-radius:20px;font-size:.6rem;font-weight:700;">{cat}</span>
           </div>
         </div>""", unsafe_allow_html=True)
 
-        # Datos clave
-        dens = f"{pop/km2:.0f}" if km2 else "S/D"
-        rows_intel = [
-            ("Intendente",   sel_row['intendente']),
-            ("Partido",      sel_row['partido'][:35] + ('…' if len(sel_row['partido']) > 35 else '')),
-            ("Padrón",       f"{sel_row['padron']:,}".replace(',','.')),
-            ("Población",    f"{pop:,}".replace(',','.')),
-            ("Densidad",     f"{dens} hab/km²"),
-            ("Superficie",   f"{km2:,.0f} km²".replace(',','.')),
-            ("Concejales",   str(sel_row['concejales_electos'])),
-        ]
-        items_html = "".join(
-            f"<div class='intel-row'><span class='intel-key'>{k}</span><span class='intel-val'>{v}</span></div>"
-            for k, v in rows_intel
-        )
-        st.markdown(f"<div class='intel-card'>{items_html}</div>", unsafe_allow_html=True)
-
-        # Gráfico resultado electoral (mini donut)
-        seg_pct = sel_row.get('segundo_pct') or 0
+        # ── Resultado electoral 2023 ─────────────────────────
         otros_pct = max(0, 100 - pct_gd - seg_pct)
-        fig_elec = go.Figure(go.Pie(
-            values=[pct_gd, seg_pct, otros_pct],
-            labels=[sel_row['partido'][:20], (sel_row.get('segundo','') or '')[:20], 'Otros'],
-            hole=.55,
-            marker_colors=[color, '#475569', '#1E293B'],
-            textinfo='percent',
-            textfont=dict(size=10, color='white'),
-            showlegend=False,
-        ))
-        fig_elec.update_layout(
-            height=160, margin=dict(t=4,b=4,l=4,r=4),
-            paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
-            annotations=[dict(text=f"<b>{pct_gd:.0f}%</b>", x=.5, y=.5,
-                              font_size=16, font_color='white', showarrow=False)],
-        )
-        st.plotly_chart(fig_elec, use_container_width=True, config={'displayModeBar': False})
+        bar_gd  = min(pct_gd, 100)
+        bar_seg = min(seg_pct, 100)
+        seg_short = seg_nom[:22] + ('…' if len(seg_nom) > 22 else '')
 
-        # Vs promedio provincial
+        st.markdown(f"""
+        <div style="background:#0A1628;border:1px solid #1E293B;border-radius:9px;
+                    padding:10px 12px;margin-bottom:6px;">
+          <div style="font-size:.58rem;font-weight:700;color:#334155;text-transform:uppercase;
+                      letter-spacing:.1em;margin-bottom:8px;">Resultado 2023</div>
+
+          <!-- Ganador -->
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3px;">
+            <span style="font-size:.72rem;font-weight:700;color:#E2E8F0;max-width:68%;
+                         overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{sel_row['partido'][:30]}</span>
+            <span style="font-size:.95rem;font-weight:800;color:{color};">{pct_gd:.1f}%</span>
+          </div>
+          <div style="background:#1E293B;border-radius:4px;height:7px;margin-bottom:9px;">
+            <div style="background:{color};height:7px;border-radius:4px;width:{bar_gd:.0f}%;
+                        transition:width .4s;"></div>
+          </div>
+
+          <!-- 2° lugar -->
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3px;">
+            <span style="font-size:.68rem;color:#94A3B8;max-width:68%;
+                         overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">2° {seg_short}</span>
+            <span style="font-size:.82rem;font-weight:700;color:#64748B;">{seg_pct:.1f}%</span>
+          </div>
+          <div style="background:#1E293B;border-radius:4px;height:5px;margin-bottom:9px;">
+            <div style="background:#475569;height:5px;border-radius:4px;width:{bar_seg:.0f}%;"></div>
+          </div>
+
+          <!-- Margen badge -->
+          <div style="display:flex;align-items:center;gap:6px;margin-top:2px;">
+            <span style="background:{cat_c}22;color:{cat_c};border:1px solid {cat_c}55;
+                         padding:3px 10px;border-radius:20px;font-size:.72rem;font-weight:800;">
+              +{marg:.1f} pp de ventaja
+            </span>
+            <span style="font-size:.62rem;color:#334155;">{cat}</span>
+          </div>
+        </div>""", unsafe_allow_html=True)
+
+        # ── Stats grid 2×3 ───────────────────────────────────
         prom_marg = df_all['margen'].mean()
         prom_pct  = df_all['ganador_pct'].mean()
+        delta_m   = marg - prom_marg
+        delta_p   = pct_gd - prom_pct
+        dm_color  = '#22C55E' if delta_m >= 0 else '#EF4444'
+        dp_color  = '#22C55E' if delta_p >= 0 else '#EF4444'
 
-        delta_marg = marg - prom_marg
-        delta_pct  = pct_gd - prom_pct
+        pop_s    = f"{pop:,}".replace(',', '.')
+        padron_s = f"{padron:,}".replace(',', '.')
+        km2_s    = f"{km2:,.0f}".replace(',', '.')
 
-        c1, c2 = st.columns(2)
-        c1.metric("Margen", f"{marg:.1f}pp",
-                  f"{delta_marg:+.1f}pp vs prom.",
-                  delta_color="normal")
-        c2.metric("% ganador", f"{pct_gd:.1f}%",
-                  f"{delta_pct:+.1f}pp vs prom.",
-                  delta_color="normal")
+        def stat_cell(clr, ico, label, val, sub=""):
+            sub_html = f"<div style='font-size:.56rem;color:#475569;margin-top:2px;'>{sub}</div>" if sub else ""
+            return (
+                f"<div style='background:#0A1628;border:1px solid #1E293B;border-radius:7px;padding:7px 9px;'>"
+                f"<div style='font-size:.6rem;color:#334155;margin-bottom:3px;'>{ico} {label}</div>"
+                f"<div style='font-size:.88rem;font-weight:800;color:{clr};line-height:1.1;'>{val}</div>"
+                f"{sub_html}</div>"
+            )
 
-        # Concejales del municipio
+        cells = "".join([
+            stat_cell("#6EE7B7", "👥", "Población",  pop_s,              "Censo 2022"),
+            stat_cell("#93C5FD", "🗳", "Padrón",     padron_s,           "Electores"),
+            stat_cell("#FCD34D", "📐", "Superficie", f"{km2_s} km²",     ""),
+            stat_cell("#F9A8D4", "🏘", "Densidad",   f"{dens} hab/km²",  ""),
+            stat_cell(dp_color,  "🎯", "% Ganador",  f"{pct_gd:.1f}%",   f"{delta_p:+.1f}pp vs PBA"),
+            stat_cell(dm_color,  "📊", "Margen",     f"{marg:.1f}pp",    f"{delta_m:+.1f}pp vs PBA"),
+        ])
+
+        st.markdown(
+            f"<div style='display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:7px;'>{cells}</div>",
+            unsafe_allow_html=True,
+        )
+
+        # ── Concejales ───────────────────────────────────────
         muni_conc = conc_df[conc_df['municipio'] == sel]
         if not muni_conc.empty:
-            with st.expander(f"Concejales 2023 ({len(muni_conc)})", expanded=False):
+            n_conc = len(muni_conc)
+            bloques_conc = muni_conc['partido'].value_counts().head(3)
+            with st.expander(f"🗳 Concejales 2023 · {n_conc} electos", expanded=False):
                 for _, row in muni_conc.iterrows():
+                    blq_c = BLOQUE_HEX.get(row.get('bloque',''), DEFAULT_CLR)
                     st.markdown(
-                        f"<div style='font-size:.75rem;padding:3px 0;border-bottom:1px solid #1E293B;color:#E2E8F0;'>"
-                        f"<b>{row['nombre']}</b><br>"
-                        f"<span style='color:#64748B;'>{row.get('partido','')[:40]}</span></div>",
+                        f"<div style='font-size:.72rem;padding:4px 0;border-bottom:1px solid #0F172A;"
+                        f"display:flex;justify-content:space-between;align-items:center;'>"
+                        f"<div><div style='color:#E2E8F0;font-weight:600;'>{row['nombre']}</div>"
+                        f"<div style='color:#475569;font-size:.65rem;'>{row.get('partido','')[:38]}</div></div>"
+                        f"<div style='width:8px;height:8px;border-radius:50%;background:{blq_c};"
+                        f"flex-shrink:0;margin-left:6px;'></div></div>",
                         unsafe_allow_html=True,
                     )
 
-        # Secretarios del municipio
+        # ── Gabinete ─────────────────────────────────────────
         muni_secs = sec_dict.get(sel, [])
         if muni_secs:
-            with st.expander(f"Gabinete ({len(muni_secs)} secretarías)", expanded=False):
+            with st.expander(f"🏛 Gabinete · {len(muni_secs)} secretarías", expanded=False):
                 for s in muni_secs:
                     nm = s.get('nombre','') if isinstance(s, dict) else s[0]
-                    cg = s.get('cargo','') if isinstance(s, dict) else s[1]
+                    cg = s.get('cargo','')  if isinstance(s, dict) else s[1]
                     st.markdown(
-                        f"<div style='font-size:.75rem;padding:3px 0;border-bottom:1px solid #1E293B;color:#E2E8F0;'>"
-                        f"<b>{nm}</b><br><span style='color:#64748B;'>{cg}</span></div>",
+                        f"<div style='font-size:.72rem;padding:4px 0;border-bottom:1px solid #0F172A;'>"
+                        f"<div style='color:#E2E8F0;font-weight:600;'>{nm}</div>"
+                        f"<div style='color:#475569;font-size:.65rem;'>{cg}</div></div>",
                         unsafe_allow_html=True,
                     )
 
