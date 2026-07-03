@@ -1,0 +1,5200 @@
+{
+  "001": {
+    "distrito": "ADOLFO ALSINA",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "VARELA, Leandro Gastón",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CALDERON, Carmen Beatriz",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "RODAS, Roberto David",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "AMARAIN, Micaela",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "APUD, Jorge Leonardo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "RODRIGUEZ, Graciela Elisabet",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "002": {
+    "distrito": "ALBERTI",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "BECKER, Fernando Luis",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "FISCELA, María Elisa",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "D' ANGELO, Adrián Alberto",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GAUTE, Jorge Alberto",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BELUSCI, Laura Gisele",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PALAZZO, Juan Enrique",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "003": {
+    "distrito": "ALMIRANTE BROWN",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "FABIANI, Juan José",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BARREIRO, Natalia",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "JAWTUSCHENKO, Nicolás Pablo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "VILOTTA, María Cristina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "VELEZ, José María",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SERVELLI, Celia Nair",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PEREIRA BENíTEZ, Juan Manuel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "AQUINO, Juan Pedro",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "GERMAN, Natalia Alejandra",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "BARREIRO, Roberto Ezequiel",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "BONTEMPO, Leticia Inés",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "FERNáNDEZ GARRIDO, Diego Enrique",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "004": {
+    "distrito": "AVELLANEDA",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "MAGDALENA, Sierra",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BARRUECO, Hugo Dino",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ALESSI, Gisele Gabriela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BERTOLOTTO, Luca Armando",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ESPOSITO, Melina Florencia",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ROMERO, Pablo Alberto",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ALVA GONZáLEZ, María Antonieta",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PAZ, Damián Andrés",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ARGAÑARAZ, Yesica Mariel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GUTOVICH, Marcelo Daniel Pedro",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DIAZ, Arnaldo Horacio",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "BENITEZ, Zunilda Beatriz",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "005": {
+    "distrito": "AYACUCHO",
+    "n_elige": 7,
+    "concejales": [
+      {
+        "nombre": "FERRARI, Miriam Edith",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "IMAZ, Fernando Raúl",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "COLANTUONO PODESTA, Ana Paola",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ASCAT, Federico Raúl",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ECHAURI, Claudia Natividad",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "TRONCOSO, Adrián Alejandro",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GUISANDE, Marcela Teresita",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "006": {
+    "distrito": "AZUL",
+    "n_elige": 9,
+    "concejales": [
+      {
+        "nombre": "CABRERA CISNEROS, Xavier Andrés",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MARTINEZ, María Cecilia",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BLANDO, Eduardo David Gastón",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "DISALVO, Pablo Jesús",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "BARCELO, María Andrea",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "LUCERO, Gerardo Saúl",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "BURGOS, Consuelo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "PUYOU, Agustín",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BAUCHE, Agustina Lilian",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "007": {
+    "distrito": "BAHIA BLANCA",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "DIAZ, Alvaro",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "TOMASSINI, Micaela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MONTERO, Federico Sebastián",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MARTíNEZ ZARA, Lucía Verónica",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ARCANGEL, Roberto",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "REYES PONTET, Mauro David",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "GONARD, María Teresa",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "ALONSO, Carlos Walter",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "LINZUAIN, Vanina Gabriela",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "STREITENBERGER, Marcos",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "UNGARO, Fabiana Andrea",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ALVAREZ PORTE, Emiliano Marcelo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "008": {
+    "distrito": "BALCARCE",
+    "n_elige": 9,
+    "concejales": [
+      {
+        "nombre": "RIDAO, Francisco Martín",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DIVITO, Sandra Verónica",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "SPINELLI, Leandro",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "VIVIO, Elsa Soledad",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CASSINI, Agustín Carlos",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GUILLEN, Angel Enrique",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "LASO BARREIRO, Mara Paula",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "ERREGUERENA, Viviana Edith",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LOMBARDINI, Andrés Matías",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "009": {
+    "distrito": "BARADERO",
+    "n_elige": 8,
+    "concejales": [
+      {
+        "nombre": "MOREIRA, Iván Nicolás",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "IOZZIA, Silvana Noemí",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ERROZ, Santiago",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CAVIEDES, María José",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LACABANNE, Néstor Rodolfo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "FERNANDEZ, Alicia Romina",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "MAREGA, Emmanuel Santiago",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "MUSANTE, Gastón",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "010": {
+    "distrito": "ARRECIFES",
+    "n_elige": 7,
+    "concejales": [
+      {
+        "nombre": "PICOY, Gustavo Javier",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "SALGADO, Evangelina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "SPAGO, Sergio Alejandro",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CORRAL, María Rosa",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "TAMASSI CANTELI, Martín Alejandro",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CONTRERAS, Cecilia Inés",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "AZAROLA, José Ignacio",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "011": {
+    "distrito": "BERAZATEGUI",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "BALOR, Carlos Eduardo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "FLORES, María Del Carmen",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LOPEZ, Federico Martín",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "VEGA, Lucía Magdalena",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "AGUIRRE, Matías Teodoro",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "NORO, Jennifer Ivana",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ACOSTA, Florentino Omar",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LUAYZA TRONCOZO, Ezequiel Andrés",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "GARCIA, Rosalía Catalina",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "ROMANO, Rubén Alberto",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "RAVELO, Héctor Andrés",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MASSIMINO, Sandra Beatriz",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "012": {
+    "distrito": "BERISSO",
+    "n_elige": 10,
+    "concejales": [
+      {
+        "nombre": "IOVANOVICH, Aldana",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MINCARELLI, Juan Ignacio",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "DE VERA, Laura Marcela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "OBREGON, Mariano Diego",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "DI LORENZO JUáREZ, Gabriela Nadya",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "YALET, Patricio",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CARVAJAL, Gimena",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "FERNANDEZ, Héctor Maximiliano",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DEL CURTO, Arnaldo Daniel",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "AGUILERA, Melisa Valeria",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "013": {
+    "distrito": "BOLIVAR",
+    "n_elige": 8,
+    "concejales": [
+      {
+        "nombre": "EDUARDO, Bucca",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "RODRIGUEZ, María Laura",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CANEPARE, Franco Elio",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "OCHOA, Mónica Alejandra",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "FABRIS, Pablo Marcelo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "OTANO, Karina Elizabet",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "PORRIS, Andrés Alejandro",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DE MARCO, Flavio Adrián",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "014": {
+    "distrito": "BRAGADO",
+    "n_elige": 9,
+    "concejales": [
+      {
+        "nombre": "DURETTI, Elvio Ricardo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BUSTOS, Amanda Ester",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ALIANIELLO, Daniel Alcides",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ALONSO, Malena",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "TOMASINO, Mauricio Alejandro",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GELITTI, Marita",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "FRANZONI, Fernando Esteban",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MONZON, Daniela",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "DIAZ, Claudio Germán",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "015": {
+    "distrito": "BRANDSEN",
+    "n_elige": 7,
+    "concejales": [
+      {
+        "nombre": "CARABALLO, Daniel Antonio",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CIENFUEGOS, Gabriela Verónica",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BRONICARDI, Lucas Emanuel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SALGUEIRO, Juan Cruz",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "NEIRA, Graciela Mabel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "FERNANDEZ, Facundo Simón",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ROLDAN, Jonathan Ariel",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "016": {
+    "distrito": "CAMPANA",
+    "n_elige": 10,
+    "concejales": [
+      {
+        "nombre": "DEPPELER, Martín Rodolfo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ABELLA, Elisa",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GOMEZ, Luis Ricardo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BENEDETICH, María José",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LAGAR, Octavio Nicolás",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "SALA, Julia Karina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "RUIZ, Mariano",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "RAMIREZ, Julieta Elis",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PIRIZ, Walter Javier",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CORIO, Maximiliano Germán",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "017": {
+    "distrito": "CAÑUELAS",
+    "n_elige": 9,
+    "concejales": [
+      {
+        "nombre": "MAZZANTI, Maximiliano Alejo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CARDOZO, Sandra Del Carmen",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SAIZ, Darío Emmanuel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PUENTES, Margarita Inés",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ROLANDELLI, Patricia Haydeé",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MORENA, Darío Pedro",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "PELERETEGUY, Claudia Susana",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MEDINA, Valeria Del Carmen",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "AUGUSTO, Juan Bautista",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "018": {
+    "distrito": "CAPITAN SARMIENTO",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "RUSSELL, Hugo Bernardo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "KEATING, Susana Beatriz",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "SORIA, Daniel Aníbal",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MARíA LAURA, Ferra",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CASA, Pablo Raúl",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CORRO, Oscar Alfredo",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "019": {
+    "distrito": "CARLOS CASARES",
+    "n_elige": 7,
+    "concejales": [
+      {
+        "nombre": "MASSONE, Christian Abel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "DELPONTE, Luisina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CAPRIOLI, Silvio Maximiliano",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "NUÑEZ, Mariana Claudia",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BARRIOS, Pedro Raúl",
+        "partido": "UNIDOS POR CASARES"
+      },
+      {
+        "nombre": "ESCOBAR, Miryam Itatí",
+        "partido": "UNIDOS POR CASARES"
+      },
+      {
+        "nombre": "CRUSEÑO, Franco Agustín",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "020": {
+    "distrito": "CARLOS TEJEDOR",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "LóPEZ FARRONI, Marcelo Enrique",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "JUSTET, Gladys Noemí",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PALAU, Armando",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "DOMINGUEZ, Julieta Belén",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "RAMOS, Valeria Edith",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GALDOS, Roberto",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "021": {
+    "distrito": "CARMEN DE ARECO",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "CERES, Facundo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "OBLIGADO, Delia Isabel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PAVONE COCOZZA, Lucas Matías",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LYNCH, Camila",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "HEFFLER, Stella Carina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ROSSI, Mariano Germán",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "022": {
+    "distrito": "PATAGONES",
+    "n_elige": 8,
+    "concejales": [
+      {
+        "nombre": "BETTINELLI, Fabio Carlos",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "PATANE, María Dolores",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ANGOS, Ricardo Martín",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DUARTE, Cristian Ariel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GOROSITO LABAT, Cecilia Elizabeth",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SAFE, Amílcar Rubén",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MARTINEZ, Roberto Jesús",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "ZELMER, Brisa María",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "023": {
+    "distrito": "CASTELLI",
+    "n_elige": 5,
+    "concejales": [
+      {
+        "nombre": "ECHARREN, Julio Sebastián",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GUALTIERI, María Teresa",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CARULLO, Hernán",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CASTRILLON, Gonzalo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MASSARA, Malena",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "024": {
+    "distrito": "COLON",
+    "n_elige": 7,
+    "concejales": [
+      {
+        "nombre": "AVETTA, Natalia Yanina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SCARPECCIA, Nicolás Juan",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "JAUREGUISAHAR, Carolina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "TRAFICANTE, Carlos Adrián",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "VILLA, Marcelo Julio",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MORALES, Milagros Luján",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "IACCI, Néstor José",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "025": {
+    "distrito": "CORONEL DORREGO",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "GAGNA, Ana Mercedes",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BRUSA, Gustavo Alberto",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BALDA, Ana María",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GUTIERREZ, Casiano Esteban",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ROZAS, Romina Soledad",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "SOLA, Santiago Alfredo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "026": {
+    "distrito": "CORONEL PRINGLES",
+    "n_elige": 7,
+    "concejales": [
+      {
+        "nombre": "AMONDARAIN, Rosana Solange",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "QUEREJETA, Sebastián Andrés",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ESPIL, Cristina Beatriz",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "D INTINO, Gabriel Omar",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DE ADURIZ, Julio Eduardo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SANCHEZ, Ana María",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BOTTINI, Rubén Gustavo",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "027": {
+    "distrito": "CORONEL DE MARINA L. ROSALES",
+    "n_elige": 9,
+    "concejales": [
+      {
+        "nombre": "BERMEJO, María Paula",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MEDINA, Daniel Jorge",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MARTIN, Melisa Daniela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GOMEZ, Pablo Ariel",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "AGUILERA, Josefina Stella Del Valle",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "DI CARLO, Juan Alberto",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "TORRES, Jorge Abelardo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "TABOADA, Liliana Noemí",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BOUSCAYROL, Gustavo Raúl",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "028": {
+    "distrito": "CORONEL SUAREZ",
+    "n_elige": 8,
+    "concejales": [
+      {
+        "nombre": "MOCCERO, Mauro",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ACOSTA, Andrea Mabel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SCHULMEISTER, Hugo Carlos",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MINNIG, Elisabeth",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "NEGRIN BELéN, Valeria",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BONNATERRE, Juan Manuel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GURRUCHAGA, Beatriz Analía",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BENZ, Alfredo Alejandro",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "029": {
+    "distrito": "CHACABUCO",
+    "n_elige": 9,
+    "concejales": [
+      {
+        "nombre": "MASCI, Gustavo Luján",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MANSILLA, Laura Lucía",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "DOMINGUEZ, Tomás Guido",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SILVA, Sofía Celia",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ORSINI, Carlos Ignacio",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "D' ORACIO, Lucía",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ZARKOVICH, Agustín",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MARTINEZ, Ezequiel",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "SOSA, Claudia Marina",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "030": {
+    "distrito": "CHASCOMUS",
+    "n_elige": 8,
+    "concejales": [
+      {
+        "nombre": "APARICIO, María Del Rosario",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "REDRUELLO, Valentino",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "FUSARI BRAMBILLA, Milagros",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DONATO, Maximiliano",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BORDALECOU, Leandro",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "FIGUEROA, María Victoria",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GIMENEZ, Oscar",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GAZZANIGA, Evelyn",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "031": {
+    "distrito": "CHIVILCOY",
+    "n_elige": 9,
+    "concejales": [
+      {
+        "nombre": "DE LILLO, Eduardo Antonio",
+        "partido": "PRIMERO CHIVILCOY"
+      },
+      {
+        "nombre": "POMMARES, Fernanda Cecilia",
+        "partido": "PRIMERO CHIVILCOY"
+      },
+      {
+        "nombre": "BURGOS, Lucas Esteban",
+        "partido": "PRIMERO CHIVILCOY"
+      },
+      {
+        "nombre": "LEMME, Viviana Rosana",
+        "partido": "PRIMERO CHIVILCOY"
+      },
+      {
+        "nombre": "CABANI, Fernando Andrés",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "COFRE, Yanila Solange",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "POGGIO, Fernando Ricardo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ETCHEVERRIA, Juan Martín",
+        "partido": "FRENTE H.A.C.E.R. POR EL PROGRESO SOCIAL"
+      },
+      {
+        "nombre": "RODRIGUEZ, María De Los Angeles",
+        "partido": "FRENTE H.A.C.E.R. POR EL PROGRESO SOCIAL"
+      }
+    ]
+  },
+  "032": {
+    "distrito": "DAIREAUX",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "RAMIREZ, María Eugenia",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ZUBIRI, Martín",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "HERNANDEZ, María Cristina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "SERRA, María Alejandra",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ZUBIRIA, José Omar",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MARCOS, Fernanda Isabel",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "033": {
+    "distrito": "DOLORES",
+    "n_elige": 7,
+    "concejales": [
+      {
+        "nombre": "IBARRA, Guillermo Bautista",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "RUIZ, Nancy Daniela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ROCHA, Juan Pablo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "FOCKE, Daiana Cristina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GISONDO, Jorge Froilan",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "VELAZQUEZ, María Elena",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "EQUIZA, José Arnaldo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "034": {
+    "distrito": "ENSENADA",
+    "n_elige": 9,
+    "concejales": [
+      {
+        "nombre": "BLASETTI, Luis Alberto",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "NARDINI, María Silvina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SECCO, Mario Nicolás",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PARDO, María Agustina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "VALLEJOS, Eduardo Angel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "DI BASTIANO, Rocío",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ROMERO, Ricardo Daniel",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "ROMERO, Claudia Marcela",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "CAPARROS, María Agustina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "035": {
+    "distrito": "ESCOBAR",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "CARLOS, Ramil",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SABENA, María Verónica",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "REHL GóMEZ, Javier Heriberto",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SOTELO, Sandra Yanina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PERALTA, Matías Horacio",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CEJAS, Laura Inés",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LOVIZIO, Ariel Omar",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "HUBER, Mariana Elena",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "MUZZIO, Diego Alejandro",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "DE BOEUF, Sandra Beatriz",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "GOROYESKY, Leandro Gastón",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CAMPO DALL ORTO, Florencia",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "036": {
+    "distrito": "ESTEBAN ECHEVERRIA",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "BELLIZZI, Valeria Alejandra",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CAMMILLERI, Angel Antonio",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PEREZ, Analía Elisabet",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GARAVAGLIA, José Luis",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "HEILING, Viviana Teresa",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MARTONE, Pablo Héctor",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "QUIROGA, Facundo",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "GIOIA, Vanesa Viviana",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "RUIZ, Rubén Enrique",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "LEONIS, Roberto Fabián",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DOBAL, Paula Velia",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ZALAZAR, Ernesto Adrián",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "037": {
+    "distrito": "EXALTACION DE LA CRUZ",
+    "n_elige": 7,
+    "concejales": [
+      {
+        "nombre": "MARTIN, Luis Mariano",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SANTILLAN, Norma Beatriz",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ALONSO, Christian Damián",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "VERON, Denisa Soledad",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "LIZASO, Esteban Alberto",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "HERLING, Albano Ariel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MENDES DIZ, Ana María",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "038": {
+    "distrito": "FLORENCIO VARELA",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "RODRIGUEZ, Christian Javier",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "RAVAGNI, Laura Daniela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "D' AQUINO, Darío Norberto",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PEREYRA, Julieta Soledad",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "EIRAS, Jorge Fabián",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "JIMENEZ, Sandra Marcela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "VILLARREAL, Walter Nicolás",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "VALLEJOS, Diego Javier",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "CANTO, Ivonne Marlene",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "TABORDA, Ezequiel Horacio",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "ALANIZ, Pablo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "OCHS, Marcela Adriana",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "039": {
+    "distrito": "GENERAL ALVARADO",
+    "n_elige": 8,
+    "concejales": [
+      {
+        "nombre": "BATTENTI, María Belén",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BESTEIRO, Tomás Mauricio",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "VUJOVICH, Cora Sabina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "TOLOSA, Eduardo Javier",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BARBERINI, Hernán Fabián",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "FARIAS, Viviana Isabel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "TREJO, Saúl Alberto",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MESPULET, Uriel Antonio",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "040": {
+    "distrito": "GENERAL ALVEAR",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "PAOLTRONI, Gabriela Elisabet",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DE TITTA, Juan Pablo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "PAPA, Vanesa Estefanía",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DORNACO, Miguel Angel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SIVERO, María Clara",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ALANIZ, José Alberto",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "041": {
+    "distrito": "GENERAL ARENALES",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "OLIVIERI, Juan Pablo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ORTIZ, Valeria Soledad",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CAPALDI, Javier Oscar",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LOPEZ, Claudio Gustavo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "RATTO, María Florencia",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CORVALAN, Miguel Atilio",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "042": {
+    "distrito": "GENERAL BELGRANO",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "TORRADA, Julio César",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CAPRIA, Lilia Esther",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "VASSALLO, Emmanuel Sergio Abrahan",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "APPELLA, Juan Pablo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "WILA, Mirta Cristina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DE ANDREA, Agustín",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "043": {
+    "distrito": "GENERAL GUIDO",
+    "n_elige": 3,
+    "concejales": [
+      {
+        "nombre": "ITURRALDE, Yolanda Soledad",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MASTOY, Leonel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CAMARA, Eduardo Miguel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "044": {
+    "distrito": "GENERAL LAMADRID",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "SCABUZZO, Santiago Sebastián",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ZARATE, Claudia Karina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "HAAG, Marcelo Alejandro",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "D´ELIA, María Soledad",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LOPEZ, Ariel Gonzalo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BUZEKI, Germán",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "045": {
+    "distrito": "GENERAL LAS HERAS",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "CEREZO, Juan Manuel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ZURDO, Jesica Belén",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ECHEGARAY, Santiago",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PORTILLO, Cristina Angélica",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "AMARILLA, Aurora Amalia",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "FERNANDES, Manuel Antonio",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "046": {
+    "distrito": "GENERAL LAVALLE",
+    "n_elige": 3,
+    "concejales": [
+      {
+        "nombre": "GARCIA, José Luciano",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GAMARRA, Rosa Elizabet",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LUERO, Carlos Alberto Luciano",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "047": {
+    "distrito": "GENERAL MADARIAGA",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "JOVANOVIC, Marcos Adrián",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CURUTCHET, María Alejandra",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ARRACHEA, Pablo Enrique",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "HADAN, Mariana",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MEDINA, Valeria María",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BAIGORRIA, Juan Manuel",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "048": {
+    "distrito": "GENERAL PAZ",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "MASSACCESI, Noelia Soledad",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MARTINETTI, Darío Américo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LAMARQUE, Nancy Edith",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LAMARQUE, Luis Alberto",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "SOBERON, Claudia Carina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "SALERNO, Edgardo Oscar",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "049": {
+    "distrito": "GENERAL PINTO",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "FLAMINI, Franco Gastón",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CALCAGNO, Melisa Victoria",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GARCIA, Juan Pablo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "RODRIGUEZ, Fernando",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SANZ, Marta Beatriz",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LOPEZ, Gabriel Felipe",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "050": {
+    "distrito": "GENERAL PUEYRREDON",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "TACCONE, Horacio Daniel",
+        "partido": "ENCUENTRO MARPLATENSE"
+      },
+      {
+        "nombre": "CRESPO, Valeria Luciana",
+        "partido": "ENCUENTRO MARPLATENSE"
+      },
+      {
+        "nombre": "CHEPPI, Juan Manuel",
+        "partido": "ENCUENTRO MARPLATENSE"
+      },
+      {
+        "nombre": "AYALA, María Eva",
+        "partido": "ENCUENTRO MARPLATENSE"
+      },
+      {
+        "nombre": "GARCIA, Diego Alejandro Sebastián",
+        "partido": "ENCUENTRO MARPLATENSE"
+      },
+      {
+        "nombre": "NEME, Agustín Patricio",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ROMERO, Marianela",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GARCIA, Guido Hernán",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BARAGIOLA, Vilma Rosana",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BUSSETTI, Julián Alberto",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "RECALT, Luis Emiliano",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "MARTINEZ, María Cecilia",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "051": {
+    "distrito": "GENERAL RODRIGUEZ",
+    "n_elige": 10,
+    "concejales": [
+      {
+        "nombre": "BALBI, Mariana Carla",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LARRALDE, Luciano Norberto Remo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "VERA, Claudia Viviana",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BLANCO, Rubén Rodolfo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MASLOWSKI, Romina Angélica",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BASILOTTA, Marcelo Rubén",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CORATTI, María Laura",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "KUBAR, Lucas Matías",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LEDESMA, Matías Horacio",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "DUARTE VILA, Daiana Camila",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "052": {
+    "distrito": "GENERAL SAN MARTIN",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "CAPPELLONI KATOPODIS, Nancy",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ESLAIMAN, Juan Salvador",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PASTORI, María Victoria",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PERRELLA, Diego Javier",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "OLALLA, María Victoria",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ALONSO, Cristian Daniel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GIL, Marcelo Alejandro",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "CARO, Verónica Cristina",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "LEO, Santiago Germán",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "CARUSSO, Alexia Andrea",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "PETRILLO, Andrés Eduardo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ELVEDZ, Carolina Micaela",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "053": {
+    "distrito": "SAN MIGUEL",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "DE LA TORRE, Pablo María",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GRILLO, Yesica Anahí",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "NIETO, Miguel Angel Alberto",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "IRIARTE, Claudia Alejandra",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "JOSE, Víctor Ricardo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "KIPPES KENT, Bárbara Ivana",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "VIGUERA DíAZ, María Marcela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CASTRO, Juan Manuel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BORRAS, Claudia Mónica",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "WALKER, Pablo José",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ROMO, Carlos Alberto",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "OXLEY CRUZ, Noelia Vanesa",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "054": {
+    "distrito": "GENERAL VIAMONTE",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "COLIQUEO, Lisandro",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MORALES, Paola Alejandra",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MARTINEZ, Miguel Angel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "TELLERIA, José Andrés",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ADAMINI, Florencia",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GAÑET ROGNONI, Maximiliano",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "055": {
+    "distrito": "GENERAL VILLEGAS",
+    "n_elige": 8,
+    "concejales": [
+      {
+        "nombre": "TROJAOLA, Oscar Alejandro",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CAPPONI, Cecilia Luján",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "SANCHEZ, Walter Omar",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "RASSE, Betina Teresa",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "PASCUAL, Horacio Daniel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LIPRANDI, Cristina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "TOMASELLI, Sergio Germán",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "DOMINICI, Mariana Inés",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "056": {
+    "distrito": "ADOLFO GONZALES CHAVES",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "GACHETEGUI, Silvina Alicia",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "PAFUNDI, Pablo Daniel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GONZALEZ, Florencia",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MILESI, Miguel Angel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ALBERDI, María Jesús",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ANTOLI, Santiago R",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "057": {
+    "distrito": "GUAMINI",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "PRIETO, María Silvina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CANOSA, Alan Eduardo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "VELA CHAPARRO, María Angelina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "RODRIGUEZ, Juan Cruz",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LANDABURO, María Antonela",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "FAVRE, Nicolás",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "058": {
+    "distrito": "HIPOLITO YRIGOYEN",
+    "n_elige": 5,
+    "concejales": [
+      {
+        "nombre": "HERNANDEZ, Pedro Javier",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ZARA, Claudia Gabriela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BARRANOU, Gabriel Alejandro",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "OLIVERO, José Luis",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ABBA, Valeria Soledad",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "059": {
+    "distrito": "BENITO JUAREZ",
+    "n_elige": 7,
+    "concejales": [
+      {
+        "nombre": "RICCI, María Teresa",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PEON, Ramiro Modesto",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CORRO, Daniela Georgina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LORENZO, Gustavo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ABRISQUETA, Marcos Oscar Ariel",
+        "partido": "JUAREZ RENACE DE BENITO JUAREZ"
+      },
+      {
+        "nombre": "LOGUERCIO GARCES, María Victoriana",
+        "partido": "JUAREZ RENACE DE BENITO JUAREZ"
+      },
+      {
+        "nombre": "BALMACEDA, Franco Leonel",
+        "partido": "JUAREZ RENACE DE BENITO JUAREZ"
+      }
+    ]
+  },
+  "060": {
+    "distrito": "JUNIN",
+    "n_elige": 10,
+    "concejales": [
+      {
+        "nombre": "LEIVA, Maia Soledad",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BISIO, Gastón Luciano",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SIERRA, Francina Marcela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PALMA, Martín Alejandro",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "FIORINI, Juan Carlos",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DE MIGUEL, Agustina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "PRANDI, Javier Rubén",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "D ANDREA, Orlanda Marina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CORNAGLIA RE, Juan Manuel",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "VERONELLI, Belén Natalia",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "061": {
+    "distrito": "LA MATANZA",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "YAMBRUN, Liliana Patricia",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BARRERA, Daniel Horacio",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PINTOS, Liliana Alejandra",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "AISA, Juan Facundo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ACOSTA, Wanda",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ARANDA, Gabriel Alberto",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ALONSO, Beatriz Angela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "RAMOS, Lorena Norma",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "LOCOCO, Ricardo Adrián",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "BARBETTI, Ana María",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "FERREYRA, Javier Pedro Néstor",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ZACARIAS, Erika Cecilia",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "062": {
+    "distrito": "LANUS",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "GALDURRALDE, Omar Daniel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BERRUECO NEGRETTE, María Belén",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "DE GREGORIO, Hugo Oscar",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ROMEO, Paula Giuliana",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "DRAGONI, Daniel Osvaldo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GUTIERREZ, Karina Alejandra",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SCHIAVONE, Damián",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CURLO, Florencia Ayelén",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "VILLA, Marcelo Alejandro",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "RON, Anabella",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DEL OSO, Juan Pedro",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "AYESA, Mariana Andrea",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "063": {
+    "distrito": "LA PLATA",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "ELIAS, Pablo Emanuel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MAGGIO, Micaela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ALBINI, Facundo Mario",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PARRILLI, María Ona",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GALLAND, Marcelo Gustavo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GANDUGLIA, Rubén Darío",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BARCIA, María Florencia",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MORZONE, Nicolás Luis",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "HOROMADIUK, Melany Ailen",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "STAFFOLANI, Gustavo Alberto",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DEFEO, María Florencia",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "BARDON, Guillermo Arcadio",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "064": {
+    "distrito": "LAPRIDA",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "HUGO MARCELO, Dascon",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LESTARPE, Karen Elizabeth",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SCHWAB, Silvio Javier",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BALERO RECHE, Nicolás Martín",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "SUAREZ, Silvia Fabiana",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LóPEZ HERNáNDEZ, Eduardo Matías",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "065": {
+    "distrito": "LAS FLORES",
+    "n_elige": 7,
+    "concejales": [
+      {
+        "nombre": "BLANSTEIN, Fabián Alejandro",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BASILE, Mariángeles",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GELENE, Emil",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GONZALEZ, Daniela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PLINI, Luciana",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "SALADINO, Guillermo Martín",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GENTILINI, Alfredo Federico",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "066": {
+    "distrito": "LEANDRO N. ALEM",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "TRAPAGA, José Luis",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CHIPONI, María Virginia",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "YURESCIA, Federico",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DANIEL, Adami",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "DONATI, Silvina Alejandra",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SEVILLANO, Héctor Fabián",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "067": {
+    "distrito": "LINCOLN",
+    "n_elige": 9,
+    "concejales": [
+      {
+        "nombre": "PARERA, Ramón Haroldo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GALINELLI, Patricia Nélida",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "PAOLETTI, Aldo Oscar",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ARNING, Sofía Clara",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "TERRON, Carlos Manuel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BARBATTO, Estela Mary",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GARCíA IGLESIAS, Alexis Emanuel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CASTILLO, Luis María",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "ESTERLUS, Claudia Mabel",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "068": {
+    "distrito": "LOBERIA",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "STORTI, Verónica Estela",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MAUAD, Jorge Atilio",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "PUCCI, María Gabriela",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DE DIOS, Lautaro Sebastián",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CHALDE, Luis Alberto",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "RODRIGUEZ, Myrian Carina",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "069": {
+    "distrito": "LOBOS",
+    "n_elige": 8,
+    "concejales": [
+      {
+        "nombre": "HASPER, Pablo Federico",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "TRONCOSO, Laura Elvira",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "FERRARI, Fernando Gustavo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ROLANDI, Sonia Soledad",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "PRANZETTI, Marina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BARRERE, Patricio Florencio",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "FERREYRA, Viviana Teresita",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PORCHEDDA, David Maximiliano",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "070": {
+    "distrito": "LOMAS DE ZAMORA",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "LESCI, Marina Soledad",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CORDERA, Diego Alejandro",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LIMONE, María Eva",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "NAVARRO, Juan Francisco",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BOURIO, María Victoria",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "TREZZA SILVA, Ramiro Alberto",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "IANTORNO, Fernando Guido",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "MARTIN, Andrea Lorena",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "SCARPA, Juan Carlos Franco",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "TROTTA, Alejandro Néstor",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "JIMENEZ, Irene",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MERCURI, Juan Manuel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "071": {
+    "distrito": "LUJAN",
+    "n_elige": 10,
+    "concejales": [
+      {
+        "nombre": "RAUSCH, Isidoro Abel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MONZON, Andrea Alejandra",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GUIBAUD, Juan Federico",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "TORRES, María Agustina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CURIESES, Martín Sebastián",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GIRON, Mariana Vilma",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CARNEVALE, Pablo Andrés",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "VARELA, Micaela Belén",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "GIACCAGLIA, Francisco",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DIAZ, Camila Josefina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "072": {
+    "distrito": "MAGDALENA",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "PELUSO, Daniela Viviana",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "FLEITA, Ariel Sebastián",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LóPEZ DORAO, Greta",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "IRAZU, María Alejandra",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "FULGIONE, César Lucas M",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "DACA, Camila Belén",
+        "partido": "ESPACIO DE PENSAMIENTO Y ACCION DE MAGDALENA"
+      }
+    ]
+  },
+  "073": {
+    "distrito": "MAIPU",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "OTERMIN, Lorena Andrea",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "TAVELA, Francisco Luis",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "FAHEY, María Florencia",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ALARCON, Cristian Omar",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BARRIOS, Andrea Valeria",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ALBAITERO BAVIO, Emiliano",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "074": {
+    "distrito": "MAR CHIQUITA",
+    "n_elige": 7,
+    "concejales": [
+      {
+        "nombre": "JACQUET, Fabián Rogelio",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SERANTES, Verónica Luján",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MINNUCCI, Guillermo Carlos",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "HELTNER, Patricia Marcela",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "PRADA, Cristian Fabián",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "BAUTISTA, Martín Alberto",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BERTORA, María Gabriela",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "075": {
+    "distrito": "MARCOS PAZ",
+    "n_elige": 9,
+    "concejales": [
+      {
+        "nombre": "DOMINGUEZ, María Isabel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MAGNI, Víctor Hugo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SALZMANN, Marina Dorotea",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MOSQUERA, Diego Facundo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "AMEIGEIRAS, Sebastián Martín",
+        "partido": "MARCOS PAZ TIENE FUTURO"
+      },
+      {
+        "nombre": "OLAIZOLA, Samanta Jael",
+        "partido": "MARCOS PAZ TIENE FUTURO"
+      },
+      {
+        "nombre": "JAUREGUI, Agustina Belén",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "ALTAMIRA, Julián Anselmo",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "ALLOCATI CORMACK, Helvio Edgardo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "076": {
+    "distrito": "MERCEDES",
+    "n_elige": 9,
+    "concejales": [
+      {
+        "nombre": "SAN MARTíN, Mariana",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "INZAURGARAT, Julián Gastón",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BOZZINI, Andrea",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GERDO, Diego Adrián",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "VILLOSLADA, Lucila",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "POLLACCHI, Mauricio Enrique",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "DI LEO, Silvia Graciela",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "IVALDIS, Armando Daniel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LAPORTA, Aída Herminia",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "077": {
+    "distrito": "MERLO",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "MENENDEZ, Karina Isabel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SOOS, Roberto",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "HAHN, Alicia Alejandra",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BELTRAN, Walter Alberto",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ALVEZ, Patricia Verónica",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LORENZO, Raúl Omar",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "TOLEDO, Paola Lorena",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "PAULUCCI, Javier Augusto",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "OTHACEHE, Pablo Ignacio",
+        "partido": "AGRUPACION CRECER DE MERLO"
+      },
+      {
+        "nombre": "CARNABUCI, Cintia Valeria",
+        "partido": "AGRUPACION CRECER DE MERLO"
+      },
+      {
+        "nombre": "CLONARIS LUCION, Pablo Rodrigo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LESCANO, Carolina Beatriz",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "078": {
+    "distrito": "MONTE",
+    "n_elige": 7,
+    "concejales": [
+      {
+        "nombre": "KANGE, Ibrahim Andrés",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "PATIÑO, Gabriela Alejandra",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LAMOTHE COULOMME, Juan Cruz",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LA ROSA GARAYALDE, Marisa Solange",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "RUIDIAZ, María Marta",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "VILLALBA, Gustavo Adolfo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ALFANO, Leonardo Martín",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "079": {
+    "distrito": "MORENO",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "CORREA, Jorge Walter",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GIMENEZ, María",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "FERNANDEZ, Emmanuel Antonio",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BELLOTTA, Araceli Viviana",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GALEANO, Gonzalo Adrián",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GIL, Zulma Rosa Mabel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "FONGI, Federico",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "DURAN, Daiana Micaela",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "CHAVEZ, Daniel Epifanio",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "FLESSA, Ingrid Estefanía",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "SOSA, Héctor Alejandro",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "AGUILAR, María Selva",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "080": {
+    "distrito": "MORON",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "SPINA, Diego",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ACEVEDO, Lorena Gabriela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ROMAN, Claudio David",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "DE LUCA, Florencia",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "NOTARIO, Marcelo Angel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MAGISTOCCHI, Bernardo Gastón",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "SOLIA, María Cecilia",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "COLONNA, Adrián Axel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CACERES, Daniela Elizabeth",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "AGUILERA, Ariel Alejandro",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "LIQUITAY, Verónica Alejandra",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "TOZZI, Pablo Ezequiel",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "081": {
+    "distrito": "NAVARRO",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "RAVOTTI, Julieta",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ODRIOZOLA, Joaquín",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "AON, María Micaela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "REY, Leandro Esteban",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MAURER, Ana Lorena",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LOZANO BULLRICH, María Soledad",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "082": {
+    "distrito": "NECOCHEA",
+    "n_elige": 10,
+    "concejales": [
+      {
+        "nombre": "SANCHEZ, Guillermo Horacio",
+        "partido": "NUEVA NECOCHEA (A.V.N.N.)"
+      },
+      {
+        "nombre": "JENSEN MENNA, Silvina Alejandra",
+        "partido": "NUEVA NECOCHEA (A.V.N.N.)"
+      },
+      {
+        "nombre": "SCHWARZ, Marcelo Adolfo Agustín",
+        "partido": "NUEVA NECOCHEA (A.V.N.N.)"
+      },
+      {
+        "nombre": "ESPINOSA, Gabriela",
+        "partido": "NUEVA NECOCHEA (A.V.N.N.)"
+      },
+      {
+        "nombre": "ZUBILLAGA, Bartolomé Antonio",
+        "partido": "NUEVA NECOCHEA (A.V.N.N.)"
+      },
+      {
+        "nombre": "KRISTIANSEN, José Julián",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ALMADA, María Evangelina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "VALIANTE, Luis Mariano Jesús",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "BIBBO, Verónica Andrea",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "IRIGOYEN, Rodrigo Ezequiel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "083": {
+    "distrito": "NUEVE DE JULIO",
+    "n_elige": 9,
+    "concejales": [
+      {
+        "nombre": "BORDONE, Julio Jesús",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ORMAECHEA, María Inés",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MOSCATO, Eduardo Luis",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "UNANUA, Marisel Silvana",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GARCIA, César Blas",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MOOS, Luis Alberto",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "ORMAECHEA, Sol",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "CRESPO, Julia Edith",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "NAUDIN, Esteban",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "084": {
+    "distrito": "OLAVARRIA",
+    "n_elige": 10,
+    "concejales": [
+      {
+        "nombre": "AGUILERA, Federico Luis",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SCHWINDT, María Liliana",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SANTELLAN, Guillermo Mauricio",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ABRAHAM, Andrea Belén",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LASCANO, Guillermo Ernesto",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "CASAMAYOR, María Adela",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "PETEHS, Marcelo Fabián",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "GALLI, Hilario",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "AMESPIL, María Guillermina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GONZALEZ, Francisco Fermín",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "085": {
+    "distrito": "PEHUAJO",
+    "n_elige": 8,
+    "concejales": [
+      {
+        "nombre": "CUMBA, Juan Miguel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GOMEZ, Daiana Maia",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "VESCOVO, Nicolás Martín",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "SEVERINO, Marcela",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "VIDELA, Diego Alberto",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "DE LA UZ, Beatriz Araceli",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ELOLA, Miguel Angel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GONZáLEZ COBO, Alfonsina",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "086": {
+    "distrito": "PELLEGRINI",
+    "n_elige": 5,
+    "concejales": [
+      {
+        "nombre": "URIARTE, Guillermo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ENRIQUE, María Luisa",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "RODRIGUEZ, Luis Andrés",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "FERNANDEZ, Facundo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "TOMASELLO, Evelyn",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "087": {
+    "distrito": "PERGAMINO",
+    "n_elige": 10,
+    "concejales": [
+      {
+        "nombre": "MAIZTEGUI, Pablo Ignacio",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "TARUSELLI, Gabriela Alejandra",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LLAN DE ROSOS, Ramiro Juan",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "RUEDA, Giuliana Yamila",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CABRERA, Nicolás Ariel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "VIERA, Silvia Esther",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "FIORE PITRELLI, Bernardo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "DIB, Jorge Salvador",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "TRIBOULEY, Ivana Jaqueline",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "FIGUEROA, Gabriel Omar",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "088": {
+    "distrito": "PILA",
+    "n_elige": 3,
+    "concejales": [
+      {
+        "nombre": "GONZáLEZ TAVERNA, María Gabriela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CUELLO, Pablo Fernando",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SOLIS, Susana Haydeé",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "089": {
+    "distrito": "PILAR",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "LAURENT, Santiago",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BELAUSTEGUI, Rosario",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ROLDAN, Juan Pablo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "POMBO, Claudia Nélida Lucía",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "RODRIGUEZ, Silvio Fabián",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "JUANES, Claudia Elizabeth",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GIORDANO, Iván Ezequiel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "QUINTANA GONZáLEZ, Juan Manuel",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "IOSELLI, Silvia Guadalupe",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "CASAÑAS ONGANIA, Juan Pablo",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "LEGUIZAMON, Analía Cristina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "AGOSTINO, Daniel Carlos",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "090": {
+    "distrito": "PINAMAR",
+    "n_elige": 7,
+    "concejales": [
+      {
+        "nombre": "YEZA, Alejo Matías",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LLAMAZARES, Carolina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "AVILA, Ariel Fernando",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "SAQUILAN, Violeta Alicia",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "NAPOLI, Leonardo Salvador",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "JOUFFRE, Alfredo",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "GIRALDI, Sabrina",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "091": {
+    "distrito": "PUAN",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "MOMBELLI, Franco",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "KRUSE, María Verónica",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DELGADO, Lucas",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "AMATO, José Luis",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "KISNER, Luisina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LANG, Carlos Marcelo",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "092": {
+    "distrito": "QUILMES",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "MIERI, Eva Carina Alejandra",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BURTOLI, Ariel Antonio",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "RAMIREZ, Evangelina Elizabeth",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GAUDIO, Roberto Ariel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "JARA, Elsa Karina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ARAUZ, Ezequiel Enrique",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ARAUJO, Lucas Emanuel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "FERREYRA, Daniela Solange",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BUFFONE, Diego Fernando",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GAGO, Marcela Alejandra",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "RIJ, Ricardo Sergio",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "ALBASETTI, Cintia Estefanía",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "093": {
+    "distrito": "RAMALLO",
+    "n_elige": 8,
+    "concejales": [
+      {
+        "nombre": "JAVIER, Romero",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ISARRA, Marcela Alejandra",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "TORRI, Leandro Marcelo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MESIAS, Daniela Victoria",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PANDO, Antolín",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ALGASIBIUR, Luis Rosendo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "AGOTEGARAY, María Soledad",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DESPOSITO, Juan Manuel María",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "094": {
+    "distrito": "RAUCH",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "PALAZZO, Gustavo Javier",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LARROCEA, Miriam Emilce",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ALMANDOZ, Andrés Nicolás",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MARTIN, Alberto Manuel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GUZMAN, Luciana Anahí",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BARBERIS, Luciano",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "095": {
+    "distrito": "RIVADAVIA",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "ROSOLEN, Jorge Pablo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LESCANO, Marcela Fabiana",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BERTERO, Segundo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GARCIA, Héctor Alfredo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PEREZ, María Josefina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GAYOSO, Jorge Alberto",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "096": {
+    "distrito": "ROJAS",
+    "n_elige": 7,
+    "concejales": [
+      {
+        "nombre": "PéREZ DELBALDO, Diego Horacio",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "OJEDA, María José",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "VELIZ, Leonardo Martín",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MENOYO, Josefina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BAGUEAR, Ramiro Miguel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SAVI, Teresa Lorena",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "RAPOSO, Facundo Nicolás",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "097": {
+    "distrito": "ROQUE PEREZ",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "BELARDINELLI, Gerardo D.",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MERCANTE, Andrea Viviana",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "VELARDE, Oscar Mario",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CAMILLETTI, Carina Mariela",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MILLAN, Fernando Raúl",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "REGUEIRA, María De Los Angeles",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "098": {
+    "distrito": "SAAVEDRA",
+    "n_elige": 7,
+    "concejales": [
+      {
+        "nombre": "MANSILLA, Mariano",
+        "partido": "TODOS POR SAAVEDRA"
+      },
+      {
+        "nombre": "PIANGATELLI, Verónica",
+        "partido": "TODOS POR SAAVEDRA"
+      },
+      {
+        "nombre": "GONZALEZ, Sergio Alfredo",
+        "partido": "TODOS POR SAAVEDRA"
+      },
+      {
+        "nombre": "COUDERC, Julio",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "SIMON, Sandra",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MOSEGUI, Silvio Ceferino",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "RIVAS, Clarisa",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "099": {
+    "distrito": "SALADILLO",
+    "n_elige": 8,
+    "concejales": [
+      {
+        "nombre": "ARMENDARIZ, Alejandro Pablo Miguel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DE LUSARRETA, María Lara",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DOLCCE, Mauricio Tomás",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LACUNZA, Laura Nélida",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "POLIMENO, Nélida Elvira",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "YANSON, Diego Antonio",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "RAPANELLI, Ana Clara",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "NICORA GUTIéRREZ, Juan Manuel",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "100": {
+    "distrito": "SALLIQUELO",
+    "n_elige": 5,
+    "concejales": [
+      {
+        "nombre": "VARGAS, Rosalba Anabela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SAUER, Mauro Javier",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GONZALEZ, Mónica Elisabet",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PANOZZO*PUMA*, Marcelo Alberto",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GONZALEZ, Catherine",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "101": {
+    "distrito": "SALTO",
+    "n_elige": 8,
+    "concejales": [
+      {
+        "nombre": "ALESSANDRO, Camilo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PATRIARCA, María Cristina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CHAVERO, Miguel Angel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BAILO, Inés",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PéREZ MORELLI, Iván Amador",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "SANCHEZ, Magalí Marisol",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "GUTHUX, Héctor Ariel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MONALDI, María Constanza",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "102": {
+    "distrito": "SAN ANDRES DE GILES",
+    "n_elige": 7,
+    "concejales": [
+      {
+        "nombre": "DI TATA, María Verónica",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SOSA ACHA, Lautaro",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BONETTI, Liliana Miriam",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "HURE, Ariel Mauricio",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "ARANDA, Sandra Itatí",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "FREIRE, Damián José",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "OLIVA, Carla",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "103": {
+    "distrito": "SAN ANTONIO DE ARECO",
+    "n_elige": 7,
+    "concejales": [
+      {
+        "nombre": "AMADEO, Miguel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CARACOCHE, Mariana",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BARAÑUK, Yamil",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BRATSCHI, Viviana Noemí",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MENDIZABAL, Florencia",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LOPEZ, José Agustín",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BARRERA, María Marta",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "104": {
+    "distrito": "SAN CAYETANO",
+    "n_elige": 5,
+    "concejales": [
+      {
+        "nombre": "CHRISTIANSEN, Alejo Exequiel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "NAVARRO, Daniela Silvina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BERTOLI, Juan Matías",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "PEON, Noelia Estefanía",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ALTAMIRANO, Lucas",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "105": {
+    "distrito": "SAN FERNANDO",
+    "n_elige": 10,
+    "concejales": [
+      {
+        "nombre": "APARICIO, Alicia Noemí",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "RIOS, Santiago",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ARZOLA, Romina Mabel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "RONDAN, Hernán Javier",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MEDIALDEA, Vanesa Eva",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "HANSEN, Luis Roberto",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "AVILA BUSTAMENTE, Pamela Daiana",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "COLOMBATTO, Juan José",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "CASTRO GONZáLEZ, Luis Adrián",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "AMANTE, Fátima Ivana",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "106": {
+    "distrito": "SAN ISIDRO",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "DURINI QUINTANA, Bernabé José",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GIORDANI, María Fernanda",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ALVARADO, Ernesto Guido",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ROJO, María Lucía",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "TRIPOLI, Alberto Mauricio",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "NYBORG ANDERSEN, Viveka",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "RIVADULLA MOULIN, Estefanía Lorena",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "DIAZ, Marcos Ezequiel Alcides",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SCHUPPISSER, Manuela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "FELDTMANN, María Inés",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "MONTES, Alberto Antonio",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "RUIZ ZEBALLOS, Débora Elena",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "107": {
+    "distrito": "SAN NICOLAS",
+    "n_elige": 10,
+    "concejales": [
+      {
+        "nombre": "LUCHELLI, Daniel Eduardo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ALBERT, Malena",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "RODRIGUEZ, Oscar Osvaldo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MALDONADO, Silvana Nancy",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MAGARIÑOS, Ariel Hugo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MOZZICAFREDO, María Belén",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "DEL LITTO, Pablo S",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "VARGAS, Vanesa Lorena",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LUCERO, Lucas Ezequiel",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "ARANCE, Sol Estefanía",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "108": {
+    "distrito": "SAN PEDRO",
+    "n_elige": 9,
+    "concejales": [
+      {
+        "nombre": "CARRASCO, Luis Alfredo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "OTERO, Mónica Beatriz",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LEGUIZAMON, Cristian Raúl",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LLULL, María Soledad",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "RIVAS, Martín Leandro",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BASSO, Paola",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LAFALCE, Diego José",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DE ROSA, Mauro",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "RIQUELME, Viviana",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "109": {
+    "distrito": "SAN VICENTE",
+    "n_elige": 9,
+    "concejales": [
+      {
+        "nombre": "RADDAVERO, Paolo Marco",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SCARDAMAGLIA, Marcela Alejandra",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "VAZQUEZ, Roberto Ramón",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "VAZQUEZ, Eleonora Lila",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SORIA, Sebastián Leonardo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "RAMOS, Claudia Daniela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MASCIA, Julián Fernando",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "SOSA, Marcela Evangelina",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "BRACCI, Juan Manuel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "110": {
+    "distrito": "SUIPACHA",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "BRAGHI, Silvia Susana",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BONFIGLIO, Alfredo Oscar",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ARANDA, María Roberta",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "HAINZE, Daiana Daniela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ALCALDE, Santiago Martín",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ROMERO, Norma Beatriz",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "111": {
+    "distrito": "TANDIL",
+    "n_elige": 10,
+    "concejales": [
+      {
+        "nombre": "FROLIK, Juan Pablo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CONDINO, María Haydeé",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MELI, Matías Raimundo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "PEZZI, Andrea Karina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "TRINGLER, Matías Francisco",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MARTINEZ, Federico",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "DOMENIGHINI, Noelia Noemí",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MON, Juan Severiano",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SáNCHEZ CHOPA, Federico",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "FIEGO, María Luján",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "112": {
+    "distrito": "TAPALQUE",
+    "n_elige": 5,
+    "concejales": [
+      {
+        "nombre": "LUPORI, Javier Angel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GOMEZ, Mariela Guadalupe",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "AGUILERA, Gustavo Daniel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BAZAN, Antonio",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "VASQUEZ, María Marcela",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "113": {
+    "distrito": "TIGRE",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "FERREIRA, Cecilia Alejandra",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ESCALANTE, Miguel Angel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PALUDI, Adriana Patricia",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "STACHOWIAK, Federico Miguel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SILVA, Marilina Mónica",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GIANELLA, Lucas Gerónimo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CERVETTO, Juan José",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "LA MAGNA, Adriana",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "AVANCINI, Diego",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "PELAYO, Mariano",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BRAVO ADAMOLI, Sofía",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BARRIOS, Marcelo Fabián",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "114": {
+    "distrito": "TORNQUIST",
+    "n_elige": 6,
+    "concejales": [
+      {
+        "nombre": "BORDONI, Estefanía",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "OLHABERRY BELBER, Martín Rubén",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SOVERCHIA, Carmen Beatriz",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MARCOLINI, Susana Mabel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MARZIALETTI, Facundo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "JUAN, Daiana Soledad",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "115": {
+    "distrito": "TRENQUE LAUQUEN",
+    "n_elige": 9,
+    "concejales": [
+      {
+        "nombre": "VIDAL, Esteban",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MONZO, María Virginia",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LAURO, Germán Luján",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LUJAN, Yanina Paola",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GOMEZ, Khalil Sebastián",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "AMADOR, Alberto Hernán",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "FERNANDEZ, Marilina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BORIES, Gustavo",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "PEREZ, Jennifer Aldana",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "116": {
+    "distrito": "TORDILLO",
+    "n_elige": 3,
+    "concejales": [
+      {
+        "nombre": "FARIAS, Alfredo Ricardo E",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ARBIDE, Adriana Paola",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "HARISGARAT, Rodolfo Daniel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "117": {
+    "distrito": "TRES ARROYOS",
+    "n_elige": 9,
+    "concejales": [
+      {
+        "nombre": "OLIVERA, Adolfo Antonio",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "REDIVO, Mara Vanina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BARRAGAN, Alejandro Daniel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GIORDANO, Alberto Eduardo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "DEL AGUILA, María Cecilia",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BARTNECHE, Omar Agustín",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "HERNANDEZ, Mariano José",
+        "partido": "MOVIMIENTO VECINAL DEL PARTIDO DE TRES ARROYOS"
+      },
+      {
+        "nombre": "CALVO, Roxana Inés",
+        "partido": "MOVIMIENTO VECINAL DEL PARTIDO DE TRES ARROYOS"
+      },
+      {
+        "nombre": "MÖLLER, Gustavo",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "118": {
+    "distrito": "TRES DE FEBRERO",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "AYBAR PERLENDER, Rodrigo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BERARDI, María De Los Angeles",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BERNS, Juan Carlos",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "SCHIAVO, Sofía",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CASNA, Pablo Hernán",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "FERRAZZO, Mariana Lorena",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ACHILLI, Diego Roberto",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BURGOS COSTILLA, Marina Noel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MARQUEZ, Eduardo Fabián",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "NUÑEZ, Hilda Beatriz",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MUÑOZ, Arnaldo Gabriel",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "AGUIRRE, Romina",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "119": {
+    "distrito": "PARTIDO DE LA COSTA",
+    "n_elige": 9,
+    "concejales": [
+      {
+        "nombre": "CARUSO, Ezequiel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BECHT, Elizabeth Adriana",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ROHR, Daniel Alejandro",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "FRETES, Silvana Mabel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "DE CONTI, Juan Carlos",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CORREA, Mónica Patricia",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "FERNANDEZ, Martín",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "AREBALO MOREIRA, Amadeo R.",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "FERRIN, Elizabeth Gladys",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "120": {
+    "distrito": "MONTE HERMOSO",
+    "n_elige": 5,
+    "concejales": [
+      {
+        "nombre": "BUSCA, Jorge Luis",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "KAIS, Carolina Estefanía",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ELZAURDIA, Cristian Andrés",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BERTAZZO, Carolina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "OLLEARO, Braian",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "121": {
+    "distrito": "25 DE MAYO",
+    "n_elige": 8,
+    "concejales": [
+      {
+        "nombre": "DE MARCOS, Jorge Javier",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BISCIONE, Josefina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LANCE, Guillermo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "HERRERA, Jorgelina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "ZARZA, María José",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GREGORINI, José María",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GALDOS CARRIZO, Yamila Viviana",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GUARCH, José Luis *el Tero*",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "122": {
+    "distrito": "VICENTE LOPEZ",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "COLELA, Mariana Gabriela",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "TERZANO URTHIAGUE, Luciano Martín",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BARBIERI, Verónica Mabel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "JAIME, José Angel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "IGLESIAS, Romina Elena",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "SZUREK, Daniel Roberto",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "PALOMINO, Luis Alberto",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "MALANO, María Rosa",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "MENCHON HOFFMANN, Juan Pablo",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "CHOLAKIAN, Malena",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LANÇON, Cyrano Francisco",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BRAIZA, María Laura",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "123": {
+    "distrito": "VILLA GESELL",
+    "n_elige": 8,
+    "concejales": [
+      {
+        "nombre": "IANNUZZI, Pedro Andrés",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "TINEO, Sofía",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MAURO, Jorge",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "OILLATAGUERRE, Myrian E",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GREEN, Adrián Maximiliano",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LANZ, Rosana Ester",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "PELUFFO, Emiliano Hernán",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "VIVAS, Luis Alberto",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "124": {
+    "distrito": "VILLARINO",
+    "n_elige": 8,
+    "concejales": [
+      {
+        "nombre": "HAURE, Silvia Mary",
+        "partido": "ACCION POR VILLARINO"
+      },
+      {
+        "nombre": "MUJICA, Raúl Roberto",
+        "partido": "ACCION POR VILLARINO"
+      },
+      {
+        "nombre": "FORNASIER, Virginia Angelina",
+        "partido": "ACCION POR VILLARINO"
+      },
+      {
+        "nombre": "LEDESMA, Leandro Alberto",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "GOMEZ, Leonela Alejandra",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "NOVO, Lucrecia",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GROSSO, Luciano Daniel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "SENSINI, Noelia Anabella",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "125": {
+    "distrito": "ZARATE",
+    "n_elige": 10,
+    "concejales": [
+      {
+        "nombre": "BLANCO, Natalia Miriam",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "UNREIN, Walter Ricardo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GALLEA, María Elena",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "FINKEL, Eduardo Martín",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BERNI, María Alejandra",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SCHIAVONI, Marcelo Daniel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BUDANO, Marcela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CASTIGLIONI, Lucas Martín",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "FENESTRAZ, Lautaro Emilio",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "HERGERT, Daiana Alejandra",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "126": {
+    "distrito": "TRES LOMAS",
+    "n_elige": 5,
+    "concejales": [
+      {
+        "nombre": "MORERO, Braian Eugenio",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "PONCE, María Luján Del Valle",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BORJES, Norberto Rubén",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CAMINOS, Luis María",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "OLIVERA, Valentina",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "127": {
+    "distrito": "FLORENTINO AMEGHINO",
+    "n_elige": 5,
+    "concejales": [
+      {
+        "nombre": "VERON, Ana María",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BERDEZAGAR, Germán Eusebio",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BOTTI, Julieta",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "PARENTINI, María Angélica",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SHANAHAN, Marcos David",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  },
+  "128": {
+    "distrito": "PRESIDENTE PERON",
+    "n_elige": 10,
+    "concejales": [
+      {
+        "nombre": "ACUÑA, Claudia Marcela",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CANEPA, Hugo Alejandro",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SANTILLAN, Estela Mary",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GARCIA, Guillermo Federico",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "BLANCO, Lilian",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GUARDIA, Eduardo Gustavo",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "SOSA, Yanina Ivón",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "CARABAJAL, Julio César",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "SáNCHEZ ROMáN, Andrea Fátima",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "TORRES, Andrés Oscar",
+        "partido": "AGRUPACION PERONENSES PRIMERO"
+      }
+    ]
+  },
+  "129": {
+    "distrito": "JOSE C. PAZ",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "CAGGIANO, Roberto Nicolás",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ESPINA, Lorena Ana María",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MANSILLA, Juan Pablo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PARISI, Lidia Elsa",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PINO, Andrés Ramón",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "RIQUELME, Bárbara Lorena",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MENGE, Lucas Maximiliano",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "GONZALEZ, Mariano Alberto",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "CORONEL, Nora Patricia",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "ARRIBILLAGA, José Gabriel",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "LIVORA, Alexis",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "QUINTEROS, Silvana Beatriz",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "130": {
+    "distrito": "MALVINAS ARGENTINAS",
+    "n_elige": 12,
+    "concejales": [
+      {
+        "nombre": "NOE, Correa",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ONTIVERO, Gerardo Ismael",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PAVON, Andrea Carina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CHAMORRO, Mario Roberto",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "FARIAS, Noelia Noemí",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LóPEZ OSORNIO, Mauro Juan Domingo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ROA, Andrea Celeste",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LAGANA, Lorena Alejandra",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "CARO, Ayrton Tomás",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "FERREYRA, Patricia Karina",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "DE LA ARENA, Martín",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "FIGUEROA, Gabriela Marta",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "131": {
+    "distrito": "PUNTA INDIO",
+    "n_elige": 5,
+    "concejales": [
+      {
+        "nombre": "BARBE, Gustavo Omar",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "COLABIANCHI, Pierina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PIETRANTUONO, Miguel Angel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "FRANZONI, Melisa Yanina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "CAPRILE, Alberto Luciano",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "132": {
+    "distrito": "EZEIZA",
+    "n_elige": 10,
+    "concejales": [
+      {
+        "nombre": "CICCO, Oscar",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "FERRARI, Daniela Vanina",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "AMARILLA BALLESTERO, Fernando Damián",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ACOSTA, Patricia Diana",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MOSTO, Claudio Marcelo",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SAPONARO, Sonia Beatriz",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LEMOS, Nicolás Ezequiel",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "ARIAS, Lorena Vanesa",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "PELLEGRINO, Martín",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "MEDRANO, Martín",
+        "partido": "JUNTOS POR EL CAMBIO"
+      }
+    ]
+  },
+  "133": {
+    "distrito": "ITUZAINGO",
+    "n_elige": 10,
+    "concejales": [
+      {
+        "nombre": "DESCALZO, Alberto Daniel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "LAZZERI, Natalia Valeria",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "ALMEIDA, Alfredo Francisco",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "MOLINAS, Emilce Noemí",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "STURA, Santiago",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "RATTO, Santiago Ezequiel",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "PRATS, Luciana Soledad",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LANARO, Christian Adrián",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "LARRALDE, Juan Francisco",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "VINSENZO, Ana Laura",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "134": {
+    "distrito": "HURLINGHAM",
+    "n_elige": 10,
+    "concejales": [
+      {
+        "nombre": "ESLAIMAN, Pedro Adrián",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "CERBINO, Elena Teresa",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "QUINTERO, Miguel Angel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PEREYRA, Silvana María",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "SIMONI, Sergio Ariel",
+        "partido": "UNION POR LA PATRIA"
+      },
+      {
+        "nombre": "PALACIO RIUS, Sebastián Adolfo",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "GALEANO, Brenda Anahí",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MEDINA, Julio Ramón",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "BELIZAN, Roque Aníbal",
+        "partido": "LA LIBERTAD AVANZA"
+      },
+      {
+        "nombre": "SERRATTI, Claudia Andrea",
+        "partido": "LA LIBERTAD AVANZA"
+      }
+    ]
+  },
+  "135": {
+    "distrito": "LEZAMA",
+    "n_elige": 3,
+    "concejales": [
+      {
+        "nombre": "MONGAY, Myriam Carina",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "TURRIN, Gastón César",
+        "partido": "JUNTOS POR EL CAMBIO"
+      },
+      {
+        "nombre": "MONGES, Azul María",
+        "partido": "UNION POR LA PATRIA"
+      }
+    ]
+  }
+}

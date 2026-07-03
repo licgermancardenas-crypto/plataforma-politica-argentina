@@ -1,0 +1,932 @@
+{
+  "diputados_prov": [
+    {
+      "nombre": "Esteban Alejandro Acerbo",
+      "seccion": 6,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Maria Laura Aloisi",
+      "seccion": 7,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Soledad Antonia Alonso",
+      "seccion": 1,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Maite Milagros Alvado",
+      "seccion": 6,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Juan Ariel Archanco",
+      "seccion": 8,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Ana Luz Balor",
+      "seccion": 1,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Romina Melisa Barreiro",
+      "seccion": 3,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Marcela María Amelia Basualdo",
+      "seccion": 5,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Mariano Cascallares",
+      "seccion": 3,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Juan Pablo De Jesus",
+      "seccion": 5,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Germán Di Cesare",
+      "seccion": 4,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Enrique Alejandro Dichiara",
+      "seccion": 6,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Héctor Rubén Eslaiman",
+      "seccion": 1,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Evelyn Marlen Flores Yanz",
+      "seccion": 2,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "José Renaldo Galván",
+      "seccion": 3,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Alexis Guerrera",
+      "seccion": 4,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Viviana Raquel Guzzo",
+      "seccion": 4,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Lucía Iañez",
+      "seccion": 8,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "María Eva Limone",
+      "seccion": 3,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Ricardo Lissalde",
+      "seccion": 7,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Juan Martín Malpeli",
+      "seccion": 8,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Mayra Soledad Mendoza",
+      "seccion": 3,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Leonardo José Moreno",
+      "seccion": 1,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Maria Silvina Nardini",
+      "seccion": 3,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Diego Eduardo Nanni",
+      "seccion": 2,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Micaela Edith Olivetto",
+      "seccion": 4,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Luciana Padulo",
+      "seccion": 5,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Carlos Javier Puglelli",
+      "seccion": 2,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Ayelén Itatí Rasquetti",
+      "seccion": 3,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Margarita Alejandra Recalde",
+      "seccion": 1,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Jose Ignacio Rossi",
+      "seccion": 5,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "María Noelia Saavedra",
+      "seccion": 1,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Facundo Tignanelli",
+      "seccion": 3,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Sofía Vannelli",
+      "seccion": 6,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Roberto Ramón Vazquez",
+      "seccion": 3,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Luis Omar Vivona",
+      "seccion": 3,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Avelino Ricardo Zurro",
+      "seccion": 4,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Gastón Andrés Abonjo",
+      "seccion": 5,
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Francisco Jorge Adorni",
+      "seccion": 8,
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Maximiliano Iván Bondarenko",
+      "seccion": 3,
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Héctor Norberto Gay",
+      "seccion": 6,
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Oscar Eduardo Liberman",
+      "seccion": 6,
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Pablo Ezequiel Morillo",
+      "seccion": 2,
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Constanza Moragues",
+      "seccion": 1,
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Agustín Romo",
+      "seccion": 7,
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Nahuel Sotelo Larcher",
+      "seccion": 3,
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Mariela Silvina Vitale",
+      "seccion": 6,
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Natalia Miriam Blanco",
+      "seccion": 2,
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Leticia Inés Bontempo",
+      "seccion": 3,
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "María Paula Bustos",
+      "seccion": 2,
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Martín Julián Endere",
+      "seccion": 7,
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Agustín Forchieri",
+      "seccion": 1,
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Maria Laura Ricchini",
+      "seccion": 4,
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Fernando Rovello",
+      "seccion": 4,
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Ana Rita Sallaberry",
+      "seccion": 1,
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "María Angel Sotolano",
+      "seccion": 3,
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Julieta Elisabet Quintero Chasman",
+      "seccion": 8,
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Alejandro Daniel Rabinovich",
+      "seccion": 2,
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Blanca Elida Alessi",
+      "seccion": 4,
+      "bloque": "Unión y Libertad"
+    },
+    {
+      "nombre": "María Laura Fernández",
+      "seccion": 7,
+      "bloque": "Unión y Libertad"
+    },
+    {
+      "nombre": "María Salomé Jalil Toledo",
+      "seccion": 1,
+      "bloque": "Unión y Libertad"
+    },
+    {
+      "nombre": "Martín Adolfo Rozas",
+      "seccion": 4,
+      "bloque": "Unión y Libertad"
+    },
+    {
+      "nombre": "Sabrina Inés Sabat",
+      "seccion": 5,
+      "bloque": "Unión y Libertad"
+    },
+    {
+      "nombre": "Matías Raúl Civale",
+      "seccion": 5,
+      "bloque": "UCR + Cambio Federal"
+    },
+    {
+      "nombre": "Diego Raúl Garciarena",
+      "seccion": 5,
+      "bloque": "UCR + Cambio Federal"
+    },
+    {
+      "nombre": "María Silvina Vaccarezza",
+      "seccion": 4,
+      "bloque": "UCR + Cambio Federal"
+    },
+    {
+      "nombre": "Valentín Miranda",
+      "seccion": 4,
+      "bloque": "UCR"
+    },
+    {
+      "nombre": "Priscila Minnaard",
+      "seccion": 6,
+      "bloque": "UCR"
+    },
+    {
+      "nombre": "Maria Alejandra Lorden",
+      "seccion": 7,
+      "bloque": "UCR"
+    },
+    {
+      "nombre": "Gustavo Sergio Cuervo",
+      "seccion": 4,
+      "bloque": "Nuevos Aires"
+    },
+    {
+      "nombre": "Carlos Fabián Luayza Troncozo",
+      "seccion": 1,
+      "bloque": "Nuevos Aires"
+    },
+    {
+      "nombre": "Viviana Yolanda Romano",
+      "seccion": 1,
+      "bloque": "Nuevos Aires"
+    },
+    {
+      "nombre": "Romina Natalí Braga",
+      "seccion": 5,
+      "bloque": "Coalición Cívica"
+    },
+    {
+      "nombre": "Luciano David Bugallo Di Prinzio",
+      "seccion": 4,
+      "bloque": "Coalición Cívica"
+    },
+    {
+      "nombre": "José Andrés De Leo",
+      "seccion": 6,
+      "bloque": "Coalición Cívica"
+    },
+    {
+      "nombre": "Ignacio Fernando Mateucci",
+      "seccion": 2,
+      "bloque": "Espacio Abierto – Hechos"
+    },
+    {
+      "nombre": "Manuel Passaglia",
+      "seccion": 2,
+      "bloque": "Espacio Abierto – Hechos"
+    },
+    {
+      "nombre": "Juan José Esper Zamar",
+      "seccion": 1,
+      "bloque": "Derecha Popular"
+    },
+    {
+      "nombre": "Monica Leticia Schlotthauer",
+      "seccion": 3,
+      "bloque": "Izquierda Socialista – FIT-U"
+    },
+    {
+      "nombre": "Christian Castillo",
+      "seccion": 3,
+      "bloque": "PTS – FIT-U"
+    }
+  ],
+  "senadores_prov": [
+    {
+      "nombre": "Valeria Arata",
+      "seccion": 4,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Sabrina Bastida",
+      "seccion": 8,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Sergio Alejandro Berni",
+      "seccion": 2,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Pedro Francisco Borgini",
+      "seccion": 8,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Laura Magdalena Clark",
+      "seccion": 2,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Fernando Gabriel Coronel",
+      "seccion": 1,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Amira Curi",
+      "seccion": 3,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Evelyn Diaz",
+      "seccion": 7,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Ayelén Durán",
+      "seccion": 6,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Federico Fagioli",
+      "seccion": 3,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Marcelo Enrique Feliú",
+      "seccion": 6,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Malena Galmarini",
+      "seccion": 1,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Emmanuel Severo González Santalla",
+      "seccion": 3,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Mario Alberto Ishii",
+      "seccion": 1,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "German Lago",
+      "seccion": 4,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "María Inés Laurini",
+      "seccion": 7,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Roxana Lopez",
+      "seccion": 1,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Monica Fernanda Macha",
+      "seccion": 1,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Maria Rosa Martinez",
+      "seccion": 3,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Jorge Alberto Paredi",
+      "seccion": 5,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Marcos Emilio Pisano",
+      "seccion": 7,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Maria Fernanda Raverta",
+      "seccion": 5,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Adrián Carlos Santarelli",
+      "seccion": 3,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Diego Alberto Videla",
+      "seccion": 4,
+      "bloque": "Fuerza Patria"
+    },
+    {
+      "nombre": "Maria Florencia Arietto",
+      "seccion": 3,
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Analia Balaudo",
+      "seccion": 4,
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Maria Luz Bambaci",
+      "seccion": 1,
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Gonzalo Cabezas",
+      "seccion": 4,
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Carlos Nicolas Curestis",
+      "seccion": 3,
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Matias Miguel De Urraza",
+      "seccion": 5,
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Maria Cecilia Martinez",
+      "seccion": 5,
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Luciano Emanuel Olivera",
+      "seccion": 1,
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Betina Clara Riva",
+      "seccion": 3,
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Diego Valenzuela",
+      "seccion": 1,
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Alex Campbell",
+      "seccion": 6,
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Guillermo Tristán Montenegro",
+      "seccion": 5,
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Pablo Alexis Petrecca",
+      "seccion": 4,
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Juan Manuel Rico Zini",
+      "seccion": 2,
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Jorge Schiavone",
+      "seccion": 3,
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Marcelo Leguizamón Brown",
+      "seccion": 8,
+      "bloque": "Hechos – UCR Identidad"
+    },
+    {
+      "nombre": "Natalia Quintana",
+      "seccion": 4,
+      "bloque": "Hechos – UCR Identidad"
+    },
+    {
+      "nombre": "Maria Emilia Subiza",
+      "seccion": 2,
+      "bloque": "Hechos – UCR Identidad"
+    },
+    {
+      "nombre": "Nerina Daniela Neumann",
+      "seccion": 6,
+      "bloque": "UCR"
+    },
+    {
+      "nombre": "Carlos Francisco Kikuchi",
+      "seccion": 2,
+      "bloque": "Unión y Libertad"
+    },
+    {
+      "nombre": "Sergio Raul Vargas",
+      "seccion": 6,
+      "bloque": "Unión y Libertad"
+    },
+    {
+      "nombre": "Silvana Paola Ventura",
+      "seccion": 6,
+      "bloque": "Unión y Libertad"
+    }
+  ],
+  "diputados_nac": [
+    {
+      "nombre": "Constanza María Alonso",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Pablo Ansaloni",
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Daniel Fernando Arroyo",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Karina Verónica Banfi",
+      "bloque": "UCR"
+    },
+    {
+      "nombre": "Alberto Benegas Lynch",
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Gabriela Besana",
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Victoria Borrego",
+      "bloque": "Coalición Cívica"
+    },
+    {
+      "nombre": "Santiago Cafiero",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "María Marcela Campagnoli",
+      "bloque": "Coalición Cívica"
+    },
+    {
+      "nombre": "Carlos Daniel Castagneto",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Christian Castillo",
+      "bloque": "FIT-U"
+    },
+    {
+      "nombre": "María Florencia De Sensi",
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Juan Carlos Giordano",
+      "bloque": "FIT-U"
+    },
+    {
+      "nombre": "Vilma Ripoll",
+      "bloque": "FIT-U"
+    },
+    {
+      "nombre": "José Luis Espert",
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Eduardo Falcone",
+      "bloque": "MID"
+    },
+    {
+      "nombre": "Alejandro Finocchiaro",
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Mónica Edith Frade",
+      "bloque": "Coalición Cívica"
+    },
+    {
+      "nombre": "Daniel Gollán",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Carlos Ramiro Gutiérrez",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Rogelio Iparraguirre",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Pablo Juliano",
+      "bloque": "Democracia para Siempre"
+    },
+    {
+      "nombre": "Máximo Carlos Kirchner",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Lilia Adela Lemoine",
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Mónica Litza",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Juan Manuel López",
+      "bloque": "Coalición Cívica"
+    },
+    {
+      "nombre": "Silvia Gabriela Lospennato",
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Mónica Fernanda Macha",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "María Lorena Macyszyn",
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Facundo Manes",
+      "bloque": "Democracia para Siempre"
+    },
+    {
+      "nombre": "Mario Roberto Manrique",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Juan Marino",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Nicolás Massot",
+      "bloque": "Encuentro Federal"
+    },
+    {
+      "nombre": "Gerardo Milman",
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Matías Molle",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Guillermo Montenegro",
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Emilio Monzó",
+      "bloque": "Encuentro Federal"
+    },
+    {
+      "nombre": "Roxana Monzón",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Micaela Morán",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Cecilia Moreau",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Leopoldo Raúl Guido Moreau",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Marcela Marina Pagano",
+      "bloque": "Coherencia"
+    },
+    {
+      "nombre": "Sergio Omar Palazzo",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Marcela Fabiana Passo",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Julio César Pereyra",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Miguel Ángel Pichetto",
+      "bloque": "Encuentro Federal"
+    },
+    {
+      "nombre": "Carolina Píparo",
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Luciana Potenza",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Agustina Lucrecia Propato",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Fabio José Quetglas",
+      "bloque": "UCR"
+    },
+    {
+      "nombre": "Aníbal Florencio Randazzo",
+      "bloque": "Encuentro Federal"
+    },
+    {
+      "nombre": "Cristian Adrián Ritondo",
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Javier Sánchez Wrba",
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Juliana Santillán Juárez Ibrahim",
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Diego César Santilli",
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Santiago Santurio",
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Sabrina Selva",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Vanesa Raquel Siley",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "María Sotolano",
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Margarita Rosa Stolbizer",
+      "bloque": "Encuentro Federal"
+    },
+    {
+      "nombre": "Julia Strada",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Luis Rodolfo Tailhade",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Danya Tavela",
+      "bloque": "Democracia para Siempre"
+    },
+    {
+      "nombre": "Victoria Tolosa Paz",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Brenda Vargas Matyi",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Patricia Vásquez",
+      "bloque": "La Libertad Avanza"
+    },
+    {
+      "nombre": "Luana Volnovich",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Hugo Rubén Yasky",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Martín Yeza",
+      "bloque": "PRO"
+    },
+    {
+      "nombre": "Natalia Zaracho",
+      "bloque": "Unión por la Patria"
+    }
+  ],
+  "senadores_nac": [
+    {
+      "nombre": "Maximiliano Abad",
+      "bloque": "UCR"
+    },
+    {
+      "nombre": "Eduardo 'Wado' de Pedro",
+      "bloque": "Unión por la Patria"
+    },
+    {
+      "nombre": "Juliana Di Tullio",
+      "bloque": "Unión por la Patria"
+    }
+  ]
+}
