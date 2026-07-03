@@ -58,6 +58,7 @@ with st.sidebar:
     - 🏛 Congreso Nacional
     - 📊 Legisladores PBA
     - 📈 Economía & Indicadores
+    - 🏙 CABA – Capital Federal
     """)
     st.markdown("---")
     st.markdown("**Fuentes de datos**")
