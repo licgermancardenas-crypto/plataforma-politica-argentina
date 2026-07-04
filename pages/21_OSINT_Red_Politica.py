@@ -218,11 +218,11 @@ tab1, tab2, tab3, tab4 = st.tabs([
 # ════════════════════════════════════════════════════════════════════════
 with tab1:
     st.markdown("""
-    <div style='font-family:monospace;color:#475569;font-size:.8rem;margin-bottom:12px;'>
-    ◉ Nodos grandes = secciones electorales &nbsp;|&nbsp;
-    ◉ Nodos medianos = municipios/intendentes &nbsp;|&nbsp;
-    Color = bloque político &nbsp;|&nbsp;
-    Tamaño = padrón electoral
+    <div style='font-family:monospace;color:#475569;font-size:.8rem;margin-bottom:12px;
+         background:#0D1425;border:1px solid #1E3A5F;border-left:3px solid #00FF88;
+         border-radius:6px;padding:10px 16px;'>
+    <b style='color:#00FF88;'>▶ CLICK en un municipio</b> para expandir su red: secretarías (🟦 rect.) y concejales (🔷 diamante) &nbsp;|&nbsp;
+    Doble click = contraer &nbsp;|&nbsp; Tamaño = padrón &nbsp;|&nbsp; Color = bloque político
     </div>""", unsafe_allow_html=True)
 
     @st.cache_data(show_spinner=False)
@@ -298,7 +298,7 @@ with tab1:
                 )
                 net.add_edge("PBA", sec_name, color={"color": color + "55"}, width=2)
 
-        # ── Nodos de municipio/intendente ──
+        # ── Nodos de municipio/intendente + hijos ocultos ──
         for row in ints:
             if sec_filter != "Todas" and row["seccion_nombre"] != sec_filter:
                 continue
@@ -313,6 +313,7 @@ with tab1:
             partido = row.get("partido", "?")
             n_conc = row.get("n_concejales", "?")
             pct = row.get("ganador_pct", "?")
+            n_secs = len(secs_data.get(mun, []))
 
             title = (f"<b style='color:{color}'>{mun}</b><br>"
                      f"<b>Intendente:</b> {intend}<br>"
@@ -320,11 +321,13 @@ with tab1:
                      f"<b>Partido:</b> {partido}<br>"
                      f"<b>Resultado 2023:</b> {pct}%<br>"
                      f"<b>Padrón:</b> {padron:,}<br>"
-                     f"<b>Concejales:</b> {n_conc}")
+                     f"<b>Secretarías:</b> {n_secs} &nbsp;·&nbsp; "
+                     f"<b>Concejales:</b> {n_conc}<br>"
+                     f"<i style='color:#00FF88;'>▶ Click para expandir red</i>")
 
             net.add_node(
                 mun,
-                label=f"{mun}\n{intend.split(',')[0] if ',' in intend else intend[:18]}",
+                label=f"⊕ {mun}\n{intend.split(',')[0] if ',' in intend else intend[:18]}",
                 size=size,
                 color={"background": color + "33", "border": color,
                        "highlight": {"background": color + "55", "border": "#FFFFFF"}},
@@ -335,6 +338,50 @@ with tab1:
             parent = row["seccion_nombre"] if show_sec else "PBA"
             edge_color = SECCION_COLOR.get(row["seccion_nombre"], "#334155") + "88"
             net.add_edge(parent, mun, color={"color": edge_color}, width=1)
+
+            # ── Secretarios (ocultos, se revelan al hacer click) ──
+            for s in secs_data.get(mun, []):
+                sid = f"sec__{mun}__{s['nombre']}"
+                net.add_node(
+                    sid,
+                    label=s["nombre"][:24],
+                    size=12,
+                    color={"background": "#0F2044", "border": "#3B82F6",
+                           "highlight": {"background": "#1E3A5F", "border": "#60A5FA"}},
+                    shape="box",
+                    hidden=True,
+                    title=(f"<b style='color:#60A5FA;'>🏛 SECRETARÍA</b><br>"
+                           f"<b>{s['nombre']}</b><br>"
+                           f"<i>{s['cargo']}</i><br>"
+                           f"<span style='color:#475569;'>{mun}</span>"),
+                    font={"size": 9, "color": "#93C5FD", "face": "Courier New"},
+                )
+                net.add_edge(mun, sid,
+                             color={"color": "#3B82F666"}, width=1.5,
+                             hidden=True, dashes=True)
+
+            # ── Concejales top-7 por municipio (ocultos) ──
+            mun_concs = [c for c in conc_data if c["municipio"] == mun][:7]
+            for c in mun_concs:
+                cid = f"conc__{mun}__{c['nombre']}"
+                blq_col = hex_bloque(c.get("bloque", ""))
+                net.add_node(
+                    cid,
+                    label=c["nombre"][:24],
+                    size=10,
+                    color={"background": blq_col + "22", "border": blq_col,
+                           "highlight": {"background": blq_col + "44", "border": "#FFFFFF"}},
+                    shape="diamond",
+                    hidden=True,
+                    title=(f"<b style='color:{blq_col};'>🗳 CONCEJAL</b><br>"
+                           f"<b>{c['nombre']}</b><br>"
+                           f"Bloque: {c.get('bloque','')}<br>"
+                           f"<span style='color:#475569;'>{mun}</span>"),
+                    font={"size": 9, "color": "#CBD5E1", "face": "Courier New"},
+                )
+                net.add_edge(mun, cid,
+                             color={"color": blq_col + "55"}, width=1,
+                             hidden=True, dashes=True)
 
         # ── Nodos de legisladores (opcional) ──
         if show_leg:
@@ -359,6 +406,73 @@ with tab1:
                 net.add_edge(parent, nid, color={"color": color + "44"}, width=0.8, dashes=True)
 
         html = net.generate_html()
+
+        # ── Inyectar handler JS: click en municipio → expande/contrae hijos ──
+        click_js = """
+<script type="text/javascript">
+(function() {
+  var expanded = {};   // trackea qué municipios están expandidos
+
+  network.on("click", function(params) {
+    if (params.nodes.length === 0) return;
+    var clickedId = String(params.nodes[0]);
+
+    // Solo actuar sobre nodos de municipio (no PBA, secciones, sec__, conc__, dip_)
+    if (clickedId === "PBA") return;
+    if (clickedId.startsWith("sec__") || clickedId.startsWith("conc__") || clickedId.startsWith("dip_")) return;
+    // Ignorar nodos de sección (contienen "ª")
+    if (clickedId.indexOf("ª") !== -1) return;
+
+    var isExpanded = !!expanded[clickedId];
+    expanded[clickedId] = !isExpanded;
+
+    var connectedNodeIds = network.getConnectedNodes(clickedId);
+    var nodeUpdates = [];
+    var edgeUpdates = [];
+
+    connectedNodeIds.forEach(function(cid) {
+      var cids = String(cid);
+      if (cids.startsWith("sec__") || cids.startsWith("conc__")) {
+        var n = nodes.get(cid);
+        if (n) nodeUpdates.push({ id: cid, hidden: isExpanded });
+      }
+    });
+
+    var connectedEdgeIds = network.getConnectedEdges(clickedId);
+    connectedEdgeIds.forEach(function(eid) {
+      var e = edges.get(eid);
+      if (e) {
+        var toId = String(e.to);
+        if (toId.startsWith("sec__") || toId.startsWith("conc__")) {
+          edgeUpdates.push({ id: eid, hidden: isExpanded });
+        }
+      }
+    });
+
+    nodes.update(nodeUpdates);
+    edges.update(edgeUpdates);
+
+    // Actualizar label del nodo: ⊕ expandir / ⊖ contraer
+    var mainNode = nodes.get(clickedId);
+    if (mainNode) {
+      var newLabel = mainNode.label;
+      if (!isExpanded) {
+        newLabel = newLabel.replace(/^⊕ /, "⊖ ");
+      } else {
+        newLabel = newLabel.replace(/^⊖ /, "⊕ ");
+      }
+      nodes.update([{ id: clickedId, label: newLabel }]);
+    }
+
+    // Foco en el nodo expandido
+    if (!isExpanded) {
+      network.focus(clickedId, { scale: 1.4, animation: { duration: 600, easingFunction: "easeInOutQuad" } });
+    }
+  });
+})();
+</script>
+"""
+        html = html.replace("</body>", click_js + "\n</body>")
         return html
 
     net_html = build_network_html(sec_sel, blq_sel, show_secciones, show_legislators, physics_on)
