@@ -1,0 +1,1106 @@
+{
+  "fuente": "GCBA – Min. Educación 2024 · DGEyC · IVC · Min. Salud",
+  "matricula_total": 547893,
+  "matricula_pct_estatal": 49.9,
+  "matricula_por_zona_sector": [
+    {
+      "zona": "Centro",
+      "sector": "Estatal",
+      "alumnos": 129943,
+      "varones": 68412,
+      "mujeres": 61531,
+      "repitencia_pct": 3.45
+    },
+    {
+      "zona": "Centro",
+      "sector": "Privado",
+      "alumnos": 136701,
+      "varones": 67092,
+      "mujeres": 69609,
+      "repitencia_pct": 0.63
+    },
+    {
+      "zona": "Norte",
+      "sector": "Estatal",
+      "alumnos": 33391,
+      "varones": 16823,
+      "mujeres": 16568,
+      "repitencia_pct": 3.47
+    },
+    {
+      "zona": "Norte",
+      "sector": "Privado",
+      "alumnos": 69762,
+      "varones": 34946,
+      "mujeres": 34816,
+      "repitencia_pct": 0.38
+    },
+    {
+      "zona": "Sur",
+      "sector": "Estatal",
+      "alumnos": 109909,
+      "varones": 57456,
+      "mujeres": 52453,
+      "repitencia_pct": 3.63
+    },
+    {
+      "zona": "Sur",
+      "sector": "Privado",
+      "alumnos": 68187,
+      "varones": 33622,
+      "mujeres": 34565,
+      "repitencia_pct": 0.91
+    }
+  ],
+  "matricula_por_nivel": [
+    {
+      "nivel": "Inicial",
+      "sector": "Estatal",
+      "alumnos": 43065,
+      "unidades": 1909
+    },
+    {
+      "nivel": "Inicial",
+      "sector": "Privado",
+      "alumnos": 48392,
+      "unidades": 2360
+    },
+    {
+      "nivel": "Primaria",
+      "sector": "Estatal",
+      "alumnos": 135106,
+      "unidades": 4375
+    },
+    {
+      "nivel": "Primaria",
+      "sector": "Privado",
+      "alumnos": 127445,
+      "unidades": 3601
+    },
+    {
+      "nivel": "Secundaria",
+      "sector": "Estatal",
+      "alumnos": 95072,
+      "unidades": 1584
+    },
+    {
+      "nivel": "Secundaria",
+      "sector": "Privado",
+      "alumnos": 98813,
+      "unidades": 1952
+    }
+  ],
+  "mercado_laboral": [
+    {
+      "anio": 2003,
+      "actividad": 60.7,
+      "empleo": 54.3,
+      "desocupacion": null,
+      "subocupacion": null,
+      "des_masc": 8.9,
+      "des_fem": 12.3
+    },
+    {
+      "anio": 2004,
+      "actividad": 61.7,
+      "empleo": 56.7,
+      "desocupacion": null,
+      "subocupacion": null,
+      "des_masc": 6.5,
+      "des_fem": 9.6
+    },
+    {
+      "anio": 2005,
+      "actividad": 62.5,
+      "empleo": 58.3,
+      "desocupacion": null,
+      "subocupacion": null,
+      "des_masc": 5.5,
+      "des_fem": 8.2
+    },
+    {
+      "anio": 2006,
+      "actividad": 62.0,
+      "empleo": 58.4,
+      "desocupacion": null,
+      "subocupacion": null,
+      "des_masc": 4.5,
+      "des_fem": 7.4
+    },
+    {
+      "anio": 2007,
+      "actividad": 62.4,
+      "empleo": 59.1,
+      "desocupacion": null,
+      "subocupacion": null,
+      "des_masc": 4.8,
+      "des_fem": 6.0
+    },
+    {
+      "anio": 2008,
+      "actividad": 62.6,
+      "empleo": 59.1,
+      "desocupacion": null,
+      "subocupacion": null,
+      "des_masc": 4.930876717629633,
+      "des_fem": 6.3001769685885165
+    },
+    {
+      "anio": 2009,
+      "actividad": 62.7,
+      "empleo": 58.8,
+      "desocupacion": null,
+      "subocupacion": null,
+      "des_masc": 5.434479035893093,
+      "des_fem": 6.977403170415863
+    },
+    {
+      "anio": 2010,
+      "actividad": 62.4,
+      "empleo": 58.7,
+      "desocupacion": null,
+      "subocupacion": null,
+      "des_masc": 4.661236890254684,
+      "des_fem": 7.24038794954869
+    },
+    {
+      "anio": 2011,
+      "actividad": 61.4,
+      "empleo": 58.0,
+      "desocupacion": null,
+      "subocupacion": null,
+      "des_masc": 4.397600289320327,
+      "des_fem": 6.604737282958503
+    },
+    {
+      "anio": 2012,
+      "actividad": 61.3,
+      "empleo": 57.5,
+      "desocupacion": null,
+      "subocupacion": null,
+      "des_masc": 4.834198044475448,
+      "des_fem": 7.661741709961275
+    },
+    {
+      "anio": 2013,
+      "actividad": 60.5,
+      "empleo": 57.1,
+      "desocupacion": null,
+      "subocupacion": null,
+      "des_masc": 4.586415570511751,
+      "des_fem": 6.7773566775618885
+    },
+    {
+      "anio": 2014,
+      "actividad": 60.9,
+      "empleo": 57.2,
+      "desocupacion": null,
+      "subocupacion": null,
+      "des_masc": 4.9,
+      "des_fem": 7.3
+    },
+    {
+      "anio": 2015,
+      "actividad": 64.2,
+      "empleo": 59.9,
+      "desocupacion": null,
+      "subocupacion": null,
+      "des_masc": 4.9,
+      "des_fem": 8.8
+    },
+    {
+      "anio": 2016,
+      "actividad": 64.4,
+      "empleo": 59.2,
+      "desocupacion": null,
+      "subocupacion": null,
+      "des_masc": 6.4,
+      "des_fem": 9.8
+    },
+    {
+      "anio": 2017,
+      "actividad": 63.4,
+      "empleo": 58.8,
+      "desocupacion": null,
+      "subocupacion": null,
+      "des_masc": 5.9,
+      "des_fem": 8.6
+    },
+    {
+      "anio": 2018,
+      "actividad": 63.7,
+      "empleo": 58.6,
+      "desocupacion": null,
+      "subocupacion": null,
+      "des_masc": 7.0,
+      "des_fem": 9.0
+    },
+    {
+      "anio": 2019,
+      "actividad": 64.8,
+      "empleo": 59.6,
+      "desocupacion": null,
+      "subocupacion": null,
+      "des_masc": 7.0,
+      "des_fem": 9.2
+    }
+  ],
+  "espacios_verdes_por_comuna": [
+    {
+      "comuna": 1,
+      "anio": 2018,
+      "m2_por_hab": 1.852
+    },
+    {
+      "comuna": 2,
+      "anio": 2018,
+      "m2_por_hab": 0.497
+    },
+    {
+      "comuna": 3,
+      "anio": 2018,
+      "m2_por_hab": 0.049
+    },
+    {
+      "comuna": 4,
+      "anio": 2018,
+      "m2_por_hab": 0.422
+    },
+    {
+      "comuna": 5,
+      "anio": 2018,
+      "m2_por_hab": 0.019
+    },
+    {
+      "comuna": 6,
+      "anio": 2018,
+      "m2_por_hab": 0.151
+    },
+    {
+      "comuna": 7,
+      "anio": 2018,
+      "m2_por_hab": 0.171
+    },
+    {
+      "comuna": 8,
+      "anio": 2018,
+      "m2_por_hab": 1.411
+    },
+    {
+      "comuna": 9,
+      "anio": 2018,
+      "m2_por_hab": 0.666
+    },
+    {
+      "comuna": 10,
+      "anio": 2018,
+      "m2_por_hab": 0.141
+    },
+    {
+      "comuna": 11,
+      "anio": 2018,
+      "m2_por_hab": 0.332
+    },
+    {
+      "comuna": 12,
+      "anio": 2018,
+      "m2_por_hab": 0.752
+    },
+    {
+      "comuna": 13,
+      "anio": 2018,
+      "m2_por_hab": 0.482
+    },
+    {
+      "comuna": 14,
+      "anio": 2018,
+      "m2_por_hab": 1.384
+    },
+    {
+      "comuna": 15,
+      "anio": 2018,
+      "m2_por_hab": 0.175
+    }
+  ],
+  "espacios_verdes_serie": [
+    {
+      "anio": 2011,
+      "m2_por_hab": 0.628
+    },
+    {
+      "anio": 2012,
+      "m2_por_hab": 0.624
+    },
+    {
+      "anio": 2013,
+      "m2_por_hab": 0.585
+    },
+    {
+      "anio": 2014,
+      "m2_por_hab": 0.59
+    },
+    {
+      "anio": 2015,
+      "m2_por_hab": 0.592
+    },
+    {
+      "anio": 2016,
+      "m2_por_hab": 0.597
+    },
+    {
+      "anio": 2017,
+      "m2_por_hab": 0.6
+    },
+    {
+      "anio": 2018,
+      "m2_por_hab": 0.61
+    }
+  ],
+  "hospitales_publicos": [
+    {
+      "nombre": "Hospital de Pediatria Dr. J. Garrahan",
+      "tipo": "Hospital de Niños",
+      "direccion": "Combate De Los Pozos 1881",
+      "barrio": "Parque Patricios",
+      "comuna": 4,
+      "especialidad": "Pediatria"
+    },
+    {
+      "nombre": "Hospital Especializado de Emerg Psiquiatricas Torcuato de Alvear",
+      "tipo": "Hospital Especializado",
+      "direccion": "Warnes Av. 2630",
+      "barrio": "Paternal",
+      "comuna": 15,
+      "especialidad": "Salud Mental"
+    },
+    {
+      "nombre": "Hospital Especializado de Gastroenterologia B. Udaondo",
+      "tipo": "Hospital Especializado",
+      "direccion": "Caseros Av. 2061",
+      "barrio": "Parque Patricios",
+      "comuna": 4,
+      "especialidad": "Enf. Apar. Digestivo"
+    },
+    {
+      "nombre": "Hospital Especializado de Infecciosas F. Muñiz",
+      "tipo": "Hospital Especializado",
+      "direccion": "Uspallata 2272",
+      "barrio": "Parque Patricios",
+      "comuna": 4,
+      "especialidad": "Infectologia"
+    },
+    {
+      "nombre": "Hospital Especializado de Odontologia  J. Dueñas",
+      "tipo": "Hospital Especializado",
+      "direccion": "Muñiz 15",
+      "barrio": "Almagro",
+      "comuna": 5,
+      "especialidad": "Odontologia"
+    },
+    {
+      "nombre": "Hospital Especializado de Odontologia Infantil Don Benito Quinquela Martin",
+      "tipo": "Hospital Especializado",
+      "direccion": "Don Pedro De Mendoza Av. 1795",
+      "barrio": "Boca",
+      "comuna": 4,
+      "especialidad": "Odontologia"
+    },
+    {
+      "nombre": "Hospital Especializado de Oftalmologia Santa Lucia",
+      "tipo": "Hospital Especializado",
+      "direccion": "San Juan Av. 2021",
+      "barrio": "San Cristobal",
+      "comuna": 3,
+      "especialidad": "Oftalmologia"
+    },
+    {
+      "nombre": "Hospital Especializado de Quemados Dr. Arturo Umberto Illia",
+      "tipo": "Hospital Especializado",
+      "direccion": "Goyena, Pedro Av. 369",
+      "barrio": "Caballito",
+      "comuna": 6,
+      "especialidad": "Quemados"
+    },
+    {
+      "nombre": "Hospital Especializado de Rehabilitacion M. Rocca",
+      "tipo": "Hospital Especializado",
+      "direccion": "Segurola Av. 1949",
+      "barrio": "Monte Castro",
+      "comuna": 10,
+      "especialidad": "Med. Fisica - Rehabilitacion"
+    },
+    {
+      "nombre": "Hospital Especializado de Rehabilitacion Respiratoria Maria Ferrer",
+      "tipo": "Hospital Especializado",
+      "direccion": "Finochietto Enrique Dr. 849",
+      "barrio": "Barracas",
+      "comuna": 4,
+      "especialidad": "Neumonologia"
+    },
+    {
+      "nombre": "Hospital Especializado de Salud Mental Braulio Moyano",
+      "tipo": "Hospital Especializado",
+      "direccion": "Brandsen 2570",
+      "barrio": "Barracas",
+      "comuna": 4,
+      "especialidad": "Salud Mental"
+    },
+    {
+      "nombre": "Hospital Especializado de Salud Mental J. Borda",
+      "tipo": "Hospital Especializado",
+      "direccion": "Carrillo, Ramon, Dr. 375",
+      "barrio": "Barracas",
+      "comuna": 4,
+      "especialidad": "Salud Mental"
+    },
+    {
+      "nombre": "Hospital Especializado Infanto Juvenil C. Tobar Garcia",
+      "tipo": "Hospital Especializado",
+      "direccion": "Carrillo, Ramon, Dr. 315",
+      "barrio": "Barracas",
+      "comuna": 4,
+      "especialidad": "Salud Mental"
+    },
+    {
+      "nombre": "Hospital Especializado Materno Infantil R. Sarda",
+      "tipo": "Hospital Especializado",
+      "direccion": "Luca, Esteban De 2151",
+      "barrio": "Parque Patricios",
+      "comuna": 4,
+      "especialidad": "Materno-Infantil"
+    },
+    {
+      "nombre": "Hospital Especializado Odontologico Dr. R. Carrillo (Ex Nacional)",
+      "tipo": "Hospital Especializado",
+      "direccion": "Sanchez De Bustamante 2529",
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "especialidad": "Odontologia"
+    },
+    {
+      "nombre": "Hospital Especializado Oftalmologico Dr. P. Lagleyze",
+      "tipo": "Hospital Especializado",
+      "direccion": "Justo, Juan B. Av. 4151",
+      "barrio": "Villa Gral. Mitre",
+      "comuna": 11,
+      "especialidad": "Oftalmologia"
+    },
+    {
+      "nombre": "Hospital General de Agudos A. Zubizarreta",
+      "tipo": "Hospital General de Agudos",
+      "direccion": "Nueva York 3952",
+      "barrio": "Villa Devoto",
+      "comuna": 11,
+      "especialidad": "Basicas - Criticas - Otras"
+    },
+    {
+      "nombre": "Hospital General de Agudos B. Rivadavia",
+      "tipo": "Hospital General de Agudos",
+      "direccion": "Las Heras General Av. 2670",
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "especialidad": "Basicas - Criticas - Otras"
+    },
+    {
+      "nombre": "Hospital General de Agudos Cecilia Grierson",
+      "tipo": "Hospital General de Agudos",
+      "direccion": "Fernandez De La Cruz, F., Gral. Av. 4402",
+      "barrio": "Villa Soldati",
+      "comuna": 8,
+      "especialidad": "nan"
+    },
+    {
+      "nombre": "Hospital General de Agudos D. Velez Sarsfield",
+      "tipo": "Hospital General de Agudos",
+      "direccion": "Calderon De La Barca, Pedro 1550",
+      "barrio": "Monte Castro",
+      "comuna": 10,
+      "especialidad": "Basicas - Criticas - Otras"
+    },
+    {
+      "nombre": "Hospital General de Agudos Donacion F. Santojanni",
+      "tipo": "Hospital General de Agudos",
+      "direccion": "Pilar 950",
+      "barrio": "Liniers",
+      "comuna": 9,
+      "especialidad": "Basicas - Criticas - Otras"
+    },
+    {
+      "nombre": "Hospital General de Agudos Dr C. Argerich",
+      "tipo": "Hospital General de Agudos",
+      "direccion": "Pi Y Margall 750",
+      "barrio": "Boca",
+      "comuna": 4,
+      "especialidad": "Basicas - Criticas - Otras"
+    },
+    {
+      "nombre": "Hospital General de Agudos Dr. C. Durand",
+      "tipo": "Hospital General de Agudos",
+      "direccion": "Diaz Velez Av. 5044",
+      "barrio": "Caballito",
+      "comuna": 6,
+      "especialidad": "Basicas - Criticas - Otras"
+    },
+    {
+      "nombre": "Hospital General de Agudos Dr. E. Tornu",
+      "tipo": "Hospital General de Agudos",
+      "direccion": "Combatientes De Malvinas Av. 3002",
+      "barrio": "Parque Chas",
+      "comuna": 15,
+      "especialidad": "Basicas - Criticas - Otras"
+    },
+    {
+      "nombre": "Hospital General de Agudos Dr. I. Pirovano",
+      "tipo": "Hospital General de Agudos",
+      "direccion": "Monroe Av. 3555",
+      "barrio": "Coghlan",
+      "comuna": 12,
+      "especialidad": "Basicas - Criticas - Otras"
+    },
+    {
+      "nombre": "Hospital General de Agudos Dr. J. A. Fernandez",
+      "tipo": "Hospital General de Agudos",
+      "direccion": "Cerviño Av. 3356",
+      "barrio": "Palermo",
+      "comuna": 14,
+      "especialidad": "Basicas - Criticas - Otras"
+    },
+    {
+      "nombre": "Hospital General de Agudos Dr. T. Alvarez",
+      "tipo": "Hospital General de Agudos",
+      "direccion": "Aranguren, Juan F., Dr. 2701",
+      "barrio": "Flores",
+      "comuna": 7,
+      "especialidad": "Basicas - Criticas - Otras"
+    },
+    {
+      "nombre": "Hospital General de Agudos J. A. Penna",
+      "tipo": "Hospital General de Agudos",
+      "direccion": "Chutro, Pedro, Prof., Dr. 3380",
+      "barrio": "Parque Patricios",
+      "comuna": 4,
+      "especialidad": "Basicas - Criticas - Otras"
+    },
+    {
+      "nombre": "Hospital General de Agudos J. M. Ramos Mejia",
+      "tipo": "Hospital General de Agudos",
+      "direccion": "Urquiza, Gral. 609",
+      "barrio": "Balvanera",
+      "comuna": 3,
+      "especialidad": "Basicas - Criticas - Otras"
+    },
+    {
+      "nombre": "Hospital General de Agudos P. Piñero",
+      "tipo": "Hospital General de Agudos",
+      "direccion": "Varela Av. 1301",
+      "barrio": "Flores",
+      "comuna": 7,
+      "especialidad": "Basicas - Criticas - Otras"
+    },
+    {
+      "nombre": "Hospital General de Niños P. de Elizalde",
+      "tipo": "Hospital de Niños",
+      "direccion": "Montes De Oca, Manuel Av. 40",
+      "barrio": "Barracas",
+      "comuna": 4,
+      "especialidad": "Pediatria"
+    },
+    {
+      "nombre": "Hospital General de Niños R. Gutierrez",
+      "tipo": "Hospital de Niños",
+      "direccion": "Gallo 1330",
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "especialidad": "Pediatria"
+    },
+    {
+      "nombre": "Hospital Municipal de Oncologia M. Curie",
+      "tipo": "Hospital Especializado",
+      "direccion": "Patricias Argentinas Av. 150",
+      "barrio": "Caballito",
+      "comuna": 6,
+      "especialidad": "Oncologia"
+    },
+    {
+      "nombre": "Inst. de Zoonosis L. Pasteur",
+      "tipo": "Hospital Especializado",
+      "direccion": "Diaz Velez Av. 4821",
+      "barrio": "Caballito",
+      "comuna": 6,
+      "especialidad": "Zoonosis"
+    },
+    {
+      "nombre": "Instituto de Rehabilitacion Psicofisica (I.R.E.P.)",
+      "tipo": "Hospital Especializado",
+      "direccion": "Echeverria 955",
+      "barrio": "Belgrano",
+      "comuna": 13,
+      "especialidad": "Med. Fisica - Rehabilitacion"
+    },
+    {
+      "nombre": "Talleres Protegidos de Rehabilitacion Psiquiatrica",
+      "tipo": "Hospital Especializado",
+      "direccion": "Suarez Av. 2215",
+      "barrio": "Barracas",
+      "comuna": 4,
+      "especialidad": "Salud Mental"
+    }
+  ],
+  "centros_salud_privados": [
+    {
+      "nombre": "ALPI - INSTITUTO DE REHABILITACION MARCELO FITTE - Sede Central",
+      "barrio": "Palermo",
+      "comuna": 1,
+      "lon": -58.41733347,
+      "lat": -34.59162999
+    },
+    {
+      "nombre": "CAMI - MEDICINA DEL TRABAJO",
+      "barrio": "Almagro",
+      "comuna": 5,
+      "lon": -58.42047607,
+      "lat": -34.61288373
+    },
+    {
+      "nombre": "CEMIC - Sede Las Heras",
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "lon": -58.40203869,
+      "lat": -34.58365254
+    },
+    {
+      "nombre": "CEMIC - Sede Saavedra",
+      "barrio": "Saavedra",
+      "comuna": 1,
+      "lon": -58.49521698,
+      "lat": -34.55698349
+    },
+    {
+      "nombre": "CENTRO GALLEGO DE BUENOS AIRES",
+      "barrio": "Balvanera",
+      "comuna": 3,
+      "lon": -58.39729878,
+      "lat": -34.61398345
+    },
+    {
+      "nombre": "CENTRO MEDICO SARAZA",
+      "barrio": "Parque Chacabuco",
+      "comuna": 7,
+      "lon": -58.42494653,
+      "lat": -34.63664688
+    },
+    {
+      "nombre": "CLINICA ADVENTISTA BELGRANO",
+      "barrio": "Villa Ortuzar",
+      "comuna": 1,
+      "lon": -58.46833246,
+      "lat": -34.57456387
+    },
+    {
+      "nombre": "CLINICA CIUDAD DE LA VIDA",
+      "barrio": "Balvanera",
+      "comuna": 3,
+      "lon": -58.40182937,
+      "lat": -34.61468681
+    },
+    {
+      "nombre": "CLINICA JURI",
+      "barrio": "Palermo",
+      "comuna": 1,
+      "lon": -58.40566632,
+      "lat": -34.58116159
+    },
+    {
+      "nombre": "CLINICA LA SAGRADA FAMILIA",
+      "barrio": "Belgrano",
+      "comuna": 1,
+      "lon": -58.44595639,
+      "lat": -34.56165881
+    },
+    {
+      "nombre": "CLINICA MILITO",
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "lon": -58.39301567,
+      "lat": -34.59566122
+    },
+    {
+      "nombre": "CLINICA SAN CAMILO",
+      "barrio": "Villa Crespo",
+      "comuna": 1,
+      "lon": -58.4425179,
+      "lat": -34.60625119
+    },
+    {
+      "nombre": "CLINICA Y MATERNIDAD SANTA ISABEL",
+      "barrio": "Flores",
+      "comuna": 7,
+      "lon": -58.45590379,
+      "lat": -34.63159223
+    },
+    {
+      "nombre": "COMPLEJO MEDICO POLICIAL CHURRUCA-VISCA",
+      "barrio": "Parque Patricios",
+      "comuna": 4,
+      "lon": -58.41077144,
+      "lat": -34.63930087
+    },
+    {
+      "nombre": "EXCELSITAS",
+      "barrio": "Colegiales",
+      "comuna": 1,
+      "lon": -58.44968504,
+      "lat": -34.5691239
+    },
+    {
+      "nombre": "FLENI FUND. LUCHA CONTRA ENF. NEUROLOGICAS INFANCIA",
+      "barrio": "Belgrano",
+      "comuna": 1,
+      "lon": -58.45049664,
+      "lat": -34.55516361
+    },
+    {
+      "nombre": "FUNDALEU FUND. ARG. CONTRA LA LEUCEMIA",
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "lon": -58.39720848,
+      "lat": -34.59155285
+    },
+    {
+      "nombre": "HOSPITAL AERONAUTICO CENTRAL",
+      "barrio": "Nueva Pompeya",
+      "comuna": 4,
+      "lon": -58.41191205,
+      "lat": -34.65278674
+    },
+    {
+      "nombre": "HOSPITAL DE ASMA Y ALERGIA",
+      "barrio": "Almagro",
+      "comuna": 5,
+      "lon": -58.42109772,
+      "lat": -34.60749541
+    },
+    {
+      "nombre": "HOSPITAL DE CLINICAS JOSE DE SAN MARTIN",
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "lon": -58.40059894,
+      "lat": -34.59931303
+    },
+    {
+      "nombre": "HOSPITAL DE ONCOLOGIA ANGEL H. ROFFO",
+      "barrio": "Agronomia",
+      "comuna": 1,
+      "lon": -58.49450555,
+      "lat": -34.59673551
+    },
+    {
+      "nombre": "HOSPITAL ESPAÑOL",
+      "barrio": "Balvanera",
+      "comuna": 3,
+      "lon": -58.40788417,
+      "lat": -34.61479216
+    },
+    {
+      "nombre": "HOSPITAL FRANCES  (PAMI)",
+      "barrio": "San Cristobal",
+      "comuna": 3,
+      "lon": -58.40773369,
+      "lat": -34.62150705
+    },
+    {
+      "nombre": "HOSPITAL ISRAELITA- ISRAMED",
+      "barrio": "Villa Santa Rita",
+      "comuna": 1,
+      "lon": -58.47368473,
+      "lat": -34.6193123
+    },
+    {
+      "nombre": "HOSPITAL ITALIANO",
+      "barrio": "Almagro",
+      "comuna": 5,
+      "lon": -58.42486935,
+      "lat": -34.60662369
+    },
+    {
+      "nombre": "HOSPITAL MILITAR CENTRAL",
+      "barrio": "Palermo",
+      "comuna": 1,
+      "lon": -58.43616155,
+      "lat": -34.57014122
+    },
+    {
+      "nombre": "HOSPITAL NAVAL DR. PEDRO MALLO",
+      "barrio": "Caballito",
+      "comuna": 6,
+      "lon": -58.43302398,
+      "lat": -34.60521474
+    },
+    {
+      "nombre": "INSTITUTO ALEXANDER FLEMING",
+      "barrio": "Colegiales",
+      "comuna": 1,
+      "lon": -58.45183044,
+      "lat": -34.57184991
+    },
+    {
+      "nombre": "INSTITUTO ANTARTIDA",
+      "barrio": "Caballito",
+      "comuna": 6,
+      "lon": -58.4358081,
+      "lat": -34.61826854
+    },
+    {
+      "nombre": "INSTITUTO ARGENTINO DE DIAGNOSTICO Y TRATAMIENTO SA",
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "lon": -58.40098306,
+      "lat": -34.59677633
+    },
+    {
+      "nombre": "INSTITUTO CARDIOVASCULAR DE BUENOS AIRES",
+      "barrio": "Belgrano",
+      "comuna": 1,
+      "lon": -58.45078494,
+      "lat": -34.55400536
+    },
+    {
+      "nombre": "INSTITUTO DUPUYTREN DE TRAUMATOLOGIA Y ORTOPEDIA",
+      "barrio": "Almagro",
+      "comuna": 5,
+      "lon": -58.41450494,
+      "lat": -34.61572125
+    },
+    {
+      "nombre": "POLICLINICA BANCARIA 9 DE JULIO",
+      "barrio": "Caballito",
+      "comuna": 6,
+      "lon": -58.45743646,
+      "lat": -34.61282978
+    },
+    {
+      "nombre": "SANATORIO AGOTE",
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "lon": -58.39452861,
+      "lat": -34.58539991
+    },
+    {
+      "nombre": "SANATORIO COLEGIALES",
+      "barrio": "Colegiales",
+      "comuna": 1,
+      "lon": -58.45090109,
+      "lat": -34.57699878
+    },
+    {
+      "nombre": "SANATORIO DE LA TRINIDAD",
+      "barrio": "Palermo",
+      "comuna": 1,
+      "lon": -58.42404173,
+      "lat": -34.57512413
+    },
+    {
+      "nombre": "SANATORIO DE LOS ARCOS",
+      "barrio": "Palermo",
+      "comuna": 1,
+      "lon": -58.42931153,
+      "lat": -34.58096794
+    },
+    {
+      "nombre": "SANATORIO DEL VALLE",
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "lon": -58.414208,
+      "lat": -34.59768789
+    },
+    {
+      "nombre": "SANATORIO GUEMES",
+      "barrio": "Palermo",
+      "comuna": 1,
+      "lon": -58.42221407,
+      "lat": -34.59749878
+    },
+    {
+      "nombre": "SANATORIO MATER DEI",
+      "barrio": "Palermo",
+      "comuna": 1,
+      "lon": -58.4042317,
+      "lat": -34.57795148
+    },
+    {
+      "nombre": "SANATORIO MITRE",
+      "barrio": "Balvanera",
+      "comuna": 3,
+      "lon": -58.40271317,
+      "lat": -34.60843734
+    },
+    {
+      "nombre": "SANATORIO OTAMENDI Y MIROLI",
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "lon": -58.40107461,
+      "lat": -34.59842828
+    },
+    {
+      "nombre": "SANATORIO SAN JOSE",
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "lon": -58.41023572,
+      "lat": -34.59153383
+    },
+    {
+      "nombre": "SANATORIO SAN PATRICIO",
+      "barrio": "Flores",
+      "comuna": 7,
+      "lon": -58.46683476,
+      "lat": -34.62951048
+    },
+    {
+      "nombre": "CENTRO MEDICO DR. CALABRESE",
+      "barrio": "Palermo",
+      "comuna": 1,
+      "lon": -58.42838953,
+      "lat": -34.60424412
+    },
+    {
+      "nombre": "CLINICA BASILEA",
+      "barrio": "Constitucion",
+      "comuna": 1,
+      "lon": -58.39030995,
+      "lat": -34.62057857
+    },
+    {
+      "nombre": "CLINICA BAZTERRICA",
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "lon": -58.40764427,
+      "lat": -34.58729893
+    },
+    {
+      "nombre": "CLINICA DE LA CIUDAD",
+      "barrio": "Caballito",
+      "comuna": 6,
+      "lon": -58.43278093,
+      "lat": -34.60436944
+    },
+    {
+      "nombre": "DIAGNOSTICO MEDICO",
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "lon": -58.39723682,
+      "lat": -34.59684596
+    },
+    {
+      "nombre": "FUNDACION FAVALORO",
+      "barrio": "Monserrat",
+      "comuna": 1,
+      "lon": -58.39094495,
+      "lat": -34.61399423
+    },
+    {
+      "nombre": "HOSPITAL BRITANICO DE BUENOS AIRES",
+      "barrio": "Barracas",
+      "comuna": 4,
+      "lon": -58.38788878,
+      "lat": -34.63455851
+    },
+    {
+      "nombre": "INSTITUTO ONCOLOGICO HENRY MOORE",
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "lon": -58.40962004,
+      "lat": -34.59507063
+    },
+    {
+      "nombre": "CLINICA Y MATERNIDAD SUIZO ARGENTINA",
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "lon": -58.40178816,
+      "lat": -34.593846
+    },
+    {
+      "nombre": "HOSPITAL ALEMAN",
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "lon": -58.40156598,
+      "lat": -34.59207858
+    },
+    {
+      "nombre": "CLINICA PSIQUIATRICA VILLA GUADALUPE",
+      "barrio": "Palermo",
+      "comuna": 1,
+      "lon": -58.4216593,
+      "lat": -34.58900803
+    },
+    {
+      "nombre": "INSTITUTO MEDICO DE OBSTETRICIA",
+      "barrio": "Balvanera",
+      "comuna": 3,
+      "lon": -58.39890779,
+      "lat": -34.60706107
+    },
+    {
+      "nombre": "SANATORIO ANCHORENA S.A.",
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "lon": -58.40034684,
+      "lat": -34.58933008
+    },
+    {
+      "nombre": "CLINICA GERIATRICA GUAYAQUIL",
+      "barrio": "Caballito",
+      "comuna": 6,
+      "lon": -58.43052542,
+      "lat": -34.61950423
+    },
+    {
+      "nombre": "CLINICA SANTA CATALINA",
+      "barrio": "Balvanera",
+      "comuna": 3,
+      "lon": -58.40356357,
+      "lat": -34.61583509
+    },
+    {
+      "nombre": "CRUZ AZUL ASISTENCIA MEDICA",
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "lon": -58.38756525,
+      "lat": -34.59006655
+    },
+    {
+      "nombre": "INSTITUTO DE INVESTIGACIONES MEDICAS A. LANARI",
+      "barrio": "Parque Chas",
+      "comuna": 1,
+      "lon": -58.47251919,
+      "lat": -34.58467533
+    },
+    {
+      "nombre": "ALPI - Sede Paraguay - Unidad de mano",
+      "barrio": "Palermo",
+      "comuna": 1,
+      "lon": -58.41591524,
+      "lat": -34.5913195
+    },
+    {
+      "nombre": "ALPI - Sede Mario Bravo - Unidad pediatría y terapias manuales",
+      "barrio": "Almagro",
+      "comuna": 5,
+      "lon": -58.41635984,
+      "lat": -34.60081239
+    },
+    {
+      "nombre": "FUNDACIÓN HOSPITALARIA",
+      "barrio": "Saavedra",
+      "comuna": 1,
+      "lon": -58.47661688,
+      "lat": -34.54416898
+    },
+    {
+      "nombre": "INSTITUTO FERRERO DE NEUROLOGÍA Y SUEÑO",
+      "barrio": "Recoleta",
+      "comuna": 2,
+      "lon": -58.39750051,
+      "lat": -34.59542159
+    }
+  ]
+}

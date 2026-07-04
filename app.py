@@ -64,6 +64,8 @@ with st.sidebar:
     - 📐 Socioeconomía CABA
     - 💰 Presupuesto CABA
     - 🛍 Mapa Comercial CABA
+    - 🚇 Movilidad CABA
+    - 📚 Educación & Calidad CABA
     """)
     st.markdown("---")
     st.markdown("**Fuentes de datos**")
