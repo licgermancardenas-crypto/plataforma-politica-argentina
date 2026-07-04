@@ -1,0 +1,512 @@
+{
+  "por_comuna": [
+    {
+      "comuna": 1,
+      "total": 20819,
+      "robos": 9746,
+      "hurtos": 8139,
+      "lesiones": 1096,
+      "homicidios": 13,
+      "amenazas": 810,
+      "vialidad": 1015,
+      "tasa_por_1000": 118.2,
+      "padron": 176202
+    },
+    {
+      "comuna": 2,
+      "total": 6690,
+      "robos": 2935,
+      "hurtos": 2911,
+      "lesiones": 273,
+      "homicidios": 2,
+      "amenazas": 201,
+      "vialidad": 368,
+      "tasa_por_1000": 48.6,
+      "padron": 137779
+    },
+    {
+      "comuna": 3,
+      "total": 12532,
+      "robos": 5688,
+      "hurtos": 4986,
+      "lesiones": 633,
+      "homicidios": 6,
+      "amenazas": 495,
+      "vialidad": 724,
+      "tasa_por_1000": 80.8,
+      "padron": 155066
+    },
+    {
+      "comuna": 4,
+      "total": 14239,
+      "robos": 7422,
+      "hurtos": 4328,
+      "lesiones": 969,
+      "homicidios": 18,
+      "amenazas": 925,
+      "vialidad": 577,
+      "tasa_por_1000": 78.9,
+      "padron": 180576
+    },
+    {
+      "comuna": 5,
+      "total": 8029,
+      "robos": 3924,
+      "hurtos": 3052,
+      "lesiones": 339,
+      "homicidios": 4,
+      "amenazas": 299,
+      "vialidad": 411,
+      "tasa_por_1000": 52.3,
+      "padron": 153414
+    },
+    {
+      "comuna": 6,
+      "total": 6863,
+      "robos": 2950,
+      "hurtos": 2951,
+      "lesiones": 267,
+      "homicidios": 2,
+      "amenazas": 251,
+      "vialidad": 442,
+      "tasa_por_1000": 43.1,
+      "padron": 159176
+    },
+    {
+      "comuna": 7,
+      "total": 12496,
+      "robos": 6396,
+      "hurtos": 4400,
+      "lesiones": 557,
+      "homicidios": 7,
+      "amenazas": 429,
+      "vialidad": 707,
+      "tasa_por_1000": 71.7,
+      "padron": 174167
+    },
+    {
+      "comuna": 8,
+      "total": 10008,
+      "robos": 4923,
+      "hurtos": 3138,
+      "lesiones": 779,
+      "homicidios": 16,
+      "amenazas": 698,
+      "vialidad": 454,
+      "tasa_por_1000": 68.2,
+      "padron": 146694
+    },
+    {
+      "comuna": 9,
+      "total": 8428,
+      "robos": 3286,
+      "hurtos": 3536,
+      "lesiones": 487,
+      "homicidios": 3,
+      "amenazas": 425,
+      "vialidad": 691,
+      "tasa_por_1000": 57.2,
+      "padron": 147324
+    },
+    {
+      "comuna": 10,
+      "total": 7368,
+      "robos": 2499,
+      "hurtos": 3543,
+      "lesiones": 334,
+      "homicidios": 0,
+      "amenazas": 371,
+      "vialidad": 621,
+      "tasa_por_1000": 50.1,
+      "padron": 147067
+    },
+    {
+      "comuna": 11,
+      "total": 7650,
+      "robos": 2767,
+      "hurtos": 3742,
+      "lesiones": 240,
+      "homicidios": 2,
+      "amenazas": 359,
+      "vialidad": 540,
+      "tasa_por_1000": 44.7,
+      "padron": 171256
+    },
+    {
+      "comuna": 12,
+      "total": 7769,
+      "robos": 2835,
+      "hurtos": 3404,
+      "lesiones": 335,
+      "homicidios": 0,
+      "amenazas": 373,
+      "vialidad": 822,
+      "tasa_por_1000": 40.7,
+      "padron": 190819
+    },
+    {
+      "comuna": 13,
+      "total": 9175,
+      "robos": 3469,
+      "hurtos": 4372,
+      "lesiones": 370,
+      "homicidios": 1,
+      "amenazas": 303,
+      "vialidad": 660,
+      "tasa_por_1000": 42.4,
+      "padron": 216549
+    },
+    {
+      "comuna": 14,
+      "total": 12794,
+      "robos": 5370,
+      "hurtos": 5867,
+      "lesiones": 499,
+      "homicidios": 0,
+      "amenazas": 318,
+      "vialidad": 740,
+      "tasa_por_1000": 61.8,
+      "padron": 207012
+    },
+    {
+      "comuna": 15,
+      "total": 10056,
+      "robos": 4094,
+      "hurtos": 4286,
+      "lesiones": 428,
+      "homicidios": 4,
+      "amenazas": 419,
+      "vialidad": 825,
+      "tasa_por_1000": 61.5,
+      "padron": 163575
+    }
+  ],
+  "evolucion_anual": {
+    "2022": {
+      "Amenazas": 9857,
+      "Homicidios": 89,
+      "Hurto": 54304,
+      "Lesiones": 10153,
+      "Robo": 56334,
+      "Vialidad": 10181,
+      "total": 140918
+    },
+    "2023": {
+      "Amenazas": 8214,
+      "Homicidios": 91,
+      "Hurto": 62567,
+      "Lesiones": 9612,
+      "Robo": 64983,
+      "Vialidad": 10430,
+      "total": 155897
+    },
+    "2024": {
+      "Amenazas": 7603,
+      "Homicidios": 78,
+      "Hurto": 62771,
+      "Lesiones": 9420,
+      "Robo": 68392,
+      "Vialidad": 10574,
+      "total": 158838
+    }
+  },
+  "por_mes_2024": [
+    {
+      "mes": 1,
+      "total": 13626,
+      "Robo": 6162,
+      "Hurto": 5210,
+      "Lesiones": 833,
+      "Homicidios": 7,
+      "Amenazas": 704,
+      "Vialidad": 710
+    },
+    {
+      "mes": 2,
+      "total": 13592,
+      "Robo": 6373,
+      "Hurto": 5102,
+      "Lesiones": 769,
+      "Homicidios": 5,
+      "Amenazas": 629,
+      "Vialidad": 714
+    },
+    {
+      "mes": 3,
+      "total": 13915,
+      "Robo": 6131,
+      "Hurto": 5460,
+      "Lesiones": 795,
+      "Homicidios": 13,
+      "Amenazas": 693,
+      "Vialidad": 823
+    },
+    {
+      "mes": 4,
+      "total": 13518,
+      "Robo": 5961,
+      "Hurto": 5384,
+      "Lesiones": 710,
+      "Homicidios": 10,
+      "Amenazas": 619,
+      "Vialidad": 834
+    },
+    {
+      "mes": 5,
+      "total": 13383,
+      "Robo": 5813,
+      "Hurto": 5380,
+      "Lesiones": 685,
+      "Homicidios": 10,
+      "Amenazas": 572,
+      "Vialidad": 923
+    },
+    {
+      "mes": 6,
+      "total": 12874,
+      "Robo": 5554,
+      "Hurto": 5236,
+      "Lesiones": 693,
+      "Homicidios": 4,
+      "Amenazas": 583,
+      "Vialidad": 804
+    },
+    {
+      "mes": 7,
+      "total": 12968,
+      "Robo": 5702,
+      "Hurto": 5145,
+      "Lesiones": 666,
+      "Homicidios": 3,
+      "Amenazas": 556,
+      "Vialidad": 896
+    },
+    {
+      "mes": 8,
+      "total": 12708,
+      "Robo": 5526,
+      "Hurto": 4924,
+      "Lesiones": 735,
+      "Homicidios": 5,
+      "Amenazas": 599,
+      "Vialidad": 919
+    },
+    {
+      "mes": 9,
+      "total": 12307,
+      "Robo": 5135,
+      "Hurto": 4792,
+      "Lesiones": 843,
+      "Homicidios": 6,
+      "Amenazas": 633,
+      "Vialidad": 898
+    },
+    {
+      "mes": 10,
+      "total": 12941,
+      "Robo": 5214,
+      "Hurto": 5138,
+      "Lesiones": 891,
+      "Homicidios": 3,
+      "Amenazas": 696,
+      "Vialidad": 999
+    },
+    {
+      "mes": 11,
+      "total": 13645,
+      "Robo": 5451,
+      "Hurto": 5615,
+      "Lesiones": 930,
+      "Homicidios": 5,
+      "Amenazas": 673,
+      "Vialidad": 971
+    },
+    {
+      "mes": 12,
+      "total": 13361,
+      "Robo": 5370,
+      "Hurto": 5385,
+      "Lesiones": 870,
+      "Homicidios": 7,
+      "Amenazas": 646,
+      "Vialidad": 1083
+    }
+  ],
+  "por_hora_2024": [
+    {
+      "hora": 0,
+      "total": 5119
+    },
+    {
+      "hora": 1,
+      "total": 3604
+    },
+    {
+      "hora": 2,
+      "total": 3002
+    },
+    {
+      "hora": 3,
+      "total": 2947
+    },
+    {
+      "hora": 4,
+      "total": 3014
+    },
+    {
+      "hora": 5,
+      "total": 3633
+    },
+    {
+      "hora": 6,
+      "total": 5043
+    },
+    {
+      "hora": 7,
+      "total": 7785
+    },
+    {
+      "hora": 8,
+      "total": 8210
+    },
+    {
+      "hora": 9,
+      "total": 7527
+    },
+    {
+      "hora": 10,
+      "total": 7574
+    },
+    {
+      "hora": 11,
+      "total": 6638
+    },
+    {
+      "hora": 12,
+      "total": 8191
+    },
+    {
+      "hora": 13,
+      "total": 6812
+    },
+    {
+      "hora": 14,
+      "total": 7331
+    },
+    {
+      "hora": 15,
+      "total": 7586
+    },
+    {
+      "hora": 16,
+      "total": 7987
+    },
+    {
+      "hora": 17,
+      "total": 8638
+    },
+    {
+      "hora": 18,
+      "total": 8924
+    },
+    {
+      "hora": 19,
+      "total": 8345
+    },
+    {
+      "hora": 20,
+      "total": 8676
+    },
+    {
+      "hora": 21,
+      "total": 8156
+    },
+    {
+      "hora": 22,
+      "total": 7402
+    },
+    {
+      "hora": 23,
+      "total": 6647
+    }
+  ],
+  "uso_arma_pct_2024": 5.3,
+  "uso_moto_pct_2024": 3.6,
+  "evolucion_por_comuna": {
+    "1": {
+      "2022": 18927,
+      "2023": 20141,
+      "2024": 20819
+    },
+    "2": {
+      "2022": 6327,
+      "2023": 6961,
+      "2024": 6690
+    },
+    "3": {
+      "2022": 11814,
+      "2023": 12355,
+      "2024": 12532
+    },
+    "4": {
+      "2022": 12190,
+      "2023": 13753,
+      "2024": 14239
+    },
+    "5": {
+      "2022": 7240,
+      "2023": 7864,
+      "2024": 8029
+    },
+    "6": {
+      "2022": 6032,
+      "2023": 6514,
+      "2024": 6863
+    },
+    "7": {
+      "2022": 10921,
+      "2023": 11318,
+      "2024": 12496
+    },
+    "8": {
+      "2022": 9190,
+      "2023": 10252,
+      "2024": 10008
+    },
+    "9": {
+      "2022": 8059,
+      "2023": 9254,
+      "2024": 8428
+    },
+    "10": {
+      "2022": 6477,
+      "2023": 7248,
+      "2024": 7368
+    },
+    "11": {
+      "2022": 6318,
+      "2023": 7593,
+      "2024": 7650
+    },
+    "12": {
+      "2022": 6949,
+      "2023": 7444,
+      "2024": 7769
+    },
+    "13": {
+      "2022": 7974,
+      "2023": 9016,
+      "2024": 9175
+    },
+    "14": {
+      "2022": 11885,
+      "2023": 13047,
+      "2024": 12794
+    },
+    "15": {
+      "2022": 8222,
+      "2023": 9979,
+      "2024": 10056
+    }
+  }
+}

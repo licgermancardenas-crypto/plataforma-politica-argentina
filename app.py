@@ -60,6 +60,7 @@ with st.sidebar:
     - 📈 Economía & Indicadores
     - 🏙 CABA – Capital Federal
     - 🏛 Legisladores CABA
+    - 🔴 Seguridad CABA
     """)
     st.markdown("---")
     st.markdown("**Fuentes de datos**")
