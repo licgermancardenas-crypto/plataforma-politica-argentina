@@ -11,3 +11,8 @@ __pycache__/
 argentinadatos_api.json
 dashboard /
 .claude/
+# CSVs crudos grandes (>50MB) – procesados en data/*.json
+data/defunciones_2022.csv
+data/ruido_diurno.csv
+data/ruido_nocturno.csv
+data/gcba_raw/

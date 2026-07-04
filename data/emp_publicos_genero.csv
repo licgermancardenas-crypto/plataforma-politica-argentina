@@ -1,0 +1,99 @@
+grupo;jerarquia;varones;mujeres;identidad_no_binaria;fecha_actualizacion
+autoridades superiores;Jefe De Gobierno;1.00;0.00;0.00;1/4/2026
+autoridades superiores;Vicejefe de Gobierno;0.00;1.00;0.00;1/4/2026
+autoridades superiores;Secretario;0.86;0.14;0.00;1/4/2026
+autoridades superiores;Ministro;0.77;0.23;0.00;1/4/2026
+autoridades superiores;Gerente General Sindicatura;0.50;0.50;0.00;1/4/2026
+autoridades superiores;Titular Del Organismo;1.00;0.00;0.00;1/4/2026
+autoridades superiores;Subsecretario;0.70;0.30;0.00;1/4/2026
+autoridades superiores;Subdirector General De La A.G.I.P.;0.45;0.55;0.00;1/4/2026
+autoridades superiores;Director General;0.57;0.43;0.00;1/4/2026
+autoridades superiores;Auditor Interno;0.52;0.48;0.00;1/4/2026
+autoridades superiores;Miembro De Junta Comunal;0.57;0.43;0.00;1/4/2026
+autoridades superiores;Otros;0.45;0.55;0.00;1/4/2026
+Carrera Gerencial;Gerente Operativo;0.51;0.49;0.00;1/4/2026
+Carrera Gerencial;Subgerente Operativo;0.48;0.52;0.00;1/4/2026
+Carrera de la Administración Pública;Profesional;0.38;0.62;0.00;1/4/2026
+Carrera de la Administración Pública;Técnica;0.52;0.48;0.00;1/4/2026
+Carrera de la Administración Pública;General;0.49;0.51;0.00;1/4/2026
+Carrera de la Administración Pública;Otros;0.58;0.42;0.00;1/4/2026
+Carrera Profesional Hospitalaria;Director;0.74;0.26;0.00;1/4/2026
+Carrera Profesional Hospitalaria;Subdirector;0.53;0.47;0.00;1/4/2026
+Carrera Profesional Hospitalaria;Jefe De Departamento;0.49;0.51;0.00;1/4/2026
+Carrera Profesional Hospitalaria;Jefe De Division;0.42;0.58;0.00;1/4/2026
+Carrera Profesional Hospitalaria;Jefe De Seccion;0.34;0.66;0.00;1/4/2026
+Carrera Profesional Hospitalaria;Jefe De Unidad ;0.52;0.48;0.00;1/4/2026
+Carrera Profesional Hospitalaria;Otros;0.31;0.69;0.00;1/4/2026
+Carrera Profesional de Enfermeria;Enfermero Profesional;0.26;0.74;0.00;1/4/2026
+Carrera Profesional de Enfermeria;Auxiliar De Enfermeria;0.40;0.60;0.00;1/4/2026
+Carrera Profesional de Enfermeria;Licenciado En Enfermeria;0.20;0.80;0.00;1/4/2026
+Carrera Profesional de Enfermeria;Licenciado En Enfermería;0.22;0.78;0.00;1/4/2026
+Especialidades técnico-profesionales de la salud;Licenciado De La Salud;0.23;0.77;0.00;1/4/2026
+Especialidades técnico-profesionales de la salud;Auxiliar De La Salud;0.41;0.59;0.00;1/4/2026
+Especialidades técnico-profesionales de la salud;Técnico De La Salud;0.24;0.76;0.00;1/4/2026
+Especialidades técnico-profesionales de la salud;Otros;0.18;0.82;0.00;1/4/2026
+RESIDENTES;1Er. Año Basica;0.23;0.77;0.00;1/4/2026
+RESIDENTES;1Er. Año Post-Basica;0.27;0.73;0.00;1/4/2026
+RESIDENTES;2Do. Año Basica;0.24;0.75;0.00;1/4/2026
+RESIDENTES;2Do. Año Post-Basica;0.27;0.73;0.00;1/4/2026
+RESIDENTES;3Er. Año Post-Basica;0.22;0.78;0.00;1/4/2026
+RESIDENTES;3Ro. Y 4To. Año Basica;0.24;0.76;0.00;1/4/2026
+RESIDENTES;Instructor (Con Otro Cargo) / Instructor (Sin Otro Cargo);0.25;0.75;0.00;1/4/2026
+RESIDENTES;Jefe De Residentes;0.25;0.75;0.00;1/4/2026
+Planta Transitoria;Planta Transitoria;0.52;0.48;0.00;1/4/2026
+Docentes;Docentes;0.18;0.82;0.00;1/4/2026
+Instituto Superior de la Seguridad Pública;Director;1.00;0.00;0.00;1/4/2026
+Instituto Superior de la Seguridad Pública;Vicedirector;1.00;0.00;0.00;1/4/2026
+Instituto Superior de la Seguridad Pública;Senior (A/B/C/D/E);0.44;0.56;0.00;1/4/2026
+Instituto Superior de la Seguridad Pública;Auxiliar Administrativo ( 1°/2°/3°/4°/5°);0.59;0.41;0.00;1/4/2026
+Instituto Superior de la Seguridad Pública;Profesor Titular;0.64;0.36;0.00;1/4/2026
+Instituto Superior de la Seguridad Pública;Profesor Asociado;0.66;0.34;0.00;1/4/2026
+Instituto Superior de la Seguridad Pública;Investigador/ Investigador Senior;0.48;0.52;0.00;1/4/2026
+Instituto Superior de la Seguridad Pública;Profesor Adjunto (A/B/C/D/E/F/G/H);0.61;0.39;0.00;1/4/2026
+Instituto Superior de la Seguridad Pública;Cadete;0.57;0.43;0.00;1/4/2026
+Instituto Superior de la Seguridad Pública;Cadete Externo;0.20;0.80;0.00;1/4/2026
+Instituto Superior de la Seguridad Pública;Jefe De Trabajos Prácticos;0.43;0.57;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Bombero;Bombero Calificado;0.73;0.27;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Bombero;Bombero Superior;0.72;0.28;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Bombero;Capitán;1.00;0.00;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Bombero;Comandante;0.83;0.17;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Bombero;Comandante General;0.80;0.20;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Bombero;Comisario;1.00;0.00;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Bombero;Inspector;0.95;0.05;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Bombero;Comandante Director;1.00;0.00;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Bombero;Jefe Del Cuerpo De Bomberos;1.00;0.00;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Bombero;Oficial;0.65;0.35;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Bombero;Oficial Mayor;0.83;0.17;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Bombero;Oficial Primero;0.81;0.19;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Bombero;Principal;0.88;0.13;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Bombero;Subcomandante;0.86;0.14;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Bombero;Subcomisario;1.00;0.00;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Bombero;Subteniente;0.77;0.23;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Bombero;Teniente;0.95;0.05;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Bombero;Comisario Inspector;1.00;0.00;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Civil;Nivel A;0.68;0.32;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Civil;Nivel B;0.50;0.49;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Civil;Nivel C;0.45;0.48;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Civil;Nivel D;0.50;0.48;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Civil;Nivel E;0.27;0.64;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Civil;Nivel F;0.37;0.63;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Civil;Nivel G;0.35;0.65;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Civil;Nivel H;0.35;0.65;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Civil;Nivel I;0.34;0.66;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Civil;Nivel J;0.35;0.65;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Oficial;Bombero Calificado;1.00;0.00;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Oficial;Comisario;0.83;0.17;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Oficial;Inspector;0.78;0.22;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Oficial;Oficial;0.53;0.47;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Oficial;Oficial Mayor;0.74;0.26;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Oficial;Oficial Primero;0.67;0.32;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Oficial;Principal;0.76;0.23;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Oficial;Subcomisario;0.82;0.16;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Oficial;Comisario General;0.82;0.18;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Oficial;Comisario Inspector;0.89;0.11;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Oficial;Comisario Mayor;0.91;0.09;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Oficial;Jefe;1.00;0.00;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Oficial;Oficial 2º Gaos;1.00;0.00;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Oficial;Oficial Ayudante;0.67;0.33;0.00;1/4/2026
+Jefatura Policia de la Ciudad - Oficial;Subjefe;0.00;1.00;0.00;1/4/2026
+Programa Especialistas Profesionales (PEP);;0.27;0.73;0.00;1/4/2026
