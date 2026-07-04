@@ -289,9 +289,11 @@ bounds_index = build_bounds_index()
 # SESSION STATE
 # ═══════════════════════════════════════════════════════════════════════════
 if 'zoom_target' not in st.session_state:
-    st.session_state.zoom_target   = None  # zoom vía búsqueda
+    st.session_state.zoom_target   = None
 if 'selected_muni' not in st.session_state:
-    st.session_state.selected_muni = None  # info panel vía clic en mapa
+    st.session_state.selected_muni = None
+if 'tile_choice' not in st.session_state:
+    st.session_state.tile_choice   = '🌑 Dark (OSINT)'
 if 'map_center' not in st.session_state:
     st.session_state.map_center = [-36.5, -60.0]
 if 'map_zoom' not in st.session_state:
@@ -366,6 +368,23 @@ with st.sidebar:
         show_disputes = st.checkbox("Resaltar disputados (<3pp)", True)
         show_radios = st.checkbox("Radios censales 2022", False,
                                   help="Muestra los radios del municipio seleccionado")
+        st.markdown("<div style='font-size:.72rem;color:#475569;margin-top:8px;margin-bottom:4px;'>🗺 Mapa base</div>", unsafe_allow_html=True)
+        TILES = {
+            '🌑 Dark (OSINT)':       'CartoDB.DarkMatter',
+            '⬜ Claro (calles)':     'CartoDB.Positron',
+            '🗺 OpenStreetMap':      'OpenStreetMap',
+            '🛰 Satélite (Esri)':    'satellite',
+            '🏙 Esri Calles':        'esri_streets',
+            '📍 IGN Argentina':      'ign',
+        }
+        tile_choice = st.radio(
+            "", list(TILES.keys()),
+            index=list(TILES.keys()).index(st.session_state.tile_choice),
+            label_visibility="collapsed",
+        )
+        if tile_choice != st.session_state.tile_choice:
+            st.session_state.tile_choice = tile_choice
+            st.rerun()
 
     if st.button("🔄 Resetear", use_container_width=True):
         st.session_state.zoom_target   = None
@@ -556,7 +575,16 @@ def make_popup(props):
 # ═══════════════════════════════════════════════════════════════════════════
 # CONSTRUIR MAPA FOLIUM
 # ═══════════════════════════════════════════════════════════════════════════
-def build_map(visible_munis_tuple, capa_mode, show_labels_, show_disputes_, center=None, zoom=7, radios_gj=None, fit_bounds=None, zoom_target=None):
+TILE_LAYERS = {
+    'CartoDB.DarkMatter': lambda m: folium.TileLayer('CartoDB.DarkMatter', attr='© CartoDB', max_zoom=19).add_to(m),
+    'CartoDB.Positron':   lambda m: folium.TileLayer('CartoDB.Positron',   attr='© CartoDB', max_zoom=19).add_to(m),
+    'OpenStreetMap':      lambda m: folium.TileLayer('OpenStreetMap',      attr='© OpenStreetMap contributors', max_zoom=19).add_to(m),
+    'satellite':          lambda m: folium.TileLayer(tiles='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', attr='© Esri', max_zoom=19).add_to(m),
+    'esri_streets':       lambda m: folium.TileLayer(tiles='https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', attr='© Esri', max_zoom=19).add_to(m),
+    'ign':                lambda m: folium.TileLayer(tiles='https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/capabaseargenmap@EPSG:3857@png/{z}/{x}/{y}.png', attr='© IGN Argentina', max_zoom=18, tms=True).add_to(m),
+}
+
+def build_map(visible_munis_tuple, capa_mode, show_labels_, show_disputes_, center=None, zoom=7, radios_gj=None, fit_bounds=None, zoom_target=None, tile_key='CartoDB.DarkMatter'):
     visible = set(visible_munis_tuple)
 
     m = folium.Map(
@@ -569,44 +597,8 @@ def build_map(visible_munis_tuple, capa_mode, show_labels_, show_disputes_, cent
     if fit_bounds:
         m.fit_bounds(fit_bounds, padding=(40, 40))
 
-    # Base tiles
-    folium.TileLayer(
-        'CartoDB.DarkMatter',
-        name='🌑 Dark (OSINT)',
-        attr='© CartoDB',
-        max_zoom=19,
-    ).add_to(m)
-    folium.TileLayer(
-        'CartoDB.Positron',
-        name='⬜ Claro (calles)',
-        attr='© CartoDB',
-        max_zoom=19,
-    ).add_to(m)
-    folium.TileLayer(
-        'OpenStreetMap',
-        name='🗺 OpenStreetMap',
-        attr='© OpenStreetMap contributors',
-        max_zoom=19,
-    ).add_to(m)
-    folium.TileLayer(
-        tiles='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-        name='🛰 Satélite (Esri)',
-        attr='Tiles © Esri — Maxar, Earthstar Geographics',
-        max_zoom=19,
-    ).add_to(m)
-    folium.TileLayer(
-        tiles='https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
-        name='🏙 Esri Calles',
-        attr='Tiles © Esri',
-        max_zoom=19,
-    ).add_to(m)
-    folium.TileLayer(
-        tiles='https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/capabaseargenmap@EPSG:3857@png/{z}/{x}/{y}.png',
-        name='📍 IGN Argentina (manzanas)',
-        attr='© IGN Argentina',
-        max_zoom=18,
-        tms=True,
-    ).add_to(m)
+    # Mapa base elegido desde el sidebar
+    TILE_LAYERS.get(tile_key, TILE_LAYERS['CartoDB.DarkMatter'])(m)
 
     Fullscreen(position='topleft').add_to(m)
     MiniMap(tile_layer='CartoDB.DarkMatter', toggle_display=True, position='bottomright', width=130, height=90).add_to(m)
@@ -722,7 +714,6 @@ def build_map(visible_munis_tuple, capa_mode, show_labels_, show_disputes_, cent
         ).add_to(layer_radios)
         layer_radios.add_to(m)
 
-    folium.LayerControl(position='topright', collapsed=False).add_to(m)
     DoubleClickZoom().add_to(m)   # doble clic → zoom al polígono (client-side JS)
 
     return m
@@ -736,6 +727,7 @@ with st.spinner("Renderizando mapa..."):
 
     zoom_bounds = bounds_index.get(zoom_target) if zoom_target else None
 
+    tile_key = TILES.get(st.session_state.tile_choice, 'CartoDB.DarkMatter')
     folium_map = build_map(
         tuple(sorted(visible_munis)),
         capa,
@@ -746,6 +738,7 @@ with st.spinner("Renderizando mapa..."):
         radios_gj=radios_data,
         fit_bounds=zoom_bounds,
         zoom_target=zoom_target,
+        tile_key=tile_key,
     )
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -756,7 +749,7 @@ map_result = st_folium(
     width="100%",
     height=920,
     returned_objects=["last_object_clicked_popup"],
-    key=f"map_{capa}_{tuple(sorted(visible_munis))}_{show_labels}_{show_disputes}_{show_radios}_{zoom_target}",
+    key=f"map_{capa}_{tuple(sorted(visible_munis))}_{show_labels}_{show_disputes}_{show_radios}_{zoom_target}_{tile_key}",
 )
 
 # Extraer municipio del popup clickeado (data-muni ya está en make_popup)
