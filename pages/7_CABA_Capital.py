@@ -27,6 +27,8 @@ st.markdown("""
 [data-testid="stSidebar"] .stSelectbox label { color:#94A3B8 !important; }
 [data-testid="stHeader"]           { background:transparent; }
 div[data-testid="stMetric"]        { background:#0A1628; border:1px solid #1E293B; border-radius:8px; padding:12px 16px; }
+[data-testid="stStatusWidget"]     { display: none !important; }
+[data-stale="true"]                { opacity: 1 !important; transition: none !important; }
 </style>
 """, unsafe_allow_html=True)
 

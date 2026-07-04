@@ -135,6 +135,13 @@ iframe[title*="streamlit_folium"] {
 .cat-competitivo { background:#78350F; color:#FCD34D; }
 .cat-dominio     { background:#1E3A5F; color:#93C5FD; }
 .cat-fortaleza   { background:#14532D; color:#86EFAC; }
+
+/* ═══════════════════════════════════════════
+   SUPRIMIR DIM DE RERUN
+═══════════════════════════════════════════ */
+[data-testid="stStatusWidget"] { display: none !important; }
+[data-stale="true"]            { opacity: 1 !important; transition: none !important; }
+.stApp > div[data-stale="true"]{ opacity: 1 !important; }
 </style>
 """, unsafe_allow_html=True)
 
