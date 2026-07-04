@@ -62,6 +62,7 @@ with st.sidebar:
     - 🏛 Legisladores CABA
     - 🔴 Seguridad CABA
     - 📐 Socioeconomía CABA
+    - 💰 Presupuesto CABA
     """)
     st.markdown("---")
     st.markdown("**Fuentes de datos**")

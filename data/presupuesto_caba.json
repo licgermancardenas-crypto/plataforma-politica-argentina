@@ -1,0 +1,706 @@
+{
+  "periodo": "2024 – Trimestre 2",
+  "total_devengado_b": 3275.4,
+  "total_vigente_b": 10411.6,
+  "total_sancion_b": 5893.1,
+  "ejecucion_pct": 31.5,
+  "por_jurisdiccion": [
+    {
+      "nombre": "Ministerio De Educación",
+      "devengado": 706.5,
+      "vigente": 1729.0,
+      "sancion": 1002.0
+    },
+    {
+      "nombre": "Ministerio De Salud",
+      "devengado": 588.5,
+      "vigente": 1578.8,
+      "sancion": 855.3
+    },
+    {
+      "nombre": "Ministerio De Seguridad",
+      "devengado": 437.7,
+      "vigente": 1174.6,
+      "sancion": 667.8
+    },
+    {
+      "nombre": "Ministerio De Espacio Publico E Higiene Urbana",
+      "devengado": 409.8,
+      "vigente": 1235.8,
+      "sancion": 682.7
+    },
+    {
+      "nombre": "Min.Infraestructura",
+      "devengado": 182.8,
+      "vigente": 700.5,
+      "sancion": 394.9
+    },
+    {
+      "nombre": "Ministerio De Desarrollo Humano Y Hábitat",
+      "devengado": 177.9,
+      "vigente": 626.8,
+      "sancion": 363.0
+    },
+    {
+      "nombre": "Jefatura De Gobierno",
+      "devengado": 134.2,
+      "vigente": 422.7,
+      "sancion": 213.7
+    },
+    {
+      "nombre": "Ministerio Publico",
+      "devengado": 108.1,
+      "vigente": 290.6,
+      "sancion": 163.9
+    },
+    {
+      "nombre": "Servicio De La Deuda Publica",
+      "devengado": 103.2,
+      "vigente": 453.4,
+      "sancion": 229.2
+    },
+    {
+      "nombre": "Consejo De La Magistratura",
+      "devengado": 79.7,
+      "vigente": 268.9,
+      "sancion": 148.0
+    },
+    {
+      "nombre": "Obligaciones A Cargo Del Tesoro",
+      "devengado": 61.5,
+      "vigente": 1060.1,
+      "sancion": 677.5
+    },
+    {
+      "nombre": "Ministerio De Hacienda Y Finanzas",
+      "devengado": 59.2,
+      "vigente": 147.5,
+      "sancion": 83.9
+    },
+    {
+      "nombre": "Ministerio De Cultura",
+      "devengado": 56.4,
+      "vigente": 169.3,
+      "sancion": 98.0
+    },
+    {
+      "nombre": "Jefatura De Gabinete De Ministros",
+      "devengado": 50.7,
+      "vigente": 143.2,
+      "sancion": 77.0
+    },
+    {
+      "nombre": "Ministerio De Justicia",
+      "devengado": 29.8,
+      "vigente": 94.5,
+      "sancion": 54.8
+    },
+    {
+      "nombre": "Legislatura De La Ciudad De Buenos Aires",
+      "devengado": 29.3,
+      "vigente": 119.1,
+      "sancion": 69.1
+    },
+    {
+      "nombre": "Ministerio De Desarrollo Económico",
+      "devengado": 18.0,
+      "vigente": 63.3,
+      "sancion": 34.9
+    },
+    {
+      "nombre": "Defensoria Del Pueblo",
+      "devengado": 12.5,
+      "vigente": 50.0,
+      "sancion": 29.0
+    },
+    {
+      "nombre": "Procuracion General  De La Ciudad",
+      "devengado": 10.7,
+      "vigente": 23.5,
+      "sancion": 13.5
+    },
+    {
+      "nombre": "Auditoria General De La Ciudad De Buenos Aires",
+      "devengado": 9.7,
+      "vigente": 29.6,
+      "sancion": 17.2
+    },
+    {
+      "nombre": "Tribunal Superior De Justicia",
+      "devengado": 7.3,
+      "vigente": 25.8,
+      "sancion": 14.9
+    },
+    {
+      "nombre": "Sindicatura General De La Ciudad De Buenos Aires",
+      "devengado": 2.1,
+      "vigente": 4.8,
+      "sancion": 2.7
+    }
+  ],
+  "por_funcion": [
+    {
+      "nombre": "Educación",
+      "devengado": 724.7,
+      "vigente": 2008.2
+    },
+    {
+      "nombre": "Salud",
+      "devengado": 588.6,
+      "vigente": 1745.4
+    },
+    {
+      "nombre": "Seguridad Interior",
+      "devengado": 509.9,
+      "vigente": 1563.3
+    },
+    {
+      "nombre": "Promoción Y Acción Social",
+      "devengado": 282.1,
+      "vigente": 1049.1
+    },
+    {
+      "nombre": "Servicios Urbanos",
+      "devengado": 251.0,
+      "vigente": 839.0
+    },
+    {
+      "nombre": "Judicial",
+      "devengado": 208.5,
+      "vigente": 627.3
+    },
+    {
+      "nombre": "Vivienda Y Urbanismo",
+      "devengado": 148.4,
+      "vigente": 505.4
+    },
+    {
+      "nombre": "Dirección Ejecutiva",
+      "devengado": 101.6,
+      "vigente": 280.7
+    },
+    {
+      "nombre": "Gastos No Clasificados",
+      "devengado": 81.2,
+      "vigente": 198.6
+    },
+    {
+      "nombre": "Deuda Pública - Intereses Y Gastos",
+      "devengado": 64.9,
+      "vigente": 342.6
+    },
+    {
+      "nombre": "Ecología",
+      "devengado": 58.8,
+      "vigente": 215.4
+    },
+    {
+      "nombre": "Cultura",
+      "devengado": 51.5,
+      "vigente": 169.9
+    },
+    {
+      "nombre": "Administración Fiscal",
+      "devengado": 47.8,
+      "vigente": 136.0
+    },
+    {
+      "nombre": "Transporte",
+      "devengado": 35.4,
+      "vigente": 186.0
+    },
+    {
+      "nombre": "Control De La Gestión",
+      "devengado": 33.6,
+      "vigente": 116.4
+    },
+    {
+      "nombre": "Legislativa",
+      "devengado": 29.3,
+      "vigente": 119.1
+    },
+    {
+      "nombre": "Trabajo",
+      "devengado": 25.7,
+      "vigente": 100.4
+    },
+    {
+      "nombre": "Agua Potable Y Alcantarillado",
+      "devengado": 14.6,
+      "vigente": 141.1
+    },
+    {
+      "nombre": "Turismo",
+      "devengado": 12.2,
+      "vigente": 29.1
+    },
+    {
+      "nombre": "Industria Y Comercio",
+      "devengado": 5.5,
+      "vigente": 38.7
+    }
+  ],
+  "por_inciso": [
+    {
+      "nombre": "Gastos En Personal",
+      "devengado": 1656.5
+    },
+    {
+      "nombre": "Servicios No Personales",
+      "devengado": 716.8
+    },
+    {
+      "nombre": "Transferencias",
+      "devengado": 425.5
+    },
+    {
+      "nombre": "Bienes De Uso",
+      "devengado": 218.4
+    },
+    {
+      "nombre": "Bienes De Consumo",
+      "devengado": 109.3
+    },
+    {
+      "nombre": "Servicio De La Deuda Y Disminución De Otros Pasivos",
+      "devengado": 103.2
+    },
+    {
+      "nombre": "Activos Financieros",
+      "devengado": 45.8
+    },
+    {
+      "nombre": "Otros Gastos",
+      "devengado": 0.0
+    }
+  ],
+  "corriente_vs_capital": {
+    "Aplicaciones Financieras": 81.2,
+    "Gastos Corrientes": 2827.7,
+    "Gastos De Capital": 366.5
+  },
+  "por_comuna": [
+    {
+      "comuna": 1,
+      "devengado_b": 999.1,
+      "vigente_b": 3593.04,
+      "per_capita": 4850203.0
+    },
+    {
+      "comuna": 4,
+      "devengado_b": 948.95,
+      "vigente_b": 2768.96,
+      "per_capita": 4348094.0
+    },
+    {
+      "comuna": 3,
+      "devengado_b": 255.76,
+      "vigente_b": 652.93,
+      "per_capita": 1363772.0
+    },
+    {
+      "comuna": 8,
+      "devengado_b": 194.63,
+      "vigente_b": 623.25,
+      "per_capita": 1039497.0
+    },
+    {
+      "comuna": 7,
+      "devengado_b": 126.2,
+      "vigente_b": 308.55,
+      "per_capita": 572099.0
+    },
+    {
+      "comuna": 14,
+      "devengado_b": 114.5,
+      "vigente_b": 372.38,
+      "per_capita": 506711.0
+    },
+    {
+      "comuna": 6,
+      "devengado_b": 109.74,
+      "vigente_b": 246.28,
+      "per_capita": 623241.0
+    },
+    {
+      "comuna": 9,
+      "devengado_b": 99.93,
+      "vigente_b": 306.05,
+      "per_capita": 617655.0
+    },
+    {
+      "comuna": 2,
+      "devengado_b": 80.65,
+      "vigente_b": 172.25,
+      "per_capita": 511015.0
+    },
+    {
+      "comuna": 12,
+      "devengado_b": 73.96,
+      "vigente_b": 277.43,
+      "per_capita": 369592.0
+    },
+    {
+      "comuna": 15,
+      "devengado_b": 60.45,
+      "vigente_b": 227.95,
+      "per_capita": 331118.0
+    },
+    {
+      "comuna": 11,
+      "devengado_b": 57.66,
+      "vigente_b": 173.51,
+      "per_capita": 303754.0
+    },
+    {
+      "comuna": 13,
+      "devengado_b": 51.29,
+      "vigente_b": 263.52,
+      "per_capita": 221705.0
+    },
+    {
+      "comuna": 10,
+      "devengado_b": 48.01,
+      "vigente_b": 167.67,
+      "per_capita": 289193.0
+    },
+    {
+      "comuna": 5,
+      "devengado_b": 43.11,
+      "vigente_b": 150.8,
+      "per_capita": 240805.0
+    }
+  ],
+  "por_funcion_por_comuna": {
+    "1": [
+      {
+        "funcion": "Judicial",
+        "devengado_b": 196.77
+      },
+      {
+        "funcion": "Educación",
+        "devengado_b": 171.82
+      },
+      {
+        "funcion": "Servicios Urbanos",
+        "devengado_b": 88.69
+      },
+      {
+        "funcion": "Gastos No Clasificados",
+        "devengado_b": 81.19
+      },
+      {
+        "funcion": "Vivienda Y Urbanismo",
+        "devengado_b": 76.35
+      }
+    ],
+    "2": [
+      {
+        "funcion": "Servicios Urbanos",
+        "devengado_b": 32.15
+      },
+      {
+        "funcion": "Salud",
+        "devengado_b": 25.6
+      },
+      {
+        "funcion": "Educación",
+        "devengado_b": 17.79
+      },
+      {
+        "funcion": "Vivienda Y Urbanismo",
+        "devengado_b": 1.68
+      },
+      {
+        "funcion": "Cultura",
+        "devengado_b": 1.4
+      }
+    ],
+    "3": [
+      {
+        "funcion": "Promoción Y Acción Social",
+        "devengado_b": 105.96
+      },
+      {
+        "funcion": "Educación",
+        "devengado_b": 44.83
+      },
+      {
+        "funcion": "Salud",
+        "devengado_b": 37.66
+      },
+      {
+        "funcion": "Servicios Urbanos",
+        "devengado_b": 29.53
+      },
+      {
+        "funcion": "Seguridad Interior",
+        "devengado_b": 15.56
+      }
+    ],
+    "4": [
+      {
+        "funcion": "Seguridad Interior",
+        "devengado_b": 433.94
+      },
+      {
+        "funcion": "Salud",
+        "devengado_b": 204.39
+      },
+      {
+        "funcion": "Educación",
+        "devengado_b": 82.46
+      },
+      {
+        "funcion": "Promoción Y Acción Social",
+        "devengado_b": 61.18
+      },
+      {
+        "funcion": "Dirección Ejecutiva",
+        "devengado_b": 59.66
+      }
+    ],
+    "5": [
+      {
+        "funcion": "Educación",
+        "devengado_b": 33.37
+      },
+      {
+        "funcion": "Vivienda Y Urbanismo",
+        "devengado_b": 3.7
+      },
+      {
+        "funcion": "Salud",
+        "devengado_b": 3.47
+      },
+      {
+        "funcion": "Promoción Y Acción Social",
+        "devengado_b": 0.9
+      },
+      {
+        "funcion": "Ecología",
+        "devengado_b": 0.64
+      }
+    ],
+    "6": [
+      {
+        "funcion": "Salud",
+        "devengado_b": 48.22
+      },
+      {
+        "funcion": "Educación",
+        "devengado_b": 33.56
+      },
+      {
+        "funcion": "Servicios Urbanos",
+        "devengado_b": 24.1
+      },
+      {
+        "funcion": "Ecología",
+        "devengado_b": 1.3
+      },
+      {
+        "funcion": "Vivienda Y Urbanismo",
+        "devengado_b": 1.22
+      }
+    ],
+    "7": [
+      {
+        "funcion": "Salud",
+        "devengado_b": 53.88
+      },
+      {
+        "funcion": "Educación",
+        "devengado_b": 37.1
+      },
+      {
+        "funcion": "Servicios Urbanos",
+        "devengado_b": 25.19
+      },
+      {
+        "funcion": "Vivienda Y Urbanismo",
+        "devengado_b": 3.64
+      },
+      {
+        "funcion": "Promoción Y Acción Social",
+        "devengado_b": 2.76
+      }
+    ],
+    "8": [
+      {
+        "funcion": "Promoción Y Acción Social",
+        "devengado_b": 88.27
+      },
+      {
+        "funcion": "Educación",
+        "devengado_b": 52.61
+      },
+      {
+        "funcion": "Vivienda Y Urbanismo",
+        "devengado_b": 23.44
+      },
+      {
+        "funcion": "Seguridad Interior",
+        "devengado_b": 8.1
+      },
+      {
+        "funcion": "Salud",
+        "devengado_b": 7.74
+      }
+    ],
+    "9": [
+      {
+        "funcion": "Salud",
+        "devengado_b": 44.24
+      },
+      {
+        "funcion": "Educación",
+        "devengado_b": 41.4
+      },
+      {
+        "funcion": "Dirección Ejecutiva",
+        "devengado_b": 4.07
+      },
+      {
+        "funcion": "Seguridad Interior",
+        "devengado_b": 3.46
+      },
+      {
+        "funcion": "Ecología",
+        "devengado_b": 2.74
+      }
+    ],
+    "10": [
+      {
+        "funcion": "Educación",
+        "devengado_b": 39.14
+      },
+      {
+        "funcion": "Vivienda Y Urbanismo",
+        "devengado_b": 2.51
+      },
+      {
+        "funcion": "Ecología",
+        "devengado_b": 2.12
+      },
+      {
+        "funcion": "Agua Potable Y Alcantarillado",
+        "devengado_b": 1.93
+      },
+      {
+        "funcion": "Promoción Y Acción Social",
+        "devengado_b": 1.02
+      }
+    ],
+    "11": [
+      {
+        "funcion": "Educación",
+        "devengado_b": 35.56
+      },
+      {
+        "funcion": "Salud",
+        "devengado_b": 12.79
+      },
+      {
+        "funcion": "Ecología",
+        "devengado_b": 3.58
+      },
+      {
+        "funcion": "Servicios Urbanos",
+        "devengado_b": 2.6
+      },
+      {
+        "funcion": "Vivienda Y Urbanismo",
+        "devengado_b": 1.11
+      }
+    ],
+    "12": [
+      {
+        "funcion": "Educación",
+        "devengado_b": 35.36
+      },
+      {
+        "funcion": "Salud",
+        "devengado_b": 23.85
+      },
+      {
+        "funcion": "Ecología",
+        "devengado_b": 6.8
+      },
+      {
+        "funcion": "Servicios Urbanos",
+        "devengado_b": 3.5
+      },
+      {
+        "funcion": "Vivienda Y Urbanismo",
+        "devengado_b": 1.74
+      }
+    ],
+    "13": [
+      {
+        "funcion": "Educación",
+        "devengado_b": 32.68
+      },
+      {
+        "funcion": "Salud",
+        "devengado_b": 5.33
+      },
+      {
+        "funcion": "Vivienda Y Urbanismo",
+        "devengado_b": 4.3
+      },
+      {
+        "funcion": "Ecología",
+        "devengado_b": 3.7
+      },
+      {
+        "funcion": "Servicios Urbanos",
+        "devengado_b": 2.56
+      }
+    ],
+    "14": [
+      {
+        "funcion": "Salud",
+        "devengado_b": 65.55
+      },
+      {
+        "funcion": "Educación",
+        "devengado_b": 36.59
+      },
+      {
+        "funcion": "Ecología",
+        "devengado_b": 5.66
+      },
+      {
+        "funcion": "Servicios Urbanos",
+        "devengado_b": 2.56
+      },
+      {
+        "funcion": "Vivienda Y Urbanismo",
+        "devengado_b": 1.69
+      }
+    ],
+    "15": [
+      {
+        "funcion": "Educación",
+        "devengado_b": 28.88
+      },
+      {
+        "funcion": "Salud",
+        "devengado_b": 19.19
+      },
+      {
+        "funcion": "Servicios Urbanos",
+        "devengado_b": 6.14
+      },
+      {
+        "funcion": "Ecología",
+        "devengado_b": 1.55
+      },
+      {
+        "funcion": "Vivienda Y Urbanismo",
+        "devengado_b": 1.53
+      }
+    ]
+  }
+}
