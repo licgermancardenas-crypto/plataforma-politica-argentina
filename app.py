@@ -63,6 +63,7 @@ with st.sidebar:
     - 🔴 Seguridad CABA
     - 📐 Socioeconomía CABA
     - 💰 Presupuesto CABA
+    - 🛍 Mapa Comercial CABA
     """)
     st.markdown("---")
     st.markdown("**Fuentes de datos**")
