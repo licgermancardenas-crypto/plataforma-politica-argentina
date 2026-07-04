@@ -3,7 +3,7 @@ Página 21 – OSINT · Red Política PBA
 Investigation board: intendentes, secretarios, concejales y legisladores
 Pirámide jerárquica con fotos + red interactiva de poder
 """
-import json, os, urllib.parse
+import json, os, urllib.parse, hashlib, base64, functools
 import streamlit as st
 import streamlit.components.v1 as components
 import plotly.graph_objects as go
@@ -79,14 +79,62 @@ def hex_bloque(bloque):
             return v
     return "#64748B"
 
-def dicebear_url(name, style="personas"):
-    seed = urllib.parse.quote(name.strip())
-    return f"https://api.dicebear.com/9.x/{style}/png?seed={seed}&size=200&backgroundColor=070b14"
+# Paletas de variación determinísticas
+_SKINS  = ["#C68642","#F1C27D","#D4956A","#8D5524","#E8BEAC","#FDBCB4","#A0522D"]
+_EYES   = ["#1A1A2E","#2C3E50","#3D2B1F","#1B4332","#0D1B2A","#2D1B69"]
 
-def avatar_url(name, bloque):
-    color = hex_bloque(bloque).lstrip("#")
-    encoded = urllib.parse.quote(name)
-    return f"https://ui-avatars.com/api/?name={encoded}&background={color}&color=ffffff&size=200&bold=true&font-size=0.38&rounded=true"
+@functools.lru_cache(maxsize=5000)
+def svg_avatar(name: str, bloque: str = "Otro") -> str:
+    """Avatar SVG embebido como data URI. Sin requests externos. 100% confiable."""
+    color = hex_bloque(bloque)
+    h = int(hashlib.md5(name.encode()).hexdigest()[:8], 16)
+
+    # Iniciales
+    words = [w for w in name.split() if w and w[0].isalpha()]
+    initials = "".join(w[0].upper() for w in words[:2]) or "?"
+
+    skin  = _SKINS[h % len(_SKINS)]
+    eye_c = _EYES[(h >> 8) % len(_EYES)]
+    fw    = 15 + (h >> 12) % 5       # ancho cara 15-19
+    fh    = 18 + (h >> 16) % 6       # alto cara  18-23
+    hy    = 36 + (h >> 20) % 8       # posición vertical cabeza
+    smile = "Q 50 {y} 56 {x}".format(y=hy+12, x=hy+7)
+
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<defs>
+  <radialGradient id="g{h}" cx="50%" cy="30%" r="70%">
+    <stop offset="0%" stop-color="{color}55"/>
+    <stop offset="100%" stop-color="#060A12"/>
+  </radialGradient>
+  <clipPath id="cc{h}"><circle cx="50" cy="50" r="50"/></clipPath>
+</defs>
+<circle cx="50" cy="50" r="50" fill="url(#g{h})"/>
+<path d="M8 100 Q20 74 34 70 L50 80 L66 70 Q80 74 92 100Z"
+      fill="{color}55" clip-path="url(#cc{h})"/>
+<path d="M40 70 L50 80 L60 70 L56 65 L50 72 L44 65Z"
+      fill="{color}88" clip-path="url(#cc{h})"/>
+<rect x="44" y="{hy+fh-3}" width="12" height="10" rx="4"
+      fill="{skin}" clip-path="url(#cc{h})"/>
+<ellipse cx="50" cy="{hy}" rx="{fw}" ry="{fh}" fill="{skin}" clip-path="url(#cc{h})"/>
+<ellipse cx="50" cy="{hy-fh+5}" rx="{fw}" ry="{fh//2+4}" fill="{color}CC" clip-path="url(#cc{h})"/>
+<ellipse cx="43" cy="{hy-4}" rx="4" ry="3.2" fill="{eye_c}" clip-path="url(#cc{h})"/>
+<ellipse cx="57" cy="{hy-4}" rx="4" ry="3.2" fill="{eye_c}" clip-path="url(#cc{h})"/>
+<circle cx="44" cy="{hy-5}" r="1" fill="white" opacity=".8" clip-path="url(#cc{h})"/>
+<circle cx="58" cy="{hy-5}" r="1" fill="white" opacity=".8" clip-path="url(#cc{h})"/>
+<path d="M48.5 {hy+2} Q50 {hy+6} 51.5 {hy+2}"
+      stroke="{skin}" stroke-width="1.1" fill="none" opacity=".5"
+      stroke-linecap="round" clip-path="url(#cc{h})"/>
+<path d="M44 {hy+8} Q50 {hy+13} 56 {hy+8}"
+      stroke="#7A4828" stroke-width="1.4" fill="none" opacity=".65"
+      stroke-linecap="round" clip-path="url(#cc{h})"/>
+<rect x="34" y="84" width="32" height="13" rx="4" fill="#060A12" opacity=".88"/>
+<text x="50" y="94" font-family="Arial Black,Arial" font-size="8.5" font-weight="900"
+      fill="{color}" text-anchor="middle">{initials}</text>
+<circle cx="50" cy="50" r="48.5" fill="none" stroke="{color}" stroke-width="2.5" opacity=".9"/>
+<circle cx="50" cy="50" r="44"   fill="none" stroke="{color}" stroke-width=".6"  opacity=".3"/>
+</svg>"""
+    b64 = base64.b64encode(svg.encode()).decode()
+    return f"data:image/svg+xml;base64,{b64}"
 
 # ── Carga de datos ─────────────────────────────────────────────────────
 @st.cache_data(show_spinner=False)
@@ -290,7 +338,7 @@ with tab1:
             size = min(35 + padron / 30000, 72)
             intend = row.get("intendente", "?")
             n_secs = len(secs_data.get(mun, []))
-            foto = fotos_ints.get(mun) or dicebear_url(intend)
+            foto = fotos_ints.get(mun) or svg_avatar(intend, row.get("bloque",""))
 
             title = (f"<div style='font-family:Courier New;min-width:220px;'>"
                      f"<b style='color:{color};font-size:.95rem;'>{mun}</b><br>"
@@ -315,7 +363,7 @@ with tab1:
             # Secretarios ocultos con foto DiceBear
             for s in secs_data.get(mun, []):
                 sid = f"sec__{mun}__{s['nombre']}"
-                sfoto = dicebear_url(s["nombre"])
+                sfoto = svg_avatar(s["nombre"], "Otro")
                 net.add_node(sid, label=s["nombre"][:22],
                              size=22, shape="circularImage", image=sfoto,
                              color={"border":"#3B82F6",
@@ -335,7 +383,7 @@ with tab1:
             for c in [x for x in conc_data if x["municipio"] == mun][:7]:
                 cid = f"conc__{mun}__{c['nombre']}"
                 bc = hex_bloque(c.get("bloque",""))
-                cfoto = dicebear_url(c["nombre"])
+                cfoto = svg_avatar(c["nombre"], c.get("bloque",""))
                 net.add_node(cid, label=c["nombre"][:22],
                              size=18, shape="circularImage", image=cfoto,
                              color={"border":bc,
@@ -357,7 +405,7 @@ with tab1:
             for row in leg_data.get("diputados_prov", []):
                 nid = f"dip_{row['nombre']}"
                 color = hex_bloque(row.get("bloque",""))
-                lfoto = dicebear_url(row["nombre"], style="notionists-neutral")
+                lfoto = svg_avatar(row["nombre"], row.get("bloque",""))
                 sec_leg = next((s for s in df_int["seccion_nombre"].unique()
                                 if str(row.get("seccion","")) in s), None)
                 net.add_node(nid, label=row["nombre"][:20], size=14,
@@ -454,7 +502,7 @@ with tab2:
         ph = {"sm": 64, "md": 80, "lg": 110}[size]
         fn = {"sm": 9, "md": 10, "lg": 13}[size]
         rn = {"sm": 8, "md": 9, "lg": 11}[size]
-        fallback = avatar_url(name, "Otro")
+        fallback = svg_avatar(name, "Otro")
         extra_html = ""
         for line in (extra_lines or []):
             extra_html += f"<div style='color:#94A3B8;font-size:{rn}px;margin-top:2px;text-align:center;font-family:Courier New;'>{line}</div>"
@@ -489,7 +537,7 @@ with tab2:
         seccion   = int_row.get("seccion_nombre", "")
         n_secs    = len(mun_secs)
         n_conc    = len(mun_conc)
-        foto_int  = fotos_ints.get(mun) or dicebear_url(intend)
+        foto_int  = fotos_ints.get(mun) or svg_avatar(intend, row.get("bloque",""))
 
         # ── Intendente card ──
         int_card = make_person_card(
@@ -507,7 +555,7 @@ with tab2:
         # ── Secretarios cards ──
         sec_cards = ""
         for s in mun_secs:
-            sfoto = dicebear_url(s["nombre"])
+            sfoto = svg_avatar(s["nombre"], "Otro")
             sec_cards += make_person_card(
                 s["nombre"], s["cargo"][:30], sfoto, "#3B82F6",
                 size="md"
@@ -523,7 +571,7 @@ with tab2:
             bc = hex_bloque(blq)
             cards_blq = ""
             for c in concejales:
-                cfoto = dicebear_url(c["nombre"])
+                cfoto = svg_avatar(c["nombre"], c.get("bloque",""))
                 cards_blq += make_person_card(
                     c["nombre"], f"#{c.get('n_orden','')} · {c.get('partido','')[:20]}",
                     cfoto, bc, size="sm"
@@ -680,7 +728,7 @@ body {{
         for i, (_, r) in enumerate(gba.iterrows()):
             c = cols[i % 4]
             color = hex_bloque(r["bloque"])
-            foto = fotos_ints.get(r["municipio"]) or dicebear_url(r["intendente"])
+            foto = fotos_ints.get(r["municipio"]) or svg_avatar(r["intendente"], r.get("bloque",""))
             with c:
                 st.markdown(f"""
                 <div style='background:#0D1425;border:1px solid {color}44;border-top:3px solid {color};
@@ -814,7 +862,7 @@ with tab4:
                                     "partido":r.get("bloque",""),
                                     "extra":f"Secc. {r.get('seccion_nombre','')} · {r.get('ganador_pct','')}% · Padrón {r.get('padron',0):,}",
                                     "color":hex_bloque(r.get("bloque","")),
-                                    "foto": fotos_ints.get(r["municipio"]) or dicebear_url(r["intendente"])})
+                                    "foto": fotos_ints.get(r["municipio"]) or svg_avatar(r["intendente"], r.get("bloque",""))})
 
         if tipo_busq in ("Todos","Secretarios"):
             for mun, sl in secs_data.items():
@@ -823,7 +871,7 @@ with tab4:
                         results.append({"tipo":"SECRETARIO","nombre":s["nombre"],
                                         "cargo":s["cargo"],"municipio":mun,
                                         "partido":"","extra":"",
-                                        "color":"#3B82F6","foto":dicebear_url(s["nombre"])})
+                                        "color":"#3B82F6","foto":svg_avatar(s["nombre"], "Otro")})
 
         if tipo_busq in ("Todos","Concejales"):
             for c in conc_data:
@@ -836,7 +884,7 @@ with tab4:
                                     "partido":c.get("bloque",""),
                                     "extra":f"{c.get('seccion_nombre','')} · Partido: {c.get('partido','')}",
                                     "color":hex_bloque(c.get("bloque","")),
-                                    "foto":dicebear_url(c["nombre"])})
+                                    "foto":svg_avatar(c["nombre"], c.get("bloque",""))})
 
         if tipo_busq in ("Todos","Legisladores"):
             for df_l, tipo_l, rol in [(df_dp,"DIP. PROV.","Diputado Prov."),
@@ -850,7 +898,7 @@ with tab4:
                                             "partido":r.get("bloque",""),
                                             "extra":f"Secc. {r.get('seccion','')}",
                                             "color":hex_bloque(r.get("bloque","")),
-                                            "foto":dicebear_url(r["nombre"],"notionists-neutral")})
+                                            "foto":svg_avatar(r["nombre"],r.get("bloque",""))})
 
         st.markdown(f"<div style='font-family:monospace;color:#00FF88;font-size:.8rem;margin-bottom:12px;'>"
                     f"▶ {len(results)} resultados</div>", unsafe_allow_html=True)
