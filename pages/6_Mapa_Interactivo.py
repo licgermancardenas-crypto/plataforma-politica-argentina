@@ -282,6 +282,8 @@ bounds_index = build_bounds_index()
 # ═══════════════════════════════════════════════════════════════════════════
 if 'selected_muni' not in st.session_state:
     st.session_state.selected_muni = None
+if 'zoomed_muni' not in st.session_state:
+    st.session_state.zoomed_muni = None
 if 'map_center' not in st.session_state:
     st.session_state.map_center = [-36.5, -60.0]
 if 'map_zoom' not in st.session_state:
@@ -318,6 +320,7 @@ with st.sidebar:
     )
     if muni_search and muni_search != st.session_state.selected_muni:
         st.session_state.selected_muni = muni_search
+        st.session_state.zoomed_muni   = muni_search  # búsqueda = zoom inmediato
         st.rerun()
 
     st.markdown("---")
@@ -358,8 +361,9 @@ with st.sidebar:
 
     if st.button("🔄 Resetear", use_container_width=True):
         st.session_state.selected_muni = None
-        st.session_state.map_center = [-36.5, -60.0]
-        st.session_state.map_zoom = 7
+        st.session_state.zoomed_muni   = None
+        st.session_state.map_center    = [-36.5, -60.0]
+        st.session_state.map_zoom      = 7
         st.rerun()
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -544,7 +548,7 @@ def make_popup(props):
 # ═══════════════════════════════════════════════════════════════════════════
 # CONSTRUIR MAPA FOLIUM
 # ═══════════════════════════════════════════════════════════════════════════
-def build_map(visible_munis_tuple, capa_mode, show_labels_, show_disputes_, center=None, zoom=7, radios_gj=None, fit_bounds=None):
+def build_map(visible_munis_tuple, capa_mode, show_labels_, show_disputes_, center=None, zoom=7, radios_gj=None, fit_bounds=None, selected_muni=None):
     visible = set(visible_munis_tuple)
 
     m = folium.Map(
@@ -612,19 +616,31 @@ def build_map(visible_munis_tuple, capa_mode, show_labels_, show_disputes_, cent
             continue
 
         is_visible = muni in visible
+        is_sel     = (muni == selected_muni)
+
         fill  = get_color(props, capa_mode) if is_visible else '#1E293B'
-        opac  = 0.75 if is_visible else 0.18
-        w_    = 1.2 if is_visible else 0.5
+        # Opacidad y borde según estado
+        if is_sel:
+            opac, w_, border = 0.92, 3.5, '#FFFFFF'
+        elif is_visible:
+            opac, w_, border = 0.68, 1.0, '#FFFFFF44'
+        else:
+            opac, w_, border = 0.15, 0.4, '#1E293B'
+
+        hint = ""
+        if is_sel:
+            hint = "<br><span style='font-size:.65rem;color:#6EE7B7;'>🔍 Clic de nuevo para hacer zoom</span>"
         popup = folium.Popup(make_popup(props), max_width=340) if is_visible else None
         tip   = folium.Tooltip(
             f"<b style='color:{'#F1F5F9' if is_visible else '#475569'};'>{muni}</b>"
             + (f"<br><span style='color:{fill};font-size:.78rem;'>{props.get('bloque','')}</span>"
-               + f"<br><span style='font-size:.72rem;color:#94A3B8;'>Margen: {props.get('margen',0):.1f}pp</span>" if is_visible else ""),
+               + f"<br><span style='font-size:.72rem;color:#94A3B8;'>Margen: {props.get('margen',0):.1f}pp</span>"
+               + hint if is_visible else ""),
             sticky=True,
         )
 
-        geo_style  = {'fillColor': fill, 'color': BORDER_CLR, 'weight': w_, 'fillOpacity': opac}
-        geo_hi     = {'weight': 3, 'color': '#F1F5F9', 'fillOpacity': 0.9}
+        geo_style  = {'fillColor': fill, 'color': border, 'weight': w_, 'fillOpacity': opac}
+        geo_hi     = {'weight': 4 if is_sel else 3, 'color': '#FFFFFF', 'fillOpacity': 0.95}
         disp_style = {'fillColor': 'transparent', 'color': '#EF4444',
                       'weight': 2.5, 'fillOpacity': 0, 'dashArray': '5 4'}
 
@@ -705,12 +721,14 @@ def build_map(visible_munis_tuple, capa_mode, show_labels_, show_disputes_, cent
 
 with st.spinner("Renderizando mapa..."):
     radios_data = None
-    sel_muni = st.session_state.selected_muni
+    sel_muni    = st.session_state.selected_muni
+    zoomed_muni = st.session_state.zoomed_muni
     if show_radios and sel_muni:
         with st.spinner(f"Cargando radios de {sel_muni}..."):
             radios_data = load_radios_by_partido(sel_muni)
 
-    sel_bounds = bounds_index.get(sel_muni) if sel_muni else None
+    # Zoom solo cuando el municipio está "zoomeado" (2do clic o búsqueda)
+    zoom_bounds = bounds_index.get(zoomed_muni) if zoomed_muni else None
 
     folium_map = build_map(
         tuple(sorted(visible_munis)),
@@ -720,7 +738,8 @@ with st.spinner("Renderizando mapa..."):
         center=st.session_state.map_center,
         zoom=st.session_state.map_zoom,
         radios_gj=radios_data,
-        fit_bounds=sel_bounds,
+        fit_bounds=zoom_bounds,
+        selected_muni=sel_muni,
     )
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -731,19 +750,28 @@ map_result = st_folium(
     width="100%",
     height=920,
     returned_objects=["last_object_clicked_popup", "last_object_clicked"],
-    key=f"map_{capa}_{tuple(sorted(visible_munis))}_{show_labels}_{show_disputes}_{show_radios}_{sel_muni}",
+    key=f"map_{capa}_{tuple(sorted(visible_munis))}_{show_labels}_{show_disputes}_{show_radios}_{sel_muni}_{zoomed_muni}",
 )
 
 # Detectar municipio clickeado via lat/lng → point-in-polygon
+# 1er clic → seleccionar (panel), 2do clic mismo municipio → zoom
 clicked = map_result.get("last_object_clicked") if map_result else None
 if clicked and isinstance(clicked, dict):
     lat = clicked.get("lat")
     lng = clicked.get("lng")
     if lat is not None and lng is not None:
         found = find_muni_by_point(lat, lng)
-        if found and found != st.session_state.selected_muni:
-            st.session_state.selected_muni = found
-            st.rerun()
+        if found:
+            if found == st.session_state.selected_muni:
+                # 2do clic → zoom
+                if st.session_state.zoomed_muni != found:
+                    st.session_state.zoomed_muni = found
+                    st.rerun()
+            else:
+                # 1er clic → solo seleccionar, sin zoom
+                st.session_state.selected_muni = found
+                st.session_state.zoomed_muni   = None
+                st.rerun()
 
 # ─────────────────────────────────────────────
 # PANEL INTELIGENCIA → SIDEBAR
@@ -752,10 +780,16 @@ with st.sidebar:
     sel = st.session_state.selected_muni
     sel_row = df_all[df_all['municipio'] == sel].iloc[0] if sel and sel in df_all['municipio'].values else None
 
-    st.markdown("""
+    zoom_hint = ""
+    if sel_row is not None and st.session_state.zoomed_muni != st.session_state.selected_muni:
+        zoom_hint = "<span style='background:#6EE7B722;color:#6EE7B7;border:1px solid #6EE7B755;padding:1px 7px;border-radius:10px;font-size:.6rem;font-weight:700;margin-left:6px;'>clic de nuevo = zoom</span>"
+
+    st.markdown(f"""
     <div style="font-size:.58rem;font-weight:700;color:#1E3A5F;text-transform:uppercase;
                 letter-spacing:.14em;margin:10px 0 5px;padding-bottom:4px;
-                border-bottom:1px solid #0F172A;">▸ Municipio seleccionado</div>
+                border-bottom:1px solid #0F172A;display:flex;align-items:center;gap:4px;">
+      ▸ Municipio seleccionado {zoom_hint}
+    </div>
     """, unsafe_allow_html=True)
 
     if sel_row is None:
@@ -764,7 +798,7 @@ with st.sidebar:
                     padding:20px 14px;text-align:center;">
           <div style="font-size:1.6rem;opacity:.25;margin-bottom:6px;">🗺</div>
           <div style="color:#334155;font-size:.73rem;line-height:1.6;">
-            Hacé click en un municipio<br>o buscalo arriba
+            1er clic → ver info del municipio<br>2do clic → zoom al territorio
           </div>
         </div>""", unsafe_allow_html=True)
     else:

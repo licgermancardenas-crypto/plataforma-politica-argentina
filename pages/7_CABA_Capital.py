@@ -89,6 +89,8 @@ def margin_color(ganador, margen):
 # ── Session State ─────────────────────────────────────────────────────
 if "sel_comuna" not in st.session_state:
     st.session_state.sel_comuna = None
+if "zoomed_comuna" not in st.session_state:
+    st.session_state.zoomed_comuna = None
 if "map_center" not in st.session_state:
     st.session_state.map_center = [-34.615, -58.443]
 if "map_zoom" not in st.session_state:
@@ -105,11 +107,13 @@ with st.sidebar:
     if sel_label != "— ver todas —":
         num = int(sel_label.split()[1])
         if st.session_state.sel_comuna != num:
-            st.session_state.sel_comuna = num
+            st.session_state.sel_comuna   = num
+            st.session_state.zoomed_comuna = num  # búsqueda = zoom inmediato
             st.rerun()
     elif sel_label == "— ver todas —" and st.session_state.sel_comuna is not None:
         if st.button("Limpiar selección"):
-            st.session_state.sel_comuna = None
+            st.session_state.sel_comuna    = None
+            st.session_state.zoomed_comuna = None
             st.rerun()
 
     st.markdown("---")
@@ -263,8 +267,9 @@ for col, val, label, color, icon in kpi_cards:
 st.markdown("<div style='height:16px'></div>", unsafe_allow_html=True)
 
 # ── Map ────────────────────────────────────────────────────────────────
-sel = st.session_state.sel_comuna
-fit_bounds = bounds_index.get(sel) if sel else None
+sel         = st.session_state.sel_comuna
+zoomed      = st.session_state.zoomed_comuna
+fit_bounds  = bounds_index.get(zoomed) if zoomed else None
 
 m = folium.Map(
     location=st.session_state.map_center,
@@ -289,19 +294,26 @@ for feat in geojson_data["features"]:
     margen  = e.get("margen", 0)
 
     is_sel  = (c_id == sel)
+    is_zoom = (c_id == zoomed)
     fill    = margin_color(ganador, margen)
     border  = PARTIDO_COLOR.get(ganador, "#64748B")
-    opacity = 0.8 if is_sel else 0.55
-    weight  = 3 if is_sel else 1.5
+    if is_zoom:
+        opacity, weight, border = 0.92, 4.0, "#FFFFFF"
+    elif is_sel:
+        opacity, weight, border = 0.85, 3.0, "#FFFFFFCC"
+    else:
+        opacity, weight = 0.55, 1.5
 
     short  = PARTIDO_SHORT.get(ganador, ganador)
     short2 = PARTIDO_SHORT.get(e.get("segundo",""), e.get("segundo",""))
+    zoom_hint = "<br><span style='color:#6EE7B7;font-size:.65rem;'>🔍 Clic de nuevo para hacer zoom</span>" if is_sel and not is_zoom else ""
     tooltip = (
         f"<b>Comuna {c_id:02d}</b><br>"
         f"{props.get('barrios','')}<br><br>"
         f"<b>🏆 {short}</b> {e.get('pct_ganador',0):.1f}%<br>"
         f"2° {short2} {e.get('pct_segundo',0):.1f}%<br>"
         f"Margen: {margen:.1f} pp"
+        + zoom_hint
     )
 
     folium.GeoJson(
@@ -333,10 +345,10 @@ map_result = st_folium(
     height=620,
     use_container_width=True,
     returned_objects=["last_object_clicked_tooltip"],
-    key=f"caba_map_{sel}",
+    key=f"caba_map_{sel}_{zoomed}",
 )
 
-# Handle click
+# Handle click: 1er clic = info, 2do clic = zoom
 if map_result and map_result.get("last_object_clicked_tooltip"):
     tip = map_result["last_object_clicked_tooltip"]
     if tip and "Comuna" in tip:
@@ -344,9 +356,16 @@ if map_result and map_result.get("last_object_clicked_tooltip"):
             import re
             match = re.search(r"Comuna (\d+)", tip)
             if match:
-                clicked = int(match.group(1))
-                if clicked != st.session_state.sel_comuna:
-                    st.session_state.sel_comuna = clicked
+                clicked_id = int(match.group(1))
+                if clicked_id == st.session_state.sel_comuna:
+                    # 2do clic → zoom
+                    if st.session_state.zoomed_comuna != clicked_id:
+                        st.session_state.zoomed_comuna = clicked_id
+                        st.rerun()
+                else:
+                    # 1er clic → solo info, sin zoom
+                    st.session_state.sel_comuna    = clicked_id
+                    st.session_state.zoomed_comuna = None
                     st.rerun()
         except Exception:
             pass
