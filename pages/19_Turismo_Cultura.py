@@ -137,9 +137,9 @@ with tab1:
         m = folium.Map(location=[-34.615, -58.437], zoom_start=12, tiles="CartoDB positron")
         cluster_ec = MarkerCluster(name="Espacios culturales").add_to(m)
 
-        for e in d["espacios_culturales_map"]:
-            if e["tipo"] not in sel_tipos:
-                continue
+        # Filter BEFORE building markers — never iterate all 1392 items
+        espacios_filtrados = [e for e in d["espacios_culturales_map"] if e["tipo"] in sel_tipos][:600]
+        for e in espacios_filtrados:
             color = TIPO_COLOR.get(e["tipo"], "#888")
             folium.CircleMarker(
                 location=[e["lat"], e["lon"]],
@@ -151,9 +151,10 @@ with tab1:
         if mostrar_aloj:
             cluster_al = MarkerCluster(name="Alojamientos").add_to(m)
             for a in d["alojamientos"]:
-                folium.Marker(
+                folium.CircleMarker(
                     location=[a["lat"], a["lon"]],
-                    icon=folium.Icon(color="orange", icon="home", prefix="fa"),
+                    radius=6,
+                    color="#F59E0B", fill=True, fill_color="#F59E0B", fill_opacity=0.85,
                     tooltip=f"<b>{a['nombre']}</b><br>{a['tipo']}<br>{a['direccion']}",
                 ).add_to(cluster_al)
 
@@ -167,7 +168,8 @@ with tab1:
                 ).add_to(m)
 
         folium.LayerControl().add_to(m)
-        st_folium(m, width=None, height=500, returned_objects=[])
+        st_folium(m, width=None, height=500, returned_objects=[],
+                  key=f"turismo_map_{'_'.join(sorted(sel_tipos)[:3])}")
 
     st.markdown("---")
     col_et, col_eb = st.columns(2)
@@ -410,7 +412,7 @@ with tab3:
                 color=AMBER, fill=True, fill_color=AMBER, fill_opacity=0.75,
                 tooltip=f"<b>{a['nombre']}</b><br>{a['tipo']}",
             ).add_to(m2)
-        st_folium(m2, width=None, height=380, returned_objects=[])
+        st_folium(m2, width=None, height=380, returned_objects=[], key="tur_aloj_map")
 
     with col_m2:
         st.markdown("#### Distribución de alojamientos")
@@ -485,7 +487,7 @@ with tab4:
                      f"{mu['autores']}<br>{mu['tecnica']}<br>"
                      f"{mu['barrio']} · {str(mu['anio']).split('.')[0]}"),
         ).add_to(cluster_mur)
-    st_folium(m3, width=None, height=440, returned_objects=[])
+    st_folium(m3, width=None, height=440, returned_objects=[], key="tur_murales_map")
     st.caption("Colores: Violeta=Cerámico · Rosa=Pintura Mural · Teal=Fresco · Naranja=Óleo · "
                "Azul=Bajorrelieve · Verde=Vitraux")
 

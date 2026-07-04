@@ -5,6 +5,7 @@ Fuente: data.buenosaires.gob.ar
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from core import loader
 
 import json
 import streamlit as st
@@ -47,13 +48,9 @@ def load_data():
     with open(os.path.join(DATA_DIR, "presupuesto_caba.json"), encoding="utf-8") as f:
         return json.load(f)
 
-@st.cache_data(show_spinner=False)
-def load_comunas():
-    with open(os.path.join(DATA_DIR, "comunas_caba.geojson"), encoding="utf-8") as f:
-        return json.load(f)
 
 data    = load_data()
-geojson = load_comunas()
+geojson = loader.get_comunas_geojson()
 
 df_jur  = pd.DataFrame(data["por_jurisdiccion"])
 df_fun  = pd.DataFrame(data["por_funcion"])

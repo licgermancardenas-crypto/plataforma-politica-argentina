@@ -93,6 +93,16 @@ def get_senadores_nac_df() -> pd.DataFrame:
     return pd.DataFrame(leg.get('senadores_nac', []))
 
 
+@st.cache_data(show_spinner=False)
+def get_comunas_geojson() -> dict:
+    """comunas_caba.geojson centralizado — compartido por todas las páginas CABA."""
+    path = os.path.join(DATA, 'comunas_caba.geojson')
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding='utf-8') as f:
+        return json.load(f)
+
+
 def bloque_counts(df: pd.DataFrame, col: str = 'bloque') -> pd.DataFrame:
     """Conteo de registros por bloque para gráficos."""
     counts = df[col].value_counts().reset_index()

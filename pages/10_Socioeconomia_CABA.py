@@ -5,6 +5,7 @@ Fuentes: GCBA Datos Abiertos · IVC · DGEyC · Censo INDEC 2010
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from core import loader
 
 import json
 import streamlit as st
@@ -47,18 +48,8 @@ def load_data():
     with open(os.path.join(DATA_DIR, "socioeconomia_caba.json"), encoding="utf-8") as f:
         return json.load(f)
 
-@st.cache_data(show_spinner=False)
-def load_comunas():
-    with open(os.path.join(DATA_DIR, "comunas_caba.geojson"), encoding="utf-8") as f:
-        return json.load(f)
-
-@st.cache_data(show_spinner=False)
-def load_elec():
-    with open(os.path.join(DATA_DIR, "comunas_caba.geojson"), encoding="utf-8") as f:
-        return json.load(f)
-
 data    = load_data()
-geojson = load_comunas()
+geojson = loader.get_comunas_geojson()
 df      = pd.DataFrame(data["por_comuna"])
 df_pob  = pd.DataFrame(data["pobreza_serie"])
 

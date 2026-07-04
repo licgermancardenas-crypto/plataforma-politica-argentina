@@ -3,6 +3,9 @@ Género & Violencia CABA – Página 18
 Fuentes: Sec. Igualdad de Género · DGEyC · Dirección Gral. de la Mujer · OVD CSJN
 """
 import json, os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from core import loader
 import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
@@ -19,13 +22,10 @@ def load():
     with open(os.path.join(BASE, "data", "genero_violencia_caba.json"), encoding="utf-8") as f:
         return json.load(f)
 
-@st.cache_data
-def load_geo():
-    with open(os.path.join(BASE, "data", "comunas_caba.geojson"), encoding="utf-8") as f:
-        return json.load(f)
+
 
 d   = load()
-geo = load_geo()
+geo = loader.get_comunas_geojson()
 
 PINK   = "#EC4899"
 ROSE   = "#BE185D"

@@ -4,6 +4,7 @@ Fuente: Datos Abiertos GCBA · Elecciones 2023
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from core import loader
 
 import json, re
 import streamlit as st
@@ -61,10 +62,6 @@ iframe                          { opacity: 1 !important; }
 # ── Datos ──────────────────────────────────────────────────────────────
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data")
 
-@st.cache_data(show_spinner=False)
-def load_comunas():
-    with open(os.path.join(DATA_DIR, "comunas_caba.geojson"), encoding="utf-8") as f:
-        return json.load(f)
 
 @st.cache_data(show_spinner=False)
 def load_elecciones():
@@ -101,7 +98,7 @@ def build_bounds_index(geojson):
             pass
     return idx
 
-geojson_data  = load_comunas()
+geojson_data  = loader.get_comunas_geojson()
 elec_list     = load_elecciones()
 elec_by_id    = {e["seccion_id"]: e for e in elec_list}
 bounds_index  = build_bounds_index(geojson_data)

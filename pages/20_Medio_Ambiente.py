@@ -110,7 +110,7 @@ with tab1:
                     icon_size=(36, 14),
                 ),
             ).add_to(m)
-        st_folium(m, width=520, height=340)
+        st_folium(m, width=520, height=340, returned_objects=[], key="ma_estaciones_map")
 
     with col_info:
         st.markdown("**Parámetros medidos**")
@@ -368,7 +368,7 @@ with tab3:
             fill_opacity=0.85,
             tooltip=f"<b>{pv['nombre']}</b><br>{pv['barrio']}<br><i>{pv['tipo']}</i>",
         ).add_to(mc_pv)
-    st_folium(m_pv, width=900, height=380)
+    st_folium(m_pv, width=900, height=380, returned_objects=[], key="ma_pv_map")
     st.caption(f"Total: {len(data['puntos_verdes'])} Puntos Verdes activos en CABA")
 
 # ════════════════════════════════════════════════════════════════════════

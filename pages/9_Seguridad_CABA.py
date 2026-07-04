@@ -5,6 +5,7 @@ Fuente: data.buenosaires.gob.ar · delitos_2024.csv (158.838 hechos)
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from core import loader
 
 import json
 import streamlit as st
@@ -47,13 +48,9 @@ def load_stats():
     with open(os.path.join(DATA_DIR, "delitos_caba_stats.json"), encoding="utf-8") as f:
         return json.load(f)
 
-@st.cache_data(show_spinner=False)
-def load_comunas():
-    with open(os.path.join(DATA_DIR, "comunas_caba.geojson"), encoding="utf-8") as f:
-        return json.load(f)
 
 stats     = load_stats()
-geojson   = load_comunas()
+geojson   = loader.get_comunas_geojson()
 df_com    = pd.DataFrame(stats["por_comuna"])
 df_mes    = pd.DataFrame(stats["por_mes_2024"])
 df_hora   = pd.DataFrame(stats["por_hora_2024"])

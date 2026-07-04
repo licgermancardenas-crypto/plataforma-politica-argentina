@@ -2,6 +2,21 @@
 headless = true
 enableCORS = false
 enableXsrfProtection = false
+maxUploadSize = 10
+# Disable file watcher — no hot reload overhead in production
+fileWatcherType = "none"
+
+[browser]
+gatherUsageStats = false
+serverAddress = "localhost"
+
+[client]
+showErrorDetails = false
+toolbarMode = "minimal"
+
+[runner]
+# Don't re-run on widget interaction if nothing changed
+fastReruns = true
 
 [theme]
 base = "dark"

@@ -3,6 +3,9 @@ Demografía CABA – Página 17
 Fuentes: DGEyC GCBA · Censo 2010 · Encuesta Anual Hogares · Registro Civil
 """
 import json, os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from core import loader
 import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
@@ -19,13 +22,10 @@ def load():
     with open(os.path.join(BASE, "data", "demografia_caba.json"), encoding="utf-8") as f:
         return json.load(f)
 
-@st.cache_data
-def load_geo():
-    with open(os.path.join(BASE, "data", "comunas_caba.geojson"), encoding="utf-8") as f:
-        return json.load(f)
+
 
 d   = load()
-geo = load_geo()
+geo = loader.get_comunas_geojson()
 
 ACCENT = "#A78BFA"   # violet
 ACCENT2 = "#7C3AED"
@@ -129,7 +129,7 @@ with tab1:
                 localize=True,
             ),
         ).add_to(m)
-        st_folium(m, width=None, height=440, returned_objects=[])
+        st_folium(m, width=None, height=440, returned_objects=[], key="demo_map")
 
     with col_r:
         st.markdown("#### Ranking comunas")
