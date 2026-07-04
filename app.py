@@ -68,6 +68,7 @@ with st.sidebar:
     - 📚 Educación & Calidad CABA
     - 🏗 Obras Públicas CABA
     - 🔍 Fiscalizaciones CABA
+    - 👥 Demografía CABA
     """)
     st.markdown("---")
     st.markdown("**Fuentes de datos**")
