@@ -70,6 +70,7 @@ with st.sidebar:
     - 🔍 Fiscalizaciones CABA
     - 👥 Demografía CABA
     - ♀ Género & Violencia CABA
+    - 🎭 Turismo & Cultura CABA
     """)
     st.markdown("---")
     st.markdown("**Fuentes de datos**")
