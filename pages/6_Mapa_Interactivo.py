@@ -12,8 +12,32 @@ import plotly.graph_objects as go
 import folium
 from folium.plugins import MiniMap, Fullscreen
 from streamlit_folium import st_folium
-from shapely.geometry import Point, shape
+from shapely.geometry import shape
+from branca.element import MacroElement
+from jinja2 import Template
 from core import loader
+
+# ── Plugin: zoom al polígono en doble clic (puro JavaScript / Leaflet) ──
+class DoubleClickZoom(MacroElement):
+    """Zoom animado a los bounds del polígono al hacer doble clic."""
+    _template = Template(u"""
+        {% macro script(this, kwargs) %}
+        (function () {
+            var map = {{ this._parent.get_name() }};
+            function bind(layer) {
+                if (layer.eachLayer) { layer.eachLayer(bind); }
+                else if (layer.getBounds) {
+                    layer.on('dblclick', function (e) {
+                        map.fitBounds(layer.getBounds(), {padding: [50, 50], animate: true});
+                        L.DomEvent.stopPropagation(e);
+                    });
+                }
+            }
+            map.eachLayer(bind);
+            map.on('layeradd', function (e) { bind(e.layer); });
+        })();
+        {% endmacro %}
+    """)
 
 st.set_page_config(
     page_title="Mapa Estratégico PBA",
@@ -235,33 +259,6 @@ def load_radios_by_partido(partido_nombre):
 with st.spinner("Cargando datos..."):
     geojson_data, df_all, conc_df, sec_dict = load_all()
 
-# Índice espacial: lista de (nombre, shapely_geometry) para point-in-polygon
-@st.cache_data(show_spinner=False)
-def build_spatial_index():
-    index = []
-    for feat in geojson_data['features']:
-        geom = feat.get('geometry')
-        if geom and geom['type'] in ('Polygon', 'MultiPolygon'):
-            try:
-                index.append((feat['properties']['municipio'], shape(geom)))
-            except Exception:
-                pass
-    return index
-
-spatial_index = build_spatial_index()
-
-def find_muni_by_point(lat, lng):
-    pt = Point(lng, lat)  # shapely usa (x=lng, y=lat)
-    for muni_name, geom in spatial_index:
-        if geom.contains(pt):
-            return muni_name
-    # Si no hay match exacto, buscar el más cercano (para puntos cerca del borde)
-    min_dist, closest = float('inf'), None
-    for muni_name, geom in spatial_index:
-        d = pt.distance(geom)
-        if d < min_dist:
-            min_dist, closest = d, muni_name
-    return closest if min_dist < 0.05 else None
 
 # ═══════════════════════════════════════════════════════════════════════════
 # ÍNDICE DE BOUNDS (para fit_bounds al seleccionar municipio)
@@ -287,10 +284,8 @@ bounds_index = build_bounds_index()
 # ═══════════════════════════════════════════════════════════════════════════
 # SESSION STATE
 # ═══════════════════════════════════════════════════════════════════════════
-if 'selected_muni' not in st.session_state:
-    st.session_state.selected_muni = None
-if 'zoomed_muni' not in st.session_state:
-    st.session_state.zoomed_muni = None
+if 'zoom_target' not in st.session_state:
+    st.session_state.zoom_target = None   # se setea solo desde la búsqueda
 if 'map_center' not in st.session_state:
     st.session_state.map_center = [-36.5, -60.0]
 if 'map_zoom' not in st.session_state:
@@ -325,9 +320,8 @@ with st.sidebar:
         label_visibility="collapsed",
         key="muni_search_box",
     )
-    if muni_search and muni_search != st.session_state.selected_muni:
-        st.session_state.selected_muni = muni_search
-        st.session_state.zoomed_muni   = muni_search  # búsqueda = zoom inmediato
+    if muni_search and muni_search != st.session_state.zoom_target:
+        st.session_state.zoom_target = muni_search
         st.rerun()
 
     st.markdown("---")
@@ -367,10 +361,9 @@ with st.sidebar:
                                   help="Muestra los radios del municipio seleccionado")
 
     if st.button("🔄 Resetear", use_container_width=True):
-        st.session_state.selected_muni = None
-        st.session_state.zoomed_muni   = None
-        st.session_state.map_center    = [-36.5, -60.0]
-        st.session_state.map_zoom      = 7
+        st.session_state.zoom_target = None
+        st.session_state.map_center  = [-36.5, -60.0]
+        st.session_state.map_zoom    = 7
         st.rerun()
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -555,7 +548,7 @@ def make_popup(props):
 # ═══════════════════════════════════════════════════════════════════════════
 # CONSTRUIR MAPA FOLIUM
 # ═══════════════════════════════════════════════════════════════════════════
-def build_map(visible_munis_tuple, capa_mode, show_labels_, show_disputes_, center=None, zoom=7, radios_gj=None, fit_bounds=None, zoomed_muni=None):
+def build_map(visible_munis_tuple, capa_mode, show_labels_, show_disputes_, center=None, zoom=7, radios_gj=None, fit_bounds=None, zoom_target=None):
     visible = set(visible_munis_tuple)
 
     m = folium.Map(
@@ -622,37 +615,31 @@ def build_map(visible_munis_tuple, capa_mode, show_labels_, show_disputes_, cent
         if not geom:
             continue
 
-        is_visible = muni in visible
-        is_zoomed  = (muni == zoomed_muni)
+        is_visible  = muni in visible
+        is_searched = (muni == zoom_target)
 
         fill = get_color(props, capa_mode) if is_visible else '#1E293B'
 
-        # Cuando hay zoom activo: solo ese municipio se marca, el resto se apaga
-        if zoomed_muni:
-            if is_zoomed:
-                opac, w_, border = 0.95, 4.0, '#FFFFFF'
-            elif is_visible:
-                opac, w_, border = 0.18, 0.5, '#FFFFFF22'
-            else:
-                opac, w_, border = 0.08, 0.3, '#1E293B'
+        # Todos los municipios visibles en igual opacidad
+        # Solo el buscado tiene borde blanco prominente
+        if is_searched:
+            opac, w_, border = 0.92, 3.5, '#FFFFFF'
+        elif is_visible:
+            opac, w_, border = 0.72, 0.8, '#FFFFFF44'
         else:
-            # Sin zoom: todos iguales, sin distinción
-            if is_visible:
-                opac, w_, border = 0.72, 1.0, '#FFFFFF55'
-            else:
-                opac, w_, border = 0.15, 0.4, '#1E293B'
+            opac, w_, border = 0.15, 0.4, '#1E293B'
 
         popup = folium.Popup(make_popup(props), max_width=340) if is_visible else None
         tip   = folium.Tooltip(
             f"<b style='color:{'#F1F5F9' if is_visible else '#475569'};'>{muni}</b>"
             + (f"<br><span style='color:{fill};font-size:.78rem;'>{props.get('bloque','')}</span>"
-               + f"<br><span style='font-size:.72rem;color:#94A3B8;'>Margen: {props.get('margen',0):.1f}pp</span>"
+               + f"<br><span style='font-size:.72rem;color:#94A3B8;'>Margen: {props.get('margen',0):.1f}pp — doble clic para zoom</span>"
                if is_visible else ""),
             sticky=True,
         )
 
         geo_style  = {'fillColor': fill, 'color': border, 'weight': w_, 'fillOpacity': opac}
-        geo_hi     = {'weight': 4, 'color': '#FFFFFF', 'fillOpacity': 0.95}
+        geo_hi     = {'weight': 3, 'color': '#FFFFFF', 'fillOpacity': 0.92}
         disp_style = {'fillColor': 'transparent', 'color': '#EF4444',
                       'weight': 2.5, 'fillOpacity': 0, 'dashArray': '5 4'}
 
@@ -728,19 +715,18 @@ def build_map(visible_munis_tuple, capa_mode, show_labels_, show_disputes_, cent
         layer_radios.add_to(m)
 
     folium.LayerControl(position='topright', collapsed=False).add_to(m)
+    DoubleClickZoom().add_to(m)   # doble clic → zoom al polígono (client-side JS)
 
     return m
 
 with st.spinner("Renderizando mapa..."):
+    zoom_target = st.session_state.zoom_target
     radios_data = None
-    sel_muni    = st.session_state.selected_muni
-    zoomed_muni = st.session_state.zoomed_muni
-    if show_radios and sel_muni:
-        with st.spinner(f"Cargando radios de {sel_muni}..."):
-            radios_data = load_radios_by_partido(sel_muni)
+    if show_radios and zoom_target:
+        with st.spinner(f"Cargando radios de {zoom_target}..."):
+            radios_data = load_radios_by_partido(zoom_target)
 
-    # Zoom solo cuando el municipio está "zoomeado" (2do clic o búsqueda)
-    zoom_bounds = bounds_index.get(zoomed_muni) if zoomed_muni else None
+    zoom_bounds = bounds_index.get(zoom_target) if zoom_target else None
 
     folium_map = build_map(
         tuple(sorted(visible_munis)),
@@ -751,7 +737,7 @@ with st.spinner("Renderizando mapa..."):
         zoom=st.session_state.map_zoom,
         radios_gj=radios_data,
         fit_bounds=zoom_bounds,
-        zoomed_muni=zoomed_muni,
+        zoom_target=zoom_target,
     )
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -761,55 +747,21 @@ map_result = st_folium(
     folium_map,
     width="100%",
     height=920,
-    returned_objects=["last_object_clicked", "center", "zoom"],
-    key=f"map_{capa}_{tuple(sorted(visible_munis))}_{show_labels}_{show_disputes}_{show_radios}_{zoomed_muni}",
+    returned_objects=[],   # sin rerun por clic — toda la interacción es JS/Folium
+    key=f"map_{capa}_{tuple(sorted(visible_munis))}_{show_labels}_{show_disputes}_{show_radios}_{zoom_target}",
 )
-
-# Guardar posición actual del mapa antes de rerun
-if map_result:
-    if map_result.get("center"):
-        c = map_result["center"]
-        st.session_state.map_center = [c["lat"], c["lng"]]
-    if map_result.get("zoom"):
-        st.session_state.map_zoom = map_result["zoom"]
-
-# Detectar clic via lat/lng → point-in-polygon
-# 1er clic → sidebar (mapa no cambia su key → no se re-renderiza)
-# 2do clic mismo municipio → zoom + resaltado exclusivo
-clicked = map_result.get("last_object_clicked") if map_result else None
-if clicked and isinstance(clicked, dict):
-    lat = clicked.get("lat")
-    lng = clicked.get("lng")
-    if lat is not None and lng is not None:
-        found = find_muni_by_point(lat, lng)
-        if found:
-            if found == st.session_state.selected_muni and st.session_state.zoomed_muni != found:
-                # 2do clic → zoom (cambia key del mapa → re-render con highlighting)
-                st.session_state.zoomed_muni = found
-                st.rerun()
-            elif found != st.session_state.selected_muni:
-                # 1er clic → solo actualiza sidebar (key del mapa NO cambia)
-                st.session_state.selected_muni = found
-                st.session_state.zoomed_muni   = None
-                st.rerun()
 
 # ─────────────────────────────────────────────
 # PANEL INTELIGENCIA → SIDEBAR
 # ─────────────────────────────────────────────
 with st.sidebar:
-    sel = st.session_state.selected_muni
+    sel = st.session_state.zoom_target
     sel_row = df_all[df_all['municipio'] == sel].iloc[0] if sel and sel in df_all['municipio'].values else None
 
-    zoom_hint = ""
-    if sel_row is not None and st.session_state.zoomed_muni != st.session_state.selected_muni:
-        zoom_hint = "<span style='background:#6EE7B722;color:#6EE7B7;border:1px solid #6EE7B755;padding:1px 7px;border-radius:10px;font-size:.6rem;font-weight:700;margin-left:6px;'>doble clic = zoom</span>"
-
-    st.markdown(f"""
+    st.markdown("""
     <div style="font-size:.58rem;font-weight:700;color:#1E3A5F;text-transform:uppercase;
                 letter-spacing:.14em;margin:10px 0 5px;padding-bottom:4px;
-                border-bottom:1px solid #0F172A;display:flex;align-items:center;gap:4px;">
-      ▸ Municipio seleccionado {zoom_hint}
-    </div>
+                border-bottom:1px solid #0F172A;">▸ Municipio</div>
     """, unsafe_allow_html=True)
 
     if sel_row is None:
@@ -818,7 +770,7 @@ with st.sidebar:
                     padding:20px 14px;text-align:center;">
           <div style="font-size:1.6rem;opacity:.25;margin-bottom:6px;">🗺</div>
           <div style="color:#334155;font-size:.73rem;line-height:1.6;">
-            1er clic → ver info del municipio<br>2do clic → zoom al territorio
+            Clic en el mapa → popup con info<br>Doble clic → zoom al territorio<br>Buscá arriba para ver ficha
           </div>
         </div>""", unsafe_allow_html=True)
     else:
