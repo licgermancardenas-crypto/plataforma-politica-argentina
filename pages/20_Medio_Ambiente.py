@@ -43,6 +43,25 @@ def load_data():
 
 data = load_data()
 
+# ── Sidebar ─────────────────────────────────────────────────────────────
+with st.sidebar:
+    st.markdown("## 🌿 Medio Ambiente")
+    st.markdown("---")
+    st.markdown("### Filtros")
+    anio_aire_desde = st.slider("Calidad del aire – desde", 2009, 2024, 2015, key="ma_aire_desde")
+    anio_aire_hasta = st.slider("Calidad del aire – hasta", 2009, 2026, 2026, key="ma_aire_hasta")
+    estaciones_sel = st.multiselect(
+        "Estaciones de monitoreo",
+        ["Centenario", "Córdoba", "La Boca", "Palermo"],
+        default=["Centenario", "Córdoba", "La Boca", "Palermo"],
+        key="ma_estaciones"
+    )
+    contaminante = st.selectbox("Contaminante", ["CO (ppm)", "NO₂ (ppb)", "PM10 (µg/m³)"], key="ma_cont")
+    anio_gei_desde = st.slider("GEI – desde año", 2000, 2023, 2010, key="ma_gei_desde")
+    sectores_gei = data["gei_sectores"]
+    gei_sel = st.multiselect("Sectores GEI", sectores_gei, default=sectores_gei, key="ma_gei_sects")
+    top_arbol = st.slider("Top N especies (arbolado)", 5, 20, 10, key="ma_top_arbol")
+
 # ── Header ─────────────────────────────────────────────────────────────
 st.markdown(f"""
 <div style='background:linear-gradient(135deg,#14532D,#16A34A);
@@ -128,15 +147,20 @@ with tab1:
     estaciones_opciones = ["centenario", "cordoba", "la_boca", "palermo"]
     est_label = {"centenario": "Centenario", "cordoba": "Córdoba", "la_boca": "La Boca", "palermo": "Palermo"}
 
-    contaminante = st.selectbox("Contaminante", ["CO (ppm)", "NO₂ (ppb)", "PM10 (µg/m³)"])
     col_key = {"CO (ppm)": "co", "NO₂ (ppb)": "no2", "PM10 (µg/m³)": "pm10"}[contaminante]
 
-    air_data = data["calidad_aire_anual"]
+    # Mapping sidebar station selections to data keys
+    est_map = {"Centenario": "centenario", "Córdoba": "cordoba", "La Boca": "la_boca", "Palermo": "palermo"}
+    est_filtradas = [est_map[e] for e in estaciones_sel if e in est_map]
+
+    air_data = [r for r in data["calidad_aire_anual"] if anio_aire_desde <= r["year"] <= anio_aire_hasta]
     años = [r["year"] for r in air_data]
 
     fig_air = go.Figure()
     colors_est = [GREEN, TEAL, AMBER, "#7C3AED"]
     for i, est in enumerate(estaciones_opciones):
+        if est not in est_filtradas:
+            continue
         key = f"{col_key}_{est}"
         vals = [r.get(key) for r in air_data]
         fig_air.add_trace(go.Scatter(
@@ -167,8 +191,8 @@ with tab1:
 with tab2:
     st.markdown("### 🌡 Gases de Efecto Invernadero – CABA (2000–2023)")
 
-    gei_data = data["gei_anual_por_sector"]
-    sectores = data["gei_sectores"]
+    gei_data = [r for r in data["gei_anual_por_sector"] if r["año"] >= anio_gei_desde]
+    sectores = [s for s in data["gei_sectores"] if s in gei_sel]
     años_gei = [r["año"] for r in gei_data]
 
     sector_colors = {
@@ -381,8 +405,8 @@ with tab4:
     c_esp, c_orig = st.columns(2)
 
     with c_esp:
-        st.markdown("**Top 20 especies más frecuentes**")
-        esp = data["arbolado_top_especies"]
+        st.markdown(f"**Top {top_arbol} especies más frecuentes**")
+        esp = data["arbolado_top_especies"][:top_arbol]
         fig_esp = go.Figure(go.Bar(
             x=[e["cantidad"] for e in esp],
             y=[e["especie"] for e in esp],

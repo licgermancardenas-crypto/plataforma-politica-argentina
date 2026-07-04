@@ -114,6 +114,9 @@ with st.sidebar:
 
     st.markdown("---")
     st.markdown(f"<div style='font-size:.6rem;color:#334155;'>Total sancionado: ${data['total_sancion_b']:.0f} B<br>Total vigente: ${data['total_vigente_b']:.0f} B</div>", unsafe_allow_html=True)
+    st.markdown("---")
+    top_n = st.slider("Top N jurisdicciones", 5, 22, 10, key="pres_topn")
+    vista = st.radio("Vista de monto", ["Devengado", "Vigente", "Sanción"], key="pres_vista")
 
 # ── Header ─────────────────────────────────────────────────────────────
 st.markdown(f"""
@@ -153,6 +156,10 @@ for col, val, label, color, sub in kpis:
 
 st.markdown("<div style='height:14px'></div>", unsafe_allow_html=True)
 
+col_monto = {"Devengado": "devengado", "Vigente": "vigente", "Sanción": "sancion"}[vista]
+# por_funcion no tiene columna "sancion" → fallback a devengado
+col_fun = col_monto if col_monto in df_fun.columns else "devengado"
+
 # ── Tabs ────────────────────────────────────────────────────────────────
 tab1, tab2, tab3, tab4 = st.tabs([
     "🌳 Por Área / Función", "🏛 Por Ministerio", "💳 Tipo de Gasto", "🗺 Por Comuna"
@@ -165,16 +172,16 @@ with tab1:
     col_t1, col_t2 = st.columns([3, 2])
 
     with col_t1:
-        df_fun_tree = df_fun[df_fun["devengado"] > 5].copy()
+        df_fun_tree = df_fun[df_fun[col_fun] > 5].copy()
         df_fun_tree["color"] = df_fun_tree["nombre"].map(FUN_COLORS).fillna("#334155")
-        df_fun_tree["pct"]   = (df_fun_tree["devengado"] / df_fun_tree["devengado"].sum() * 100).round(1)
+        df_fun_tree["pct"]   = (df_fun_tree[col_fun] / df_fun_tree[col_fun].sum() * 100).round(1)
         df_fun_tree["label"] = df_fun_tree.apply(
-            lambda r: f"{r['nombre']}<br>${r['devengado']:.0f}B ({r['pct']}%)", axis=1
+            lambda r: f"{r['nombre']}<br>${r[col_fun]:.0f}B ({r['pct']}%)", axis=1
         )
 
         fig_tree = px.treemap(
             df_fun_tree,
-            path=["nombre"], values="devengado",
+            path=["nombre"], values=col_fun,
             color="nombre",
             color_discrete_map=FUN_COLORS,
             custom_data=["devengado","pct"],
@@ -191,11 +198,14 @@ with tab1:
 
     with col_t2:
         st.markdown("#### Ranking por área")
-        for _, r in df_fun.iterrows():
-            if r["devengado"] <= 0: continue
-            pct_f = round(r["devengado"] / data["total_devengado_b"] * 100, 1)
+        df_fun_sorted = df_fun.sort_values(col_fun, ascending=False)
+        total_fun = df_fun_sorted[col_fun].sum()
+        max_fun   = df_fun_sorted[col_fun].max() if not df_fun_sorted.empty else 1
+        for _, r in df_fun_sorted.iterrows():
+            if r[col_fun] <= 0: continue
+            pct_f = round(r[col_fun] / total_fun * 100, 1) if total_fun > 0 else 0
             clr   = FUN_COLORS.get(r["nombre"], "#64748B")
-            bar_w = int(r["devengado"] / df_fun.iloc[0]["devengado"] * 100)
+            bar_w = int(r[col_fun] / max_fun * 100) if max_fun > 0 else 0
             ejec_f= round(r["devengado"] / r["vigente"] * 100, 1) if r["vigente"] > 0 else 0
             ejec_c= "#6EE7B7" if ejec_f >= 45 else "#FCD34D" if ejec_f >= 25 else "#EF4444"
             st.markdown(
@@ -203,7 +213,7 @@ with tab1:
                 f"border:1px solid #1E293B;border-radius:7px;'>"
                 f"<div style='display:flex;justify-content:space-between;margin-bottom:4px;'>"
                 f"<span style='font-size:.75rem;color:{clr};font-weight:600;'>{r['nombre'][:26]}</span>"
-                f"<span style='font-size:.72rem;color:{clr};font-weight:800;'>${r['devengado']:.0f}B</span></div>"
+                f"<span style='font-size:.72rem;color:{clr};font-weight:800;'>${r[col_fun]:.0f}B</span></div>"
                 f"<div style='background:#1E293B;border-radius:3px;height:5px;margin-bottom:4px;'>"
                 f"<div style='background:{clr};height:5px;width:{bar_w}%;border-radius:3px;'></div>"
                 f"</div>"
@@ -221,7 +231,10 @@ with tab2:
     col_m1, col_m2 = st.columns([2, 1])
 
     with col_m1:
-        df_j = df_jur[df_jur["devengado"] > 0].sort_values("devengado", ascending=True)
+        df_j = (df_jur[df_jur[col_monto] > 0]
+                .sort_values(col_monto, ascending=False)
+                .head(top_n)
+                .sort_values(col_monto, ascending=True))
         # Escortar nombres largos
         df_j["nombre_short"] = df_j["nombre"].str.replace("Ministerio De ", "Min. ").str.replace("Ministerio ", "Min. ")
         ejec_jur = (df_j["devengado"] / df_j["vigente"] * 100).clip(0, 100)
@@ -238,14 +251,14 @@ with tab2:
         ))
         fig_jur.add_trace(go.Bar(
             y=df_j["nombre_short"],
-            x=df_j["devengado"],
-            name="Devengado",
+            x=df_j[col_monto],
+            name=vista,
             orientation="h",
             marker_color=colors_jur,
-            text=df_j["devengado"].apply(lambda x: f"${x:.0f}B"),
+            text=df_j[col_monto].apply(lambda x: f"${x:.0f}B"),
             textposition="outside",
             textfont=dict(color="#E2E8F0", size=9),
-            hovertemplate="<b>%{y}</b><br>Devengado: $%{x:.1f}B<extra></extra>",
+            hovertemplate=f"<b>%{{y}}</b><br>{vista}: $%{{x:.1f}}B<extra></extra>",
         ))
         fig_jur.update_layout(
             barmode="overlay",
@@ -262,8 +275,9 @@ with tab2:
 
     with col_m2:
         st.markdown("#### % Ejecución por ministerio")
-        df_j2 = df_jur[df_jur["devengado"] > 0].copy()
+        df_j2 = df_jur[df_jur[col_monto] > 0].copy()
         df_j2["ejec_pct"] = (df_j2["devengado"] / df_j2["vigente"] * 100).clip(0, 100).round(1)
+        df_j2 = df_j2.sort_values(col_monto, ascending=False).head(top_n)
         df_j2 = df_j2.sort_values("ejec_pct", ascending=False)
         for _, r in df_j2.iterrows():
             e    = r["ejec_pct"]

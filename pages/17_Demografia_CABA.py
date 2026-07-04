@@ -79,6 +79,12 @@ with st.sidebar:
     st.metric(f"Año {ev['anio']}", f"{ev['total']} años")
     st.caption("Mujer: " + str(ev['mujer']) + " · Varón: " + str(ev['varon']))
     st.markdown("---")
+    st.markdown("**Filtros**")
+    comunas_sel = st.multiselect("Comunas", list(range(1,16)), default=list(range(1,16)), format_func=lambda x: f"C{x}", key="demo_comunas")
+    if not comunas_sel:
+        comunas_sel = list(range(1, 16))
+    indicador_viv = st.radio("Indicador vivienda", ["NBI", "Déficit habitacional", "Hacinamiento"], key="demo_ind")
+    st.markdown("---")
 
     st.markdown("**Top 10 barrios por población**")
     barrios = sorted(d["pob_por_barrio"], key=lambda x: x["poblacion"], reverse=True)[:10]
@@ -129,12 +135,20 @@ with tab1:
                 localize=True,
             ),
         ).add_to(m)
+        if len(comunas_sel) < 15:
+            sel_features = {"type":"FeatureCollection","features":[
+                f for f in geo["features"] if f["properties"].get("comuna") in comunas_sel
+            ]}
+            folium.GeoJson(sel_features, style_function=lambda x: {
+                "fillOpacity": 0, "weight": 3, "color": "#A78BFA"
+            }).add_to(m)
         st_folium(m, width=None, height=440, returned_objects=[], key="demo_map")
 
     with col_r:
         st.markdown("#### Ranking comunas")
         pob_df = pd.DataFrame(d["pob_por_comuna"]).sort_values("poblacion", ascending=False)
-        max_pob = pob_df["poblacion"].max()
+        pob_df = pob_df[pob_df["comuna"].isin(comunas_sel)]
+        max_pob = pob_df["poblacion"].max() if not pob_df.empty else 1
         for _, row in pob_df.iterrows():
             pct = row["poblacion"] / max_pob
             st.markdown(
@@ -308,9 +322,13 @@ with tab3:
 
     with col_nbi:
         st.markdown("#### NBI por comuna (%)")
-        nbi_df = pd.DataFrame(d["nbi_por_comuna"]).sort_values("nbi_pct", ascending=True)
-        colors_nbi = ["#EF4444" if v > 10 else "#F59E0B" if v > 5 else "#10B981"
-                      for v in nbi_df["nbi_pct"]]
+        nbi_df = pd.DataFrame(d["nbi_por_comuna"])
+        nbi_df = nbi_df[nbi_df["comuna"].isin(comunas_sel)].sort_values("nbi_pct", ascending=True)
+        if indicador_viv == "NBI":
+            colors_nbi = [ACCENT] * len(nbi_df)
+        else:
+            colors_nbi = ["#EF4444" if v > 10 else "#F59E0B" if v > 5 else "#10B981"
+                          for v in nbi_df["nbi_pct"]]
         fig_nbi = go.Figure(go.Bar(
             y=[f"C{c}" for c in nbi_df["comuna"]],
             x=nbi_df["nbi_pct"],
@@ -334,11 +352,13 @@ with tab3:
     with col_def:
         st.markdown("#### Déficit habitacional por comuna")
         dh_df = pd.DataFrame(d["deficit_habitacional"])
+        dh_df = dh_df[dh_df["comuna"].isin(comunas_sel)]
+        dh_highlight = indicador_viv == "Déficit habitacional"
         fig_dh = go.Figure()
         for col_name, color, name in [
-            ("cuantitativo","#EF4444","Cuantitativo"),
-            ("cualitativo_i","#F59E0B","Cualitativo I"),
-            ("cualitativo_ii","#10B981","Cualitativo II"),
+            ("cuantitativo", "#7C3AED" if dh_highlight else "#EF4444", "Cuantitativo"),
+            ("cualitativo_i", "#A78BFA" if dh_highlight else "#F59E0B", "Cualitativo I"),
+            ("cualitativo_ii", "#DDD6FE" if dh_highlight else "#10B981", "Cualitativo II"),
         ]:
             fig_dh.add_trace(go.Bar(
                 x=[f"C{c}" for c in dh_df["comuna"]],
@@ -363,6 +383,7 @@ with tab3:
     with col_cs:
         st.markdown("#### Calidad de conexión a servicios básicos (%)")
         cs_df = pd.DataFrame(d["calidad_servicios"])
+        cs_df = cs_df[cs_df["comuna"].isin(comunas_sel)]
         fig_cs = go.Figure()
         for col_name, color, name in [
             ("satisfactoria","#10B981","Satisfactoria"),
@@ -440,11 +461,13 @@ with tab3:
     col_hac, _ = st.columns([1, 1])
     with col_hac:
         st.markdown("#### Hacinamiento: viviendas con 2+ hogares (%)")
-        hac_df = pd.DataFrame(d["hacinamiento"]).sort_values("dos_mas_hogares", ascending=True)
+        hac_df = pd.DataFrame(d["hacinamiento"])
+        hac_df = hac_df[hac_df["comuna"].isin(comunas_sel)].sort_values("dos_mas_hogares", ascending=True)
+        hac_scale = "Purples" if indicador_viv == "Hacinamiento" else "Reds"
         fig_hac = px.bar(
             hac_df, x="dos_mas_hogares", y=hac_df["comuna"].apply(lambda c: f"C{c}"),
             orientation="h",
-            color="dos_mas_hogares", color_continuous_scale="Reds",
+            color="dos_mas_hogares", color_continuous_scale=hac_scale,
             labels={"x": "%", "y": ""},
             text=[f"{v:.1f}%" for v in hac_df["dos_mas_hogares"]],
         )

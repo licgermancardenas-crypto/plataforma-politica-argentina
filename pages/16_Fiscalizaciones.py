@@ -96,6 +96,10 @@ with st.sidebar:
             f"<div style='background:{clr};height:3px;width:{bw}%;border-radius:2px;'></div></div></div>",
             unsafe_allow_html=True,
         )
+    st.markdown("---")
+    año_fisc = st.selectbox("Año", [2024, 2023, 2022], key="fisc_anio")
+    all_cats = sorted(df_cat[df_cat["categoria"] != "Otros"]["categoria"].unique().tolist())
+    cats_sel = st.multiselect("Categorías", all_cats, default=all_cats[:5], key="fisc_cats")
 
 # ── Header ──────────────────────────────────────────────────────────────
 total = data["total_historico"]
@@ -134,6 +138,20 @@ for col, val, label, color, sub in kpis:
 </div>""", unsafe_allow_html=True)
 st.markdown("<div style='height:14px'></div>", unsafe_allow_html=True)
 
+# ── Datos filtrados ──────────────────────────────────────────────────────
+df_mes_f  = df_mes[df_mes["anio"] == año_fisc].copy()
+df_cat_f  = df_cat[(df_cat["anio"] == año_fisc) & (df_cat["categoria"].isin(cats_sel))].copy()
+df_area_f = df_area[df_area["anio"] == año_fisc].copy()
+
+total_anio = next((t["total"] for t in data["totales_por_anio"] if t["anio"] == año_fisc), 0)
+st.markdown(f"""
+<div style='background:#0A1628;border:1px solid #1E293B;border-left:4px solid #67E8F9;
+            border-radius:8px;padding:12px 16px;margin-bottom:14px;display:inline-block;'>
+  <div style='font-size:.62rem;color:#64748B;text-transform:uppercase;letter-spacing:.04em;'>Inspecciones {año_fisc}</div>
+  <div style='font-size:1.35rem;font-weight:800;color:#67E8F9;margin:3px 0;'>{total_anio:,}</div>
+  <div style='font-size:.6rem;color:#334155;'>año seleccionado</div>
+</div>""", unsafe_allow_html=True)
+
 tab1, tab2, tab3 = st.tabs(["📊 Por Categoría", "📅 Evolución Temporal", "🔬 Detalle por Área"])
 
 # ══════════════════════════════════════════════════════════════════════
@@ -145,7 +163,7 @@ with tab1:
         # Stacked bar por categoría×año
         df_cat_clean = df_cat[df_cat["categoria"] != "Otros"].copy()
         fig_cat = px.bar(
-            df_cat_clean, x="anio", y="n", color="categoria",
+            df_cat_f, x="anio", y="n", color="categoria",
             barmode="stack",
             color_discrete_map=CAT_COLORS,
         )
@@ -161,7 +179,7 @@ with tab1:
 
     with c2:
         # Donut total
-        cat_total = df_cat_clean.groupby("categoria")["n"].sum().reset_index()
+        cat_total = df_cat_f.groupby("categoria")["n"].sum().reset_index()
         cat_total = cat_total.sort_values("n",ascending=False)
         fig_don = go.Figure(go.Pie(
             labels=cat_total["categoria"],
@@ -228,8 +246,8 @@ with tab2:
         # Mensual por año (line)
         colors_anio = {2022:"#F59E0B", 2023:"#38BDF8", 2024:"#4ADE80"}
         fig_men = go.Figure()
-        for yr in [2022, 2023, 2024]:
-            df_yr = df_mes[df_mes["anio"]==yr].sort_values("mes")
+        for yr in [año_fisc]:
+            df_yr = df_mes_f.sort_values("mes")
             if len(df_yr) == 0: continue
             fig_men.add_trace(go.Scatter(
                 x=df_yr["mes"].map(MES_NOMBRES),
@@ -299,7 +317,7 @@ with tab3:
     st.plotly_chart(fig_top, use_container_width=True)
 
     st.markdown("#### Tabla completa por área y año")
-    df_pivot = df_area.pivot_table(index="area", columns="anio", values="n", fill_value=0).reset_index()
+    df_pivot = df_area_f.pivot_table(index="area", columns="anio", values="n", fill_value=0).reset_index()
     df_pivot.columns = [str(c) for c in df_pivot.columns]
     df_pivot["Total"] = df_pivot[[c for c in df_pivot.columns if c.isdigit()]].sum(axis=1)
     df_pivot = df_pivot.sort_values("Total", ascending=False)

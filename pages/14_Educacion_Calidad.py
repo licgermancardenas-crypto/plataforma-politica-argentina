@@ -49,6 +49,10 @@ with st.sidebar:
     st.markdown("## 📚 Educación & Calidad")
     st.markdown("<span style='font-size:.73rem;color:#64748B;'>Min. Educación · DGEyC · IVC · Min. Salud</span>", unsafe_allow_html=True)
     st.markdown("---")
+    sector_edu = st.radio("Sector educativo", ["Todos", "Estatal", "Privado"], key="edu_sector")
+    anio_ml = st.selectbox("Año mercado laboral", list(range(2023, 2006, -1)), key="edu_anio_ml")
+    tipo_salud = st.radio("Centros de salud en mapa", ["Públicos", "Privados", "Ambos"], key="edu_salud")
+    st.markdown("---")
     # KPI matrícula
     total = data["matricula_total"]
     pct_e = data["matricula_pct_estatal"]
@@ -116,11 +120,13 @@ tab1, tab2, tab3, tab4 = st.tabs(["📖 Educación", "💼 Mercado Laboral", "�
 # TAB 1 – EDUCACIÓN
 # ══════════════════════════════════════════════════════════════════════
 with tab1:
+    df_mat_filt = df_mat if sector_edu == "Todos" else df_mat[df_mat["sector"] == sector_edu]
+    df_niv_filt = df_niv if sector_edu == "Todos" else df_niv[df_niv["sector"] == sector_edu]
     c1, c2 = st.columns(2)
     with c1:
         # Matrícula por zona y sector
         fig_mat = px.bar(
-            df_mat.sort_values("alumnos", ascending=False),
+            df_mat_filt.sort_values("alumnos", ascending=False),
             x="zona", y="alumnos", color="sector",
             barmode="group",
             color_discrete_map={"Estatal":"#4ADE80","Privado":"#FBBF24"},
@@ -140,7 +146,7 @@ with tab1:
 
     with c2:
         # Por nivel educativo
-        df_niv_agg = df_niv.groupby("nivel").agg(alumnos=("alumnos","sum"),unidades=("unidades","sum")).reset_index()
+        df_niv_agg = df_niv_filt.groupby("nivel").agg(alumnos=("alumnos","sum"),unidades=("unidades","sum")).reset_index()
         fig_niv = go.Figure(go.Pie(
             labels=df_niv_agg["nivel"], values=df_niv_agg["alumnos"],
             hole=0.5, marker_colors=["#38BDF8","#4ADE80","#FBBF24","#F97316","#C084FC"],
@@ -156,7 +162,7 @@ with tab1:
 
     # Repitencia por zona
     st.markdown("#### Tasa de repitencia por zona y sector (%)")
-    df_rep = df_mat[df_mat["repitencia_pct"]>0].copy()
+    df_rep = df_mat_filt[df_mat_filt["repitencia_pct"]>0].copy()
     fig_rep = go.Figure(go.Bar(
         x=df_rep.apply(lambda r: f"{r.zona} {r.sector[:4]}.", axis=1),
         y=df_rep["repitencia_pct"],
@@ -190,6 +196,9 @@ with tab2:
                 name=nm, mode="lines+markers",
                 line=dict(color=clr, width=2.5), marker=dict(size=5),
             ))
+        fig_ml.add_vline(x=str(anio_ml), line_dash="dash", line_color="#F59E0B",
+                         annotation_text=str(anio_ml), annotation_position="top right",
+                         annotation_font_color="#F59E0B", annotation_font_size=10)
         fig_ml.update_layout(
             title=dict(text="Tasas del mercado laboral CABA (2003-2019)",font=dict(color="#E2E8F0",size=12)),
             paper_bgcolor="#0A1628", plot_bgcolor="#0A1628", font=dict(color="#94A3B8"),
@@ -302,31 +311,33 @@ with tab4:
             "Piñero": (-34.627, -58.437), "Rivadavia": (-34.621, -58.459),
             "Santojanni": (-34.659, -58.504), "Alvarez": (-34.639, -58.468),
         }
-        for h in hosp:
-            nom = h["nombre"]
-            # Buscar match parcial
-            coords = None
-            for k, v in hosp_geo.items():
-                if k.lower() in nom.lower():
-                    coords = v; break
-            com = h.get("comuna")
-            if coords:
-                folium.Marker(
-                    location=coords,
-                    icon=folium.Icon(color="red", icon="plus-sign", prefix="glyphicon"),
-                    tooltip=f"<b>🏥 {nom}</b><br>{h.get('tipo','')}<br>{h.get('direccion','')}<br>C{int(com):02d}" if com else f"<b>🏥 {nom}</b>",
-                ).add_to(m)
+        if tipo_salud in ["Públicos", "Ambos"]:
+            for h in hosp:
+                nom = h["nombre"]
+                # Buscar match parcial
+                coords = None
+                for k, v in hosp_geo.items():
+                    if k.lower() in nom.lower():
+                        coords = v; break
+                com = h.get("comuna")
+                if coords:
+                    folium.Marker(
+                        location=coords,
+                        icon=folium.Icon(color="red", icon="plus-sign", prefix="glyphicon"),
+                        tooltip=f"<b>🏥 {nom}</b><br>{h.get('tipo','')}<br>{h.get('direccion','')}<br>C{int(com):02d}" if com else f"<b>🏥 {nom}</b>",
+                    ).add_to(m)
 
         # Centros privados con coords reales
-        for c_s in cs:
-            if not c_s.get("lat"): continue
-            try:
-                folium.CircleMarker(
-                    location=[c_s["lat"], c_s["lon"]],
-                    radius=5, color="#A78BFA", fill=True, fill_color="#A78BFA", fill_opacity=0.8,
-                    tooltip=f"<b>🏨 {c_s.get('nombre','')}</b><br>{c_s.get('barrio','')}<br>C{int(c_s['comuna']):02d}" if c_s.get('comuna') else f"<b>{c_s.get('nombre','')}</b>",
-                ).add_to(m)
-            except: pass
+        if tipo_salud in ["Privados", "Ambos"]:
+            for c_s in cs:
+                if not c_s.get("lat"): continue
+                try:
+                    folium.CircleMarker(
+                        location=[c_s["lat"], c_s["lon"]],
+                        radius=5, color="#A78BFA", fill=True, fill_color="#A78BFA", fill_opacity=0.8,
+                        tooltip=f"<b>🏨 {c_s.get('nombre','')}</b><br>{c_s.get('barrio','')}<br>C{int(c_s['comuna']):02d}" if c_s.get('comuna') else f"<b>{c_s.get('nombre','')}</b>",
+                    ).add_to(m)
+                except: pass
 
         st_folium(m, height=480, use_container_width=True,
                   returned_objects=[], key="salud_map")

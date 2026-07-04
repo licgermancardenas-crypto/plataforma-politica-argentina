@@ -9,6 +9,7 @@ from core import loader
 import json, re
 import streamlit as st
 import folium
+import plotly.graph_objects as go
 from streamlit_folium import st_folium
 from shapely.geometry import shape
 from branca.element import MacroElement
@@ -161,6 +162,21 @@ with st.sidebar:
             st.session_state.zoom_comuna = None
             st.rerun()
 
+    st.markdown("---")
+
+    st.markdown("### Filtros")
+    comunas_caba_sel = st.multiselect(
+        "Comunas a destacar",
+        list(range(1, 16)),
+        default=[],
+        format_func=lambda x: f"Comuna {x}",
+        key="caba_comunas",
+    )
+    indicador_caba = st.selectbox(
+        "Indicador socioeconómico",
+        ["NBI %", "Desocupación %", "Pobreza %"],
+        key="caba_ind",
+    )
     st.markdown("---")
 
     # ── Panel intel ───────────────────────────────────────────────────
@@ -413,6 +429,22 @@ for feat in geojson_data["features"]:
     except Exception:
         pass
 
+# Resaltar comunas seleccionadas con borde violeta adicional
+if comunas_caba_sel:
+    for feat in geojson_data["features"]:
+        c_id = feat["properties"]["comuna"]
+        if c_id in comunas_caba_sel:
+            folium.GeoJson(
+                feat,
+                style_function=lambda f: {
+                    "fillColor": "transparent",
+                    "color": "#C084FC",
+                    "weight": 5,
+                    "fillOpacity": 0,
+                    "dashArray": "6 4",
+                },
+            ).add_to(m)
+
 DoubleClickZoom().add_to(m)   # zoom animado al polígono (JS puro, sin rerun)
 
 # Key NO incluye sel_comuna → mapa no se re-renderiza al clickear
@@ -474,3 +506,44 @@ st.dataframe(
 )
 
 st.caption("Fuente: Datos Abiertos GCBA · datos.buenosaires.gob.ar · Elecciones Generales 2023 (escrutinio definitivo)")
+
+# ── Socioeconomía por Comuna ───────────────────────────────────────────
+if socio_by_com:
+    st.markdown("---")
+    st.markdown("### 📊 Indicador Socioeconómico por Comuna")
+
+    ind_field_map = {
+        "NBI %": "nbi_pct",
+        "Desocupación %": "deficit_cuantitativo",
+        "Pobreza %": "idx_vulnerabilidad",
+    }
+    ind_field = ind_field_map[indicador_caba]
+
+    comunas_sorted = sorted(socio_by_com.keys())
+    vals_ind = [socio_by_com[c].get(ind_field, 0) for c in comunas_sorted]
+    colors_ind = [
+        "#C084FC" if c in comunas_caba_sel else "#3B82F6"
+        for c in comunas_sorted
+    ]
+    labels_ind = [f"C{c:02d}" for c in comunas_sorted]
+
+    fig_ind = go.Figure(go.Bar(
+        x=labels_ind,
+        y=vals_ind,
+        marker_color=colors_ind,
+        text=[f"{v:.1f}" for v in vals_ind],
+        textposition="outside",
+    ))
+    fig_ind.update_layout(
+        height=340,
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="#0A1628",
+        yaxis=dict(gridcolor="#1E293B", title=indicador_caba, color="#94A3B8"),
+        xaxis=dict(color="#94A3B8"),
+        font=dict(color="#94A3B8"),
+        margin=dict(t=30, b=40, l=60, r=20),
+    )
+    st.plotly_chart(fig_ind, use_container_width=True)
+    if comunas_caba_sel:
+        destacadas = ", ".join([f"C{c:02d}" for c in sorted(comunas_caba_sel)])
+        st.caption(f"Comunas destacadas (violeta): {destacadas} · Indicador: {indicador_caba}")

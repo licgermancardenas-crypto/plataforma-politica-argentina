@@ -53,13 +53,17 @@ with st.sidebar:
     st.markdown("## 🚇 Movilidad CABA")
     st.markdown("<span style='font-size:.73rem;color:#64748B;'>SBASE · DGIT · Min. Transporte</span>", unsafe_allow_html=True)
     st.markdown("---")
+    lineas_sel = st.multiselect("Líneas de subte", ["A","B","C","D","E","H"], default=["A","B","C","D","E","H"], key="mov_lineas")
+    anio_sub = st.selectbox("Año subte", [2020,2019,2018,2017,2016,2015,2014,2013], key="mov_anio")
+    st.markdown("---")
     ultimo = data["subte_ultimo_anio"]
-    total_u = sum(r["total"] for r in data["subte_ranking_lineas"])
+    ranking_filt = [r for r in data["subte_ranking_lineas"] if r["linea"] in lineas_sel]
+    total_u = sum(r["total"] for r in ranking_filt) if ranking_filt else 0
     st.markdown(f"<div style='font-size:.65rem;color:#334155;text-transform:uppercase;'>Subte {ultimo}</div>", unsafe_allow_html=True)
     st.markdown(f"<div style='font-size:1.8rem;font-weight:800;color:#38BDF8;'>{total_u/1e6:.0f}M</div>", unsafe_allow_html=True)
     st.markdown("<div style='font-size:.6rem;color:#475569;'>viajes totales</div>", unsafe_allow_html=True)
     st.markdown("")
-    for r in data["subte_ranking_lineas"]:
+    for r in ranking_filt:
         clr = LINEA_COLOR.get(r["linea"],"#64748B")
         bw  = int(r["pct"])
         st.markdown(
@@ -118,8 +122,9 @@ tab1, tab2, tab3 = st.tabs(["🚇 Subte", "🚦 Siniestros Viales", "🚲 EcoBic
 with tab1:
     c1, c2 = st.columns([3,2])
     with c1:
+        df_sv_filt = df_sv[df_sv["linea"].isin(lineas_sel)] if lineas_sel else df_sv.iloc[0:0]
         fig_sub = px.line(
-            df_sv.sort_values(["anio","linea"]),
+            df_sv_filt.sort_values(["anio","linea"]),
             x="anio", y="total", color="linea",
             color_discrete_map=LINEA_COLOR,
             markers=True,
@@ -129,6 +134,9 @@ with tab1:
         fig_sub.add_vrect(x0=2019.5, x1=2021, fillcolor="#EF4444", opacity=0.08,
                           annotation_text="COVID-19", annotation_position="top left",
                           annotation_font_color="#EF4444", annotation_font_size=9)
+        fig_sub.add_vline(x=anio_sub, line_dash="dot", line_color="#F59E0B",
+                          annotation_text=str(anio_sub), annotation_position="top right",
+                          annotation_font_color="#F59E0B", annotation_font_size=9)
         fig_sub.update_layout(
             paper_bgcolor="#0A1628", plot_bgcolor="#0A1628",
             font=dict(color="#94A3B8"),
@@ -147,6 +155,7 @@ with tab1:
                          attr="© CARTO", max_zoom=19).add_to(m)
         for est in data["subte_estaciones"]:
             if not est.get("lat"): continue
+            if est["linea"] not in lineas_sel: continue
             clr = LINEA_COLOR.get(est["linea"],"#64748B")
             folium.CircleMarker(
                 location=[est["lat"], est["lon"]],
@@ -160,12 +169,12 @@ with tab1:
     fig_tot = go.Figure()
     fig_tot.add_trace(go.Bar(
         x=df_tot["anio"].astype(str), y=df_tot["total"],
-        marker_color=["#EF4444" if a in [2020,2021] else "#38BDF8" for a in df_tot["anio"]],
+        marker_color=["#EF4444" if a in [2020,2021] else "#F59E0B" if a == anio_sub else "#38BDF8" for a in df_tot["anio"]],
         text=(df_tot["total"]/1e6).round(1).astype(str)+"M",
         textposition="outside", textfont=dict(color="#E2E8F0", size=9),
     ))
     fig_tot.update_layout(
-        title=dict(text="Total viajes subte por año (todas las líneas)",font=dict(color="#E2E8F0",size=12)),
+        title=dict(text=f"Total viajes subte por año (todas las líneas) — seleccionado: {anio_sub}",font=dict(color="#E2E8F0",size=12)),
         paper_bgcolor="#0A1628", plot_bgcolor="#0A1628", font=dict(color="#94A3B8"),
         xaxis=dict(gridcolor="#1E293B"), yaxis=dict(gridcolor="#1E293B",title="Viajes"),
         margin=dict(t=35,b=5,l=5,r=5), height=240, showlegend=False,

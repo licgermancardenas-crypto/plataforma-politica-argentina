@@ -105,6 +105,11 @@ with st.sidebar:
         st.markdown(f"<div style='font-size:.82rem;display:flex;justify-content:space-between;'>"
                     f"<span>{r['modalidad']}</span><b>{r['casos']:,}</b></div>",
                     unsafe_allow_html=True)
+    st.markdown("---")
+    st.markdown("**Filtros temporales**")
+    anio_desde = st.selectbox("Desde año", list(range(2009, 2024)), index=0, key="gv_desde")
+    anio_hasta = st.selectbox("Hasta año", list(range(2009, 2024)), index=13, key="gv_hasta")
+    tipos_viol_sel = st.multiselect("Tipos de violencia (L144)", ["Física","Psicológica","Sexual","Económica","Simbólica"], default=["Física","Psicológica","Sexual","Económica"], key="gv_tipos")
 
 tab1, tab2, tab3, tab4 = st.tabs([
     "📞 Línea 144 & Atención",
@@ -183,6 +188,8 @@ with tab1:
     with col_m:
         st.markdown("#### Tipo de violencia (Línea 144)")
         tv_df = pd.DataFrame(d["l144_tipo_violencia"])
+        if tipos_viol_sel:
+            tv_df = tv_df[tv_df["tipo"].apply(lambda t: any(s in t for s in tipos_viol_sel))]
         fig_tv = px.pie(
             tv_df, values="casos", names="tipo",
             color_discrete_sequence=["#BE185D","#EC4899","#F472B6","#FBCFE8","#FDF2F8"],
@@ -198,6 +205,7 @@ with tab1:
     st.markdown("---")
     st.markdown("#### Casos OVD y CIM por año (2009-2023)")
     casos_df = pd.DataFrame(d["casos_atencion_anual"])
+    casos_df = casos_df[(casos_df["anio"] >= anio_desde) & (casos_df["anio"] <= anio_hasta)]
     fig_ca = go.Figure()
     fig_ca.add_trace(go.Bar(x=casos_df["anio"], y=casos_df["ovd"], name="OVD (CSJN)",
                             marker_color="#7C3AED",
@@ -265,6 +273,7 @@ with tab2:
     with col_fv:
         st.markdown("#### Víctimas de femicidio por año (CABA)")
         fv_df = pd.DataFrame(d["femicidios_victimas"])
+        fv_df = fv_df[(fv_df["anio"] >= anio_desde) & (fv_df["anio"] <= anio_hasta)]
         colors = ["#DC2626" if v >= 13 else "#F59E0B" if v >= 9 else "#FBCFE8"
                   for v in fv_df["victimas"]]
         fig_fv = go.Figure(go.Bar(
@@ -285,6 +294,7 @@ with tab2:
     with col_ft:
         st.markdown("#### Tasa de femicidio (c/100.000 mujeres)")
         ft_df = pd.DataFrame(d["femicidios_tasa"])
+        ft_df = ft_df[(ft_df["anio"] >= anio_desde) & (ft_df["anio"] <= anio_hasta)]
         fig_ft = go.Figure(go.Scatter(
             x=ft_df["anio"], y=ft_df["tasa"],
             mode="lines+markers+text",
@@ -311,6 +321,7 @@ with tab2:
         st.markdown("#### Violencia de pareja: tipos por año")
         if d.get("viol_pareja_tipo"):
             vp_df = pd.DataFrame(d["viol_pareja_tipo"])
+            vp_df = vp_df[(vp_df["anio"] >= anio_desde) & (vp_df["anio"] <= anio_hasta)]
             TIPO_COLORS = {"Psicológica":"#7C3AED","Física":"#DC2626","Sexual":"#F59E0B","Económica":"#10B981"}
             fig_vp = px.bar(
                 vp_df, x="anio", y="casos", color="tipo",
@@ -333,6 +344,7 @@ with tab2:
         st.markdown("#### Casos penales con indicadores de violencia de género")
         if d.get("casos_penales_vg"):
             cp_df = pd.DataFrame(d["casos_penales_vg"])
+            cp_df = cp_df[(cp_df["anio"] >= anio_desde) & (cp_df["anio"] <= anio_hasta)]
             tipos_pen = cp_df["tipo"].unique()
             fig_cp = go.Figure()
             colors_pen = [PINK, "#7C3AED", "#F59E0B", "#0EA5E9"]
@@ -356,6 +368,7 @@ with tab2:
     st.markdown("---")
     st.markdown("#### OVD: casos atendidos por sexo y año")
     ovd_sex = pd.DataFrame(d["ovd_por_sexo"])
+    ovd_sex = ovd_sex[(ovd_sex["anio"] >= anio_desde) & (ovd_sex["anio"] <= anio_hasta)]
     fig_os = px.bar(
         ovd_sex, x="anio", y="casos", color="sexo",
         barmode="group",
@@ -381,6 +394,7 @@ with tab3:
     with col_bo:
         st.markdown("#### Brecha de ingresos en ocupación principal (%) – histórico")
         bo_df = pd.DataFrame(d["brecha_ocupacion"])
+        bo_df = bo_df[(bo_df["anio"] >= anio_desde) & (bo_df["anio"] <= anio_hasta)]
         colors_bo = ["#DC2626" if v < -20 else "#F59E0B" if v < -15 else "#10B981"
                      for v in bo_df["brecha"]]
         fig_bo = go.Figure(go.Bar(
