@@ -161,11 +161,15 @@ iframe[title*="streamlit_folium"] {
 .cat-fortaleza   { background:#14532D; color:#86EFAC; }
 
 /* ═══════════════════════════════════════════
-   SUPRIMIR DIM DE RERUN
+   SUPRIMIR DIM DE RERUN — MÁXIMA AGRESIVIDAD
 ═══════════════════════════════════════════ */
-[data-testid="stStatusWidget"] { display: none !important; }
-[data-stale="true"]            { opacity: 1 !important; transition: none !important; }
-.stApp > div[data-stale="true"]{ opacity: 1 !important; }
+[data-testid="stStatusWidget"]  { display: none !important; }
+[data-stale="true"]             { opacity: 1 !important; transition: none !important; }
+[data-stale]                    { opacity: 1 !important; }
+[aria-busy="true"]              { opacity: 1 !important; }
+.stApp                          { transition: none !important; }
+.stApp > *                      { opacity: 1 !important; transition: none !important; }
+iframe                          { opacity: 1 !important; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -285,7 +289,9 @@ bounds_index = build_bounds_index()
 # SESSION STATE
 # ═══════════════════════════════════════════════════════════════════════════
 if 'zoom_target' not in st.session_state:
-    st.session_state.zoom_target = None   # se setea solo desde la búsqueda
+    st.session_state.zoom_target   = None  # zoom vía búsqueda
+if 'selected_muni' not in st.session_state:
+    st.session_state.selected_muni = None  # info panel vía clic en mapa
 if 'map_center' not in st.session_state:
     st.session_state.map_center = [-36.5, -60.0]
 if 'map_zoom' not in st.session_state:
@@ -321,7 +327,8 @@ with st.sidebar:
         key="muni_search_box",
     )
     if muni_search and muni_search != st.session_state.zoom_target:
-        st.session_state.zoom_target = muni_search
+        st.session_state.zoom_target   = muni_search
+        st.session_state.selected_muni = muni_search
         st.rerun()
 
     st.markdown("---")
@@ -361,9 +368,10 @@ with st.sidebar:
                                   help="Muestra los radios del municipio seleccionado")
 
     if st.button("🔄 Resetear", use_container_width=True):
-        st.session_state.zoom_target = None
-        st.session_state.map_center  = [-36.5, -60.0]
-        st.session_state.map_zoom    = 7
+        st.session_state.zoom_target   = None
+        st.session_state.selected_muni = None
+        st.session_state.map_center    = [-36.5, -60.0]
+        st.session_state.map_zoom      = 7
         st.rerun()
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -747,21 +755,34 @@ map_result = st_folium(
     folium_map,
     width="100%",
     height=920,
-    returned_objects=[],   # sin rerun por clic — toda la interacción es JS/Folium
+    returned_objects=["last_object_clicked_popup"],
     key=f"map_{capa}_{tuple(sorted(visible_munis))}_{show_labels}_{show_disputes}_{show_radios}_{zoom_target}",
 )
+
+# Extraer municipio del popup clickeado (data-muni ya está en make_popup)
+# El mapa NO cambia su key → no se re-renderiza, no resetea posición
+_popup_html = (map_result or {}).get("last_object_clicked_popup") or ""
+if _popup_html and 'data-muni="' in _popup_html:
+    import re as _re
+    _m = _re.search(r'data-muni="([^"]+)"', _popup_html)
+    if _m:
+        _found = _m.group(1)
+        if _found != st.session_state.selected_muni:
+            st.session_state.selected_muni = _found
+            st.rerun()
 
 # ─────────────────────────────────────────────
 # PANEL INTELIGENCIA → SIDEBAR
 # ─────────────────────────────────────────────
 with st.sidebar:
-    sel = st.session_state.zoom_target
+    # Prioridad: lo que se clickeó en el mapa o lo que se buscó
+    sel = st.session_state.selected_muni or st.session_state.zoom_target
     sel_row = df_all[df_all['municipio'] == sel].iloc[0] if sel and sel in df_all['municipio'].values else None
 
     st.markdown("""
     <div style="font-size:.58rem;font-weight:700;color:#1E3A5F;text-transform:uppercase;
                 letter-spacing:.14em;margin:10px 0 5px;padding-bottom:4px;
-                border-bottom:1px solid #0F172A;">▸ Municipio</div>
+                border-bottom:1px solid #0F172A;">▸ Municipio seleccionado</div>
     """, unsafe_allow_html=True)
 
     if sel_row is None:
@@ -770,7 +791,7 @@ with st.sidebar:
                     padding:20px 14px;text-align:center;">
           <div style="font-size:1.6rem;opacity:.25;margin-bottom:6px;">🗺</div>
           <div style="color:#334155;font-size:.73rem;line-height:1.6;">
-            Clic en el mapa → popup con info<br>Doble clic → zoom al territorio<br>Buscá arriba para ver ficha
+            Hacé clic en un municipio<br>o buscalo arriba
           </div>
         </div>""", unsafe_allow_html=True)
     else:
