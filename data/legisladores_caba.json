@@ -1,0 +1,87 @@
+{
+  "autoridades": {
+    "presidenta": "Clara Muzzio",
+    "vicepresidente_1": "Matías López",
+    "vicepresidente_2": "Juan Pablo Modarelli",
+    "vicepresidente_3": "Juan Pablo Arenaza"
+  },
+  "bloques": [
+    {"nombre": "Fuerza por Buenos Aires",   "bancas": 20, "color": "#DC2626", "coalicion": "Oposición"},
+    {"nombre": "La Libertad Avanza",         "bancas": 14, "color": "#7C3AED", "coalicion": "Gobierno"},
+    {"nombre": "Vamos por Más",              "bancas": 11, "color": "#1D4ED8", "coalicion": "Oficialismo CABA"},
+    {"nombre": "Confianza y Desarrollo",     "bancas":  6, "color": "#0891B2", "coalicion": "Centro"},
+    {"nombre": "Ciudadanos Unidos - UCR",    "bancas":  5, "color": "#EA580C", "coalicion": "Centro"},
+    {"nombre": "Republicanos Unidos",        "bancas":  1, "color": "#16A34A", "coalicion": "Centro"},
+    {"nombre": "Transformación",             "bancas":  1, "color": "#6366F1", "coalicion": "Centro"},
+    {"nombre": "FIT-U",                      "bancas":  2, "color": "#F59E0B", "coalicion": "Izquierda"}
+  ],
+  "diputados": [
+    {"nombre": "Claudia Neira",             "bloque": "Fuerza por Buenos Aires",  "mandato": "2023-2027", "presidente_bloque": true},
+    {"nombre": "Matías Lammens",            "bloque": "Fuerza por Buenos Aires",  "mandato": "2023-2027"},
+    {"nombre": "María Bielli",              "bloque": "Fuerza por Buenos Aires",  "mandato": "2023-2027"},
+    {"nombre": "Matías Barroetaveña",       "bloque": "Fuerza por Buenos Aires",  "mandato": "2023-2027"},
+    {"nombre": "Alejandro Grillo",          "bloque": "Fuerza por Buenos Aires",  "mandato": "2023-2027"},
+    {"nombre": "Victoria Freire",           "bloque": "Fuerza por Buenos Aires",  "mandato": "2023-2027"},
+    {"nombre": "Claudio Ferreño",           "bloque": "Fuerza por Buenos Aires",  "mandato": "2023-2027"},
+    {"nombre": "Graciana Peñafort",         "bloque": "Fuerza por Buenos Aires",  "mandato": "2023-2027"},
+    {"nombre": "Andrés La Blunda",          "bloque": "Fuerza por Buenos Aires",  "mandato": "2023-2027"},
+    {"nombre": "Delfina Velázquez",         "bloque": "Fuerza por Buenos Aires",  "mandato": "2023-2027"},
+    {"nombre": "Leandro Santoro",           "bloque": "Fuerza por Buenos Aires",  "mandato": "2025-2029"},
+    {"nombre": "Claudia Negri",             "bloque": "Fuerza por Buenos Aires",  "mandato": "2025-2029"},
+    {"nombre": "Federico Mochi",            "bloque": "Fuerza por Buenos Aires",  "mandato": "2025-2029"},
+    {"nombre": "Mariana González",          "bloque": "Fuerza por Buenos Aires",  "mandato": "2025-2029"},
+    {"nombre": "Juan Pablo Modarelli",      "bloque": "Fuerza por Buenos Aires",  "mandato": "2025-2029"},
+    {"nombre": "Noemí Geminiani",           "bloque": "Fuerza por Buenos Aires",  "mandato": "2025-2029"},
+    {"nombre": "Alejandro Salvatierra",     "bloque": "Fuerza por Buenos Aires",  "mandato": "2025-2029"},
+    {"nombre": "Bárbara Rossen",            "bloque": "Fuerza por Buenos Aires",  "mandato": "2025-2029"},
+    {"nombre": "Francisco Caporiccio",      "bloque": "Fuerza por Buenos Aires",  "mandato": "2025-2029"},
+    {"nombre": "Berenice Iañez",            "bloque": "Fuerza por Buenos Aires",  "mandato": "2025-2029"},
+
+    {"nombre": "María del Pilar Ramírez",   "bloque": "La Libertad Avanza",       "mandato": "2023-2027", "presidente_bloque": true},
+    {"nombre": "Edgardo Alifraco",          "bloque": "La Libertad Avanza",       "mandato": "2023-2027"},
+    {"nombre": "Sandra Rey",                "bloque": "La Libertad Avanza",       "mandato": "2023-2027"},
+    {"nombre": "Jorge Reta",                "bloque": "La Libertad Avanza",       "mandato": "2023-2027"},
+    {"nombre": "Marcelo Erns",              "bloque": "La Libertad Avanza",       "mandato": "2025-2029"},
+    {"nombre": "Solana Pelayo",             "bloque": "La Libertad Avanza",       "mandato": "2025-2029"},
+    {"nombre": "Nicolás Pakgojz",           "bloque": "La Libertad Avanza",       "mandato": "2025-2029"},
+    {"nombre": "Andrea Freguia",            "bloque": "La Libertad Avanza",       "mandato": "2025-2029"},
+    {"nombre": "Juan Pablo Arenaza",        "bloque": "La Libertad Avanza",       "mandato": "2025-2029"},
+    {"nombre": "Lucía Montenegro",          "bloque": "La Libertad Avanza",       "mandato": "2025-2029"},
+    {"nombre": "Leonardo Saifert",          "bloque": "La Libertad Avanza",       "mandato": "2025-2029"},
+    {"nombre": "Rebeca Fleitas",            "bloque": "La Libertad Avanza",       "mandato": "2025-2029"},
+    {"nombre": "Diego Vartabedian",         "bloque": "La Libertad Avanza",       "mandato": "2025-2029"},
+    {"nombre": "Marina Kienast",            "bloque": "La Libertad Avanza",       "mandato": "2025-2029"},
+
+    {"nombre": "Facundo Del Gaiso",         "bloque": "Vamos por Más",            "mandato": "2023-2027"},
+    {"nombre": "Matías López",              "bloque": "Vamos por Más",            "mandato": "2023-2027"},
+    {"nombre": "Gimena Villafruela",        "bloque": "Vamos por Más",            "mandato": "2023-2027"},
+    {"nombre": "Guillermo Suárez",          "bloque": "Vamos por Más",            "mandato": "2023-2027"},
+    {"nombre": "Sergio Siciliano",          "bloque": "Vamos por Más",            "mandato": "2023-2027"},
+    {"nombre": "Patricia Glize",            "bloque": "Vamos por Más",            "mandato": "2023-2027"},
+    {"nombre": "Sebastián Nagata",          "bloque": "Vamos por Más",            "mandato": "2023-2027"},
+    {"nombre": "Silvia Lospennato",         "bloque": "Vamos por Más",            "mandato": "2025-2029", "presidente_bloque": true},
+    {"nombre": "Hernán Lombardi",           "bloque": "Vamos por Más",            "mandato": "2025-2029"},
+    {"nombre": "Laura Alonso",              "bloque": "Vamos por Más",            "mandato": "2025-2029"},
+    {"nombre": "Darío Nieto",               "bloque": "Vamos por Más",            "mandato": "2025-2029"},
+
+    {"nombre": "Graciela Ocaña",            "bloque": "Confianza y Desarrollo",   "mandato": "2023-2027", "presidente_bloque": true},
+    {"nombre": "María Fernanda Mollard",    "bloque": "Confianza y Desarrollo",   "mandato": "2023-2027"},
+    {"nombre": "Ignacio Parera",            "bloque": "Confianza y Desarrollo",   "mandato": "2023-2027"},
+    {"nombre": "Horacio Rodríguez Larreta", "bloque": "Confianza y Desarrollo",   "mandato": "2025-2029"},
+    {"nombre": "Guadalupe Tagliaferri",     "bloque": "Confianza y Desarrollo",   "mandato": "2025-2029"},
+    {"nombre": "Emmanuel Ferrario",         "bloque": "Confianza y Desarrollo",   "mandato": "2025-2029"},
+
+    {"nombre": "Manuela Thourte",           "bloque": "Ciudadanos Unidos - UCR",  "mandato": "2023-2027", "presidente_bloque": true},
+    {"nombre": "Silvia Imas",               "bloque": "Ciudadanos Unidos - UCR",  "mandato": "2023-2027"},
+    {"nombre": "Juan Loupias",              "bloque": "Ciudadanos Unidos - UCR",  "mandato": "2023-2027"},
+    {"nombre": "Aldana Crucitta",           "bloque": "Ciudadanos Unidos - UCR",  "mandato": "2023-2027"},
+    {"nombre": "Waldo Wolff",               "bloque": "Ciudadanos Unidos - UCR",  "mandato": "2025-2029"},
+
+    {"nombre": "Pablo Donati",              "bloque": "Republicanos Unidos",      "mandato": "2023-2027", "presidente_bloque": true},
+
+    {"nombre": "Eugenio Casielles",         "bloque": "Transformación",           "mandato": "2023-2027", "presidente_bloque": true},
+
+    {"nombre": "Vanina Biasi",              "bloque": "FIT-U",                    "mandato": "2025-2029", "presidente_bloque": true},
+    {"nombre": "Andrea D'Atri",             "bloque": "FIT-U",                    "mandato": "2023-2027"}
+  ]
+}
