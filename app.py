@@ -66,6 +66,8 @@ with st.sidebar:
     - 🛍 Mapa Comercial CABA
     - 🚇 Movilidad CABA
     - 📚 Educación & Calidad CABA
+    - 🏗 Obras Públicas CABA
+    - 🔍 Fiscalizaciones CABA
     """)
     st.markdown("---")
     st.markdown("**Fuentes de datos**")

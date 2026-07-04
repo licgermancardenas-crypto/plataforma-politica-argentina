@@ -1,0 +1,465 @@
+{
+  "fuente": "AGC – Inspecciones realizadas 2022-2024",
+  "totales_por_anio": [
+    {
+      "anio": 2022,
+      "total": 64868
+    },
+    {
+      "anio": 2023,
+      "total": 8978
+    },
+    {
+      "anio": 2024,
+      "total": 15289
+    }
+  ],
+  "total_historico": 89135,
+  "top_areas": {
+    "Establecimientos y Productos Alimenticios": 36589,
+    "SGO Inspecciones simples": 9323,
+    "Mercadería en Tránsito y Vía Pública": 7020,
+    "Obras": 4735,
+    "SGO Fiscalización Crítica": 4367,
+    "Auditorias Integrales Programadas": 3634,
+    "SGO Verificaciones": 3536,
+    "AVO": 3381,
+    "SGO Fiscalización Nocturna": 3326,
+    "SGO Grandes Superficies": 3045,
+    "SGO Est. Salud y Geriátricos": 1669,
+    "SGO Est. Educativos": 1590,
+    "SGO Est. Deportivos": 1393,
+    "SGO Est. Hoteles y Pensiones": 1160,
+    "Térmicas": 1113,
+    "Incendio": 993,
+    "Elevadores": 947,
+    "SGO Eventos Masivos": 368,
+    "SGO Suspensiones y Rechazos": 352,
+    "Eléctricas": 290
+  },
+  "por_categoria_anio": [
+    {
+      "anio": 2022,
+      "categoria": "Alimenticios",
+      "n": 29342
+    },
+    {
+      "anio": 2022,
+      "categoria": "Auditorías Integrales",
+      "n": 2010
+    },
+    {
+      "anio": 2022,
+      "categoria": "Deportivos",
+      "n": 915
+    },
+    {
+      "anio": 2022,
+      "categoria": "Educativos",
+      "n": 770
+    },
+    {
+      "anio": 2022,
+      "categoria": "Elevadores",
+      "n": 947
+    },
+    {
+      "anio": 2022,
+      "categoria": "Eventos",
+      "n": 221
+    },
+    {
+      "anio": 2022,
+      "categoria": "Fiscalización Crítica",
+      "n": 2013
+    },
+    {
+      "anio": 2022,
+      "categoria": "Fiscalización Nocturna",
+      "n": 1362
+    },
+    {
+      "anio": 2022,
+      "categoria": "Grandes Superficies",
+      "n": 1822
+    },
+    {
+      "anio": 2022,
+      "categoria": "Hoteles / Pensiones",
+      "n": 1123
+    },
+    {
+      "anio": 2022,
+      "categoria": "Inspecciones Simples",
+      "n": 5719
+    },
+    {
+      "anio": 2022,
+      "categoria": "Mercadería / Vía Pública",
+      "n": 5289
+    },
+    {
+      "anio": 2022,
+      "categoria": "Obras / AVO",
+      "n": 8116
+    },
+    {
+      "anio": 2022,
+      "categoria": "Otros",
+      "n": 1420
+    },
+    {
+      "anio": 2022,
+      "categoria": "Salud / Geriátricos",
+      "n": 961
+    },
+    {
+      "anio": 2022,
+      "categoria": "Seguridad (Incendio/Térmicas)",
+      "n": 993
+    },
+    {
+      "anio": 2022,
+      "categoria": "Verificaciones",
+      "n": 1845
+    },
+    {
+      "anio": 2023,
+      "categoria": "Alimenticios",
+      "n": 7247
+    },
+    {
+      "anio": 2023,
+      "categoria": "Mercadería / Vía Pública",
+      "n": 1731
+    },
+    {
+      "anio": 2024,
+      "categoria": "Auditorías Integrales",
+      "n": 1624
+    },
+    {
+      "anio": 2024,
+      "categoria": "Deportivos",
+      "n": 765
+    },
+    {
+      "anio": 2024,
+      "categoria": "Educativos",
+      "n": 820
+    },
+    {
+      "anio": 2024,
+      "categoria": "Eventos",
+      "n": 147
+    },
+    {
+      "anio": 2024,
+      "categoria": "Fiscalización Crítica",
+      "n": 2354
+    },
+    {
+      "anio": 2024,
+      "categoria": "Fiscalización Nocturna",
+      "n": 1964
+    },
+    {
+      "anio": 2024,
+      "categoria": "Grandes Superficies",
+      "n": 1223
+    },
+    {
+      "anio": 2024,
+      "categoria": "Hoteles / Pensiones",
+      "n": 389
+    },
+    {
+      "anio": 2024,
+      "categoria": "Inspecciones Simples",
+      "n": 3604
+    },
+    {
+      "anio": 2024,
+      "categoria": "Salud / Geriátricos",
+      "n": 708
+    },
+    {
+      "anio": 2024,
+      "categoria": "Verificaciones",
+      "n": 1691
+    }
+  ],
+  "por_mes": [
+    {
+      "anio": 2022,
+      "mes": 4,
+      "n": 13885
+    },
+    {
+      "anio": 2022,
+      "mes": 5,
+      "n": 14071
+    },
+    {
+      "anio": 2022,
+      "mes": 6,
+      "n": 14568
+    },
+    {
+      "anio": 2022,
+      "mes": 7,
+      "n": 3669
+    },
+    {
+      "anio": 2022,
+      "mes": 8,
+      "n": 4237
+    },
+    {
+      "anio": 2022,
+      "mes": 9,
+      "n": 4071
+    },
+    {
+      "anio": 2022,
+      "mes": 10,
+      "n": 3882
+    },
+    {
+      "anio": 2022,
+      "mes": 11,
+      "n": 4131
+    },
+    {
+      "anio": 2022,
+      "mes": 12,
+      "n": 2342
+    },
+    {
+      "anio": 2023,
+      "mes": 10,
+      "n": 3171
+    },
+    {
+      "anio": 2023,
+      "mes": 11,
+      "n": 3468
+    },
+    {
+      "anio": 2023,
+      "mes": 12,
+      "n": 2339
+    },
+    {
+      "anio": 2024,
+      "mes": 4,
+      "n": 5163
+    },
+    {
+      "anio": 2024,
+      "mes": 5,
+      "n": 5507
+    },
+    {
+      "anio": 2024,
+      "mes": 6,
+      "n": 3641
+    }
+  ],
+  "top_categorias": {
+    "Alimenticios": 36589,
+    "Inspecciones Simples": 9323,
+    "Obras / AVO": 8116,
+    "Mercadería / Vía Pública": 7020,
+    "Fiscalización Crítica": 4367,
+    "Auditorías Integrales": 3634,
+    "Verificaciones": 3536,
+    "Fiscalización Nocturna": 3326,
+    "Grandes Superficies": 3045,
+    "Deportivos": 1680,
+    "Salud / Geriátricos": 1669,
+    "Educativos": 1590,
+    "Hoteles / Pensiones": 1512,
+    "Otros": 1420,
+    "Seguridad (Incendio/Térmicas)": 993,
+    "Elevadores": 947,
+    "Eventos": 368
+  },
+  "area_por_anio": [
+    {
+      "anio": 2022,
+      "area": "Establecimientos y Productos Alimenticios",
+      "n": 29342
+    },
+    {
+      "anio": 2022,
+      "area": "SGO Inspecciones simples",
+      "n": 5719
+    },
+    {
+      "anio": 2022,
+      "area": "Mercadería en Tránsito y Vía Pública",
+      "n": 5289
+    },
+    {
+      "anio": 2022,
+      "area": "Obras",
+      "n": 4735
+    },
+    {
+      "anio": 2022,
+      "area": "AVO",
+      "n": 3381
+    },
+    {
+      "anio": 2022,
+      "area": "SGO Fiscalización Crítica",
+      "n": 2013
+    },
+    {
+      "anio": 2022,
+      "area": "Auditorias Integrales Programadas",
+      "n": 2010
+    },
+    {
+      "anio": 2022,
+      "area": "SGO Verificaciones",
+      "n": 1845
+    },
+    {
+      "anio": 2022,
+      "area": "SGO Grandes Superficies",
+      "n": 1822
+    },
+    {
+      "anio": 2022,
+      "area": "SGO Fiscalización Nocturna",
+      "n": 1362
+    },
+    {
+      "anio": 2022,
+      "area": "Térmicas",
+      "n": 1113
+    },
+    {
+      "anio": 2022,
+      "area": "Incendio",
+      "n": 993
+    },
+    {
+      "anio": 2022,
+      "area": "SGO Est. Salud y Geriátricos",
+      "n": 961
+    },
+    {
+      "anio": 2022,
+      "area": "Elevadores",
+      "n": 947
+    },
+    {
+      "anio": 2022,
+      "area": "SGO Est. Hoteles y Pensiones",
+      "n": 771
+    },
+    {
+      "anio": 2022,
+      "area": "SGO Est. Educativos",
+      "n": 770
+    },
+    {
+      "anio": 2022,
+      "area": "SGO Est. Deportivos",
+      "n": 740
+    },
+    {
+      "anio": 2022,
+      "area": "SGO Suspensiones y Rechazos",
+      "n": 352
+    },
+    {
+      "anio": 2022,
+      "area": "Eléctricas",
+      "n": 290
+    },
+    {
+      "anio": 2022,
+      "area": "SGO Eventos Masivos",
+      "n": 221
+    },
+    {
+      "anio": 2022,
+      "area": "SGO Eventos Deportivos",
+      "n": 175
+    },
+    {
+      "anio": 2023,
+      "area": "Establecimientos y Productos Alimenticios",
+      "n": 7247
+    },
+    {
+      "anio": 2023,
+      "area": "Mercadería en Tránsito y Vía Pública",
+      "n": 1731
+    },
+    {
+      "anio": 2024,
+      "area": "SGO Inspecciones simples",
+      "n": 3604
+    },
+    {
+      "anio": 2024,
+      "area": "SGO Fiscalización Crítica",
+      "n": 2354
+    },
+    {
+      "anio": 2024,
+      "area": "SGO Fiscalización Nocturna",
+      "n": 1964
+    },
+    {
+      "anio": 2024,
+      "area": "SGO Verificaciones",
+      "n": 1691
+    },
+    {
+      "anio": 2024,
+      "area": "Auditorias Integrales Programadas",
+      "n": 1624
+    },
+    {
+      "anio": 2024,
+      "area": "SGO Grandes Superficies",
+      "n": 1223
+    },
+    {
+      "anio": 2024,
+      "area": "SGO Est. Educativos",
+      "n": 820
+    },
+    {
+      "anio": 2024,
+      "area": "SGO Est. Salud y Geriátricos",
+      "n": 708
+    },
+    {
+      "anio": 2024,
+      "area": "SGO Est. Deportivos",
+      "n": 653
+    },
+    {
+      "anio": 2024,
+      "area": "SGO Est. Hoteles y Pensiones",
+      "n": 389
+    },
+    {
+      "anio": 2024,
+      "area": "SGO Eventos Masivos",
+      "n": 147
+    },
+    {
+      "anio": 2024,
+      "area": "SGO Eventos Deportivos",
+      "n": 112
+    }
+  ]
+}
