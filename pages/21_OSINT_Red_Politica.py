@@ -162,8 +162,23 @@ def load_fotos():
     with open(path, encoding="utf-8") as f:
         return json.load(f)
 
+@st.cache_data(show_spinner=False)
+def load_fotos_concejales():
+    base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    path = os.path.join(base, "data", "fotos_concejales.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+def foto_concejal(municipio: str, nombre: str, bloque: str = "Otro") -> str:
+    """Foto real si existe, SVG avatar si no."""
+    key = f"{municipio}::{nombre}"
+    return fotos_conc.get(key) or svg_avatar(nombre, bloque)
+
 ints, secs_data, conc_data, leg_data, leg_caba = load()
 fotos_ints = load_fotos()
+fotos_conc = load_fotos_concejales()
 
 df_int  = pd.DataFrame(ints)
 df_conc = pd.DataFrame(conc_data)
@@ -383,7 +398,7 @@ with tab1:
             for c in [x for x in conc_data if x["municipio"] == mun][:7]:
                 cid = f"conc__{mun}__{c['nombre']}"
                 bc = hex_bloque(c.get("bloque",""))
-                cfoto = svg_avatar(c["nombre"], c.get("bloque",""))
+                cfoto = foto_concejal(c.get("municipio", mun), c["nombre"], c.get("bloque",""))
                 net.add_node(cid, label=c["nombre"][:22],
                              size=18, shape="circularImage", image=cfoto,
                              color={"border":bc,
@@ -571,7 +586,7 @@ with tab2:
             bc = hex_bloque(blq)
             cards_blq = ""
             for c in concejales:
-                cfoto = svg_avatar(c["nombre"], c.get("bloque",""))
+                cfoto = foto_concejal(c.get("municipio", mun), c["nombre"], c.get("bloque",""))
                 cards_blq += make_person_card(
                     c["nombre"], f"#{c.get('n_orden','')} · {c.get('partido','')[:20]}",
                     cfoto, bc, size="sm"
