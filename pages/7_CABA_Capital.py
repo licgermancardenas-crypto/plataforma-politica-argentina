@@ -72,6 +72,24 @@ def load_elecciones():
         return json.load(f)
 
 @st.cache_data(show_spinner=False)
+def load_socioeconomia():
+    path = os.path.join(DATA_DIR, "socioeconomia_caba.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        d = json.load(f)
+    return {r["comuna"]: r for r in d.get("por_comuna", [])}
+
+@st.cache_data(show_spinner=False)
+def load_delitos_stats():
+    path = os.path.join(DATA_DIR, "delitos_caba_stats.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        d = json.load(f)
+    return {r["comuna"]: r for r in d.get("por_comuna", [])}
+
+@st.cache_data(show_spinner=False)
 def build_bounds_index(geojson):
     idx = {}
     for feat in geojson["features"]:
@@ -83,10 +101,12 @@ def build_bounds_index(geojson):
             pass
     return idx
 
-geojson_data = load_comunas()
-elec_list    = load_elecciones()
-elec_by_id   = {e["seccion_id"]: e for e in elec_list}
-bounds_index = build_bounds_index(geojson_data)
+geojson_data  = load_comunas()
+elec_list     = load_elecciones()
+elec_by_id    = {e["seccion_id"]: e for e in elec_list}
+bounds_index  = build_bounds_index(geojson_data)
+socio_by_com  = load_socioeconomia()
+delitos_by_com = load_delitos_stats()
 
 # ── Constantes ────────────────────────────────────────────────────────
 PARTIDO_COLOR = {
@@ -218,6 +238,45 @@ with st.sidebar:
     <span style="background:{cat_c}22;color:{cat_c};border:1px solid {cat_c}55;padding:3px 10px;border-radius:20px;font-size:.7rem;font-weight:800;">+{margen:.1f} pp ventaja</span>
     <span style="font-size:.6rem;color:#475569;">{delta_s}</span>
   </div>
+</div>""", unsafe_allow_html=True)
+
+        # ── Socioeconomía ──────────────────────────────────────────
+        s = socio_by_com.get(sel)
+        d = delitos_by_com.get(float(sel))
+        if s or d:
+            NIVEL_COLOR = {"Alta": "#EF4444", "Media": "#F97316", "Baja": "#6EE7B7"}
+            niv   = s.get("nivel_vulnerabilidad","") if s else ""
+            niv_c = NIVEL_COLOR.get(niv, "#64748B")
+            pop_s = f"{s['poblacion_2010']:,}".replace(",",".") if s else "—"
+            nbi_s = f"{s['nbi_pct']}%" if s else "—"
+            def_s = f"{s['deficit_cuantitativo']}%" if s else "—"
+            del_s = f"{int(d['total']):,}".replace(",",".") if d else "—"
+            tasa_s = f"{d['tasa_por_1000']}" if d else "—"
+            hom_s  = f"{int(d['homicidios'])}" if d else "—"
+
+            def row2(ico, lbl, val, clr="#94A3B8"):
+                return (f"<div style='display:flex;justify-content:space-between;padding:4px 0;"
+                        f"border-bottom:1px solid #0F172A;font-size:.75rem;'>"
+                        f"<span style='color:#475569;'>{ico} {lbl}</span>"
+                        f"<span style='color:{clr};font-weight:700;'>{val}</span></div>")
+
+            st.markdown(f"""
+<div style='background:#0A1628;border:1px solid #1E293B;border-radius:9px;padding:10px 12px;margin-top:6px;'>
+  <div style='font-size:.58rem;font-weight:700;color:#334155;text-transform:uppercase;
+              letter-spacing:.1em;margin-bottom:6px;'>Perfil social · Seguridad</div>
+  {''.join([
+    row2("👥","Población (2010)", pop_s, "#93C5FD"),
+    row2("📊","NBI", nbi_s, "#F97316"),
+    row2("🏚","Déficit hab.", def_s, "#FBBF24"),
+    (f"<div style='display:flex;justify-content:space-between;padding:4px 0;"
+     f"border-bottom:1px solid #0F172A;font-size:.75rem;'>"
+     f"<span style='color:#475569;'>🔴 Vulnerabilidad</span>"
+     f"<span style='background:{niv_c}22;color:{niv_c};border:1px solid {niv_c}44;"
+     f"padding:1px 8px;border-radius:10px;font-size:.68rem;font-weight:700;'>{niv}</span></div>" if niv else ""),
+    row2("🔴","Hechos 2024", del_s, "#EF4444"),
+    row2("📈","Tasa/1.000", tasa_s, "#EF4444"),
+    row2("💀","Homicidios", hom_s, "#7F1D1D"),
+  ])}
 </div>""", unsafe_allow_html=True)
 
     else:
