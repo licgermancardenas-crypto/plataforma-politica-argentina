@@ -555,7 +555,7 @@ def make_popup(props):
 # ═══════════════════════════════════════════════════════════════════════════
 # CONSTRUIR MAPA FOLIUM
 # ═══════════════════════════════════════════════════════════════════════════
-def build_map(visible_munis_tuple, capa_mode, show_labels_, show_disputes_, center=None, zoom=7, radios_gj=None, fit_bounds=None, selected_muni=None):
+def build_map(visible_munis_tuple, capa_mode, show_labels_, show_disputes_, center=None, zoom=7, radios_gj=None, fit_bounds=None, zoomed_muni=None):
     visible = set(visible_munis_tuple)
 
     m = folium.Map(
@@ -623,31 +623,36 @@ def build_map(visible_munis_tuple, capa_mode, show_labels_, show_disputes_, cent
             continue
 
         is_visible = muni in visible
-        is_sel     = (muni == selected_muni)
+        is_zoomed  = (muni == zoomed_muni)
 
-        fill  = get_color(props, capa_mode) if is_visible else '#1E293B'
-        # Opacidad y borde según estado
-        if is_sel:
-            opac, w_, border = 0.92, 3.5, '#FFFFFF'
-        elif is_visible:
-            opac, w_, border = 0.68, 1.0, '#FFFFFF44'
+        fill = get_color(props, capa_mode) if is_visible else '#1E293B'
+
+        # Cuando hay zoom activo: solo ese municipio se marca, el resto se apaga
+        if zoomed_muni:
+            if is_zoomed:
+                opac, w_, border = 0.95, 4.0, '#FFFFFF'
+            elif is_visible:
+                opac, w_, border = 0.18, 0.5, '#FFFFFF22'
+            else:
+                opac, w_, border = 0.08, 0.3, '#1E293B'
         else:
-            opac, w_, border = 0.15, 0.4, '#1E293B'
+            # Sin zoom: todos iguales, sin distinción
+            if is_visible:
+                opac, w_, border = 0.72, 1.0, '#FFFFFF55'
+            else:
+                opac, w_, border = 0.15, 0.4, '#1E293B'
 
-        hint = ""
-        if is_sel:
-            hint = "<br><span style='font-size:.65rem;color:#6EE7B7;'>🔍 Clic de nuevo para hacer zoom</span>"
         popup = folium.Popup(make_popup(props), max_width=340) if is_visible else None
         tip   = folium.Tooltip(
             f"<b style='color:{'#F1F5F9' if is_visible else '#475569'};'>{muni}</b>"
             + (f"<br><span style='color:{fill};font-size:.78rem;'>{props.get('bloque','')}</span>"
                + f"<br><span style='font-size:.72rem;color:#94A3B8;'>Margen: {props.get('margen',0):.1f}pp</span>"
-               + hint if is_visible else ""),
+               if is_visible else ""),
             sticky=True,
         )
 
         geo_style  = {'fillColor': fill, 'color': border, 'weight': w_, 'fillOpacity': opac}
-        geo_hi     = {'weight': 4 if is_sel else 3, 'color': '#FFFFFF', 'fillOpacity': 0.95}
+        geo_hi     = {'weight': 4, 'color': '#FFFFFF', 'fillOpacity': 0.95}
         disp_style = {'fillColor': 'transparent', 'color': '#EF4444',
                       'weight': 2.5, 'fillOpacity': 0, 'dashArray': '5 4'}
 
@@ -746,7 +751,7 @@ with st.spinner("Renderizando mapa..."):
         zoom=st.session_state.map_zoom,
         radios_gj=radios_data,
         fit_bounds=zoom_bounds,
-        selected_muni=sel_muni,
+        zoomed_muni=zoomed_muni,
     )
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -756,12 +761,21 @@ map_result = st_folium(
     folium_map,
     width="100%",
     height=920,
-    returned_objects=["last_object_clicked_popup", "last_object_clicked"],
-    key=f"map_{capa}_{tuple(sorted(visible_munis))}_{show_labels}_{show_disputes}_{show_radios}_{sel_muni}_{zoomed_muni}",
+    returned_objects=["last_object_clicked", "center", "zoom"],
+    key=f"map_{capa}_{tuple(sorted(visible_munis))}_{show_labels}_{show_disputes}_{show_radios}_{zoomed_muni}",
 )
 
-# Detectar municipio clickeado via lat/lng → point-in-polygon
-# 1er clic → seleccionar (panel), 2do clic mismo municipio → zoom
+# Guardar posición actual del mapa antes de rerun
+if map_result:
+    if map_result.get("center"):
+        c = map_result["center"]
+        st.session_state.map_center = [c["lat"], c["lng"]]
+    if map_result.get("zoom"):
+        st.session_state.map_zoom = map_result["zoom"]
+
+# Detectar clic via lat/lng → point-in-polygon
+# 1er clic → sidebar (mapa no cambia su key → no se re-renderiza)
+# 2do clic mismo municipio → zoom + resaltado exclusivo
 clicked = map_result.get("last_object_clicked") if map_result else None
 if clicked and isinstance(clicked, dict):
     lat = clicked.get("lat")
@@ -769,13 +783,12 @@ if clicked and isinstance(clicked, dict):
     if lat is not None and lng is not None:
         found = find_muni_by_point(lat, lng)
         if found:
-            if found == st.session_state.selected_muni:
-                # 2do clic → zoom
-                if st.session_state.zoomed_muni != found:
-                    st.session_state.zoomed_muni = found
-                    st.rerun()
-            else:
-                # 1er clic → solo seleccionar, sin zoom
+            if found == st.session_state.selected_muni and st.session_state.zoomed_muni != found:
+                # 2do clic → zoom (cambia key del mapa → re-render con highlighting)
+                st.session_state.zoomed_muni = found
+                st.rerun()
+            elif found != st.session_state.selected_muni:
+                # 1er clic → solo actualiza sidebar (key del mapa NO cambia)
                 st.session_state.selected_muni = found
                 st.session_state.zoomed_muni   = None
                 st.rerun()
@@ -789,7 +802,7 @@ with st.sidebar:
 
     zoom_hint = ""
     if sel_row is not None and st.session_state.zoomed_muni != st.session_state.selected_muni:
-        zoom_hint = "<span style='background:#6EE7B722;color:#6EE7B7;border:1px solid #6EE7B755;padding:1px 7px;border-radius:10px;font-size:.6rem;font-weight:700;margin-left:6px;'>clic de nuevo = zoom</span>"
+        zoom_hint = "<span style='background:#6EE7B722;color:#6EE7B7;border:1px solid #6EE7B755;padding:1px 7px;border-radius:10px;font-size:.6rem;font-weight:700;margin-left:6px;'>doble clic = zoom</span>"
 
     st.markdown(f"""
     <div style="font-size:.58rem;font-weight:700;color:#1E3A5F;text-transform:uppercase;

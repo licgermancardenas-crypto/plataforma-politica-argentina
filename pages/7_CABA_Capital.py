@@ -295,20 +295,21 @@ for feat in geojson_data["features"]:
     ganador = e.get("ganador", "")
     margen  = e.get("margen", 0)
 
-    is_sel  = (c_id == sel)
-    is_zoom = (c_id == zoomed)
-    fill    = margin_color(ganador, margen)
-    border  = PARTIDO_COLOR.get(ganador, "#64748B")
-    if is_zoom:
-        opacity, weight, border = 0.92, 4.0, "#FFFFFF"
-    elif is_sel:
-        opacity, weight, border = 0.85, 3.0, "#FFFFFFCC"
+    is_zoomed = (c_id == zoomed)
+    fill      = margin_color(ganador, margen)
+    border    = PARTIDO_COLOR.get(ganador, "#64748B")
+
+    if zoomed:
+        if is_zoomed:
+            opacity, weight, border = 0.95, 4.0, "#FFFFFF"
+        else:
+            opacity, weight, border = 0.18, 0.5, "#FFFFFF22"
     else:
-        opacity, weight = 0.55, 1.5
+        opacity, weight = 0.58, 1.5
 
     short  = PARTIDO_SHORT.get(ganador, ganador)
     short2 = PARTIDO_SHORT.get(e.get("segundo",""), e.get("segundo",""))
-    zoom_hint = "<br><span style='color:#6EE7B7;font-size:.65rem;'>🔍 Clic de nuevo para hacer zoom</span>" if is_sel and not is_zoom else ""
+    zoom_hint = "<br><span style='color:#6EE7B7;font-size:.65rem;'>🔍 Doble clic para hacer zoom</span>" if (c_id == sel and not is_zoomed) else ""
     tooltip = (
         f"<b>Comuna {c_id:02d}</b><br>"
         f"{props.get('barrios','')}<br><br>"
@@ -346,11 +347,20 @@ map_result = st_folium(
     m,
     height=620,
     use_container_width=True,
-    returned_objects=["last_object_clicked_tooltip"],
-    key=f"caba_map_{sel}_{zoomed}",
+    returned_objects=["last_object_clicked_tooltip", "center", "zoom"],
+    key=f"caba_map_{zoomed}",
 )
 
-# Handle click: 1er clic = info, 2do clic = zoom
+# Guardar posición del mapa
+if map_result:
+    if map_result.get("center"):
+        c = map_result["center"]
+        st.session_state.map_center = [c["lat"], c["lng"]]
+    if map_result.get("zoom"):
+        st.session_state.map_zoom = map_result["zoom"]
+
+# 1er clic → sidebar (key del mapa no cambia)
+# Doble clic → zoom + resaltado exclusivo (key cambia)
 if map_result and map_result.get("last_object_clicked_tooltip"):
     tip = map_result["last_object_clicked_tooltip"]
     if tip and "Comuna" in tip:
@@ -359,13 +369,12 @@ if map_result and map_result.get("last_object_clicked_tooltip"):
             match = re.search(r"Comuna (\d+)", tip)
             if match:
                 clicked_id = int(match.group(1))
-                if clicked_id == st.session_state.sel_comuna:
-                    # 2do clic → zoom
-                    if st.session_state.zoomed_comuna != clicked_id:
-                        st.session_state.zoomed_comuna = clicked_id
-                        st.rerun()
-                else:
-                    # 1er clic → solo info, sin zoom
+                if clicked_id == st.session_state.sel_comuna and st.session_state.zoomed_comuna != clicked_id:
+                    # Doble clic → zoom
+                    st.session_state.zoomed_comuna = clicked_id
+                    st.rerun()
+                elif clicked_id != st.session_state.sel_comuna:
+                    # 1er clic → solo sidebar
                     st.session_state.sel_comuna    = clicked_id
                     st.session_state.zoomed_comuna = None
                     st.rerun()
