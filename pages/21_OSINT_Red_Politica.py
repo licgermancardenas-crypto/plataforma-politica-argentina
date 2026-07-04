@@ -3,7 +3,7 @@ Página 21 – OSINT · Red Política PBA
 Mapa de poder interactivo: intendentes, secretarios, concejales y legisladores
 Estilo investigation board / tactical intelligence dashboard
 """
-import json, os, re, tempfile
+import json, os, urllib.parse
 import streamlit as st
 import streamlit.components.v1 as components
 import plotly.graph_objects as go
@@ -117,7 +117,22 @@ def load():
         leg_caba = json.load(f)
     return ints, secs, conc, leg, leg_caba
 
+@st.cache_data(show_spinner=False)
+def load_fotos():
+    base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    path = os.path.join(base, "data", "fotos_intendentes.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+def avatar_url(name, bloque):
+    color = hex_bloque(bloque).lstrip("#")
+    encoded = urllib.parse.quote(name)
+    return f"https://ui-avatars.com/api/?name={encoded}&background={color}&color=ffffff&size=200&bold=true&font-size=0.38&rounded=true"
+
 ints, secs_data, conc_data, leg_data, leg_caba = load()
+fotos = load_fotos()
 
 df_int  = pd.DataFrame(ints)
 df_conc = pd.DataFrame(conc_data)
@@ -228,7 +243,7 @@ with tab1:
     @st.cache_data(show_spinner=False)
     def build_network_html(sec_filter, blq_filter, show_sec, show_leg, phys_on):
         net = Network(
-            height="650px",
+            height="700px",
             width="100%",
             bgcolor="#070B14",
             font_color="#CBD5E1",
@@ -239,44 +254,57 @@ with tab1:
         net.set_options(f"""
         {{
           "nodes": {{
-            "font": {{"face": "Courier New", "size": 11}},
-            "borderWidth": 2,
-            "shadow": {{"enabled": true, "color": "rgba(0,255,136,0.3)", "size": 15, "x": 0, "y": 0}}
+            "font": {{"face": "Courier New", "size": 11, "color": "#E2E8F0"}},
+            "borderWidth": 3,
+            "borderWidthSelected": 5,
+            "shadow": {{
+              "enabled": true,
+              "color": "rgba(0,255,136,0.4)",
+              "size": 20,
+              "x": 0,
+              "y": 0
+            }}
           }},
           "edges": {{
-            "smooth": {{"type": "continuous"}},
+            "smooth": {{"type": "curvedCW", "roundness": 0.15}},
             "shadow": false,
-            "width": 1.5
+            "selectionWidth": 3
           }},
           "physics": {{
             {physics_str},
             "forceAtlas2Based": {{
-              "gravitationalConstant": -80,
-              "centralGravity": 0.01,
-              "springLength": 160,
-              "springConstant": 0.08,
-              "damping": 0.4,
-              "avoidOverlap": 0.8
+              "gravitationalConstant": -100,
+              "centralGravity": 0.008,
+              "springLength": 200,
+              "springConstant": 0.06,
+              "damping": 0.45,
+              "avoidOverlap": 1.0
             }},
             "solver": "forceAtlas2Based",
-            "stabilization": {{"iterations": 200}}
+            "stabilization": {{"iterations": 250, "updateInterval": 25}}
           }},
           "interaction": {{
             "hover": true,
-            "tooltipDelay": 100,
-            "hideEdgesOnDrag": true
+            "tooltipDelay": 80,
+            "hideEdgesOnDrag": true,
+            "multiselect": false,
+            "navigationButtons": false
           }}
         }}""")
 
         # ── Nodo central PBA ──
         net.add_node(
             "PBA",
-            label="Buenos Aires\nProvincia",
-            size=55,
-            color={"background": "#1F3864", "border": "#3B82F6", "highlight": {"border": "#60A5FA"}},
+            label="BUENOS AIRES\nPROVINCIA",
+            size=70,
+            color={"background": "#0F2044", "border": "#3B82F6",
+                   "highlight": {"background": "#1E3A5F", "border": "#60A5FA"}},
             shape="dot",
-            title="<b>Provincia de Buenos Aires</b><br>135 municipios",
-            font={"size": 14, "color": "#93C5FD", "face": "Courier New"},
+            title=("<b style='color:#60A5FA;font-size:1.1rem;'>🗺 PROVINCIA DE BUENOS AIRES</b><br>"
+                   "135 municipios · 8 secciones electorales<br>"
+                   "<i style='color:#475569;'>Click en un intendente para expandir su red</i>"),
+            font={"size": 16, "color": "#93C5FD", "face": "Courier New", "bold": True},
+            borderWidth=4,
         )
 
         # ── Nodos de sección ──
@@ -289,14 +317,16 @@ with tab1:
                 n_mun = len(df_int[df_int["seccion_nombre"] == sec_name])
                 net.add_node(
                     sec_name,
-                    label=sec_name[:20],
-                    size=38,
-                    color={"background": color + "33", "border": color},
+                    label=sec_name[:22],
+                    size=48,
+                    color={"background": "#0A0F1E", "border": color,
+                           "highlight": {"background": color + "22", "border": color}},
                     shape="dot",
-                    title=f"<b>{sec_name}</b><br>{n_mun} municipios",
-                    font={"size": 12, "color": color},
+                    title=f"<b style='color:{color};'>{sec_name}</b><br>{n_mun} municipios",
+                    font={"size": 13, "color": color, "face": "Courier New"},
+                    borderWidth=3,
                 )
-                net.add_edge("PBA", sec_name, color={"color": color + "55"}, width=2)
+                net.add_edge("PBA", sec_name, color={"color": color + "66"}, width=2.5)
 
         # ── Nodos de municipio/intendente + hijos ocultos ──
         for row in ints:
@@ -308,56 +338,69 @@ with tab1:
             mun = row["municipio"]
             color = hex_bloque(row["bloque"])
             padron = row.get("padron") or 50000
-            size = min(8 + padron / 35000, 40)
+            # Tamaño proporcional al padrón, entre 35 y 75px
+            size = min(35 + padron / 30000, 75)
             intend = row.get("intendente", "?")
             partido = row.get("partido", "?")
             n_conc = row.get("n_concejales", "?")
             pct = row.get("ganador_pct", "?")
             n_secs = len(secs_data.get(mun, []))
 
-            title = (f"<b style='color:{color}'>{mun}</b><br>"
-                     f"<b>Intendente:</b> {intend}<br>"
-                     f"<b>Bloque:</b> {row['bloque']}<br>"
-                     f"<b>Partido:</b> {partido}<br>"
-                     f"<b>Resultado 2023:</b> {pct}%<br>"
-                     f"<b>Padrón:</b> {padron:,}<br>"
-                     f"<b>Secretarías:</b> {n_secs} &nbsp;·&nbsp; "
-                     f"<b>Concejales:</b> {n_conc}<br>"
-                     f"<i style='color:#00FF88;'>▶ Click para expandir red</i>")
+            # Foto: Wikipedia si existe, avatar coloreado si no
+            foto = fotos.get(mun) or avatar_url(intend, row["bloque"])
+
+            title = (f"<div style='font-family:Courier New;min-width:220px;'>"
+                     f"<div style='color:{color};font-size:1rem;font-weight:700;'>{mun}</div>"
+                     f"<div style='color:#94A3B8;font-size:.8rem;margin:4px 0;'>"
+                     f"<b style='color:#E2E8F0;'>Intendente:</b> {intend}</div>"
+                     f"<div style='color:{color};font-size:.75rem;'>{row['bloque']}</div>"
+                     f"<div style='color:#475569;font-size:.72rem;margin-top:4px;'>"
+                     f"Partido: {partido}<br>"
+                     f"Resultado 2023: {pct}% · Padrón: {padron:,}<br>"
+                     f"Secretarías: {n_secs} · Concejales: {n_conc}</div>"
+                     f"<div style='color:#00FF88;font-size:.72rem;margin-top:6px;'>"
+                     f"▶ Click para expandir red interna</div>"
+                     f"</div>")
 
             net.add_node(
                 mun,
-                label=f"⊕ {mun}\n{intend.split(',')[0] if ',' in intend else intend[:18]}",
+                label=f"{mun}\n{intend[:22]}",
                 size=size,
-                color={"background": color + "33", "border": color,
-                       "highlight": {"background": color + "55", "border": "#FFFFFF"}},
-                shape="dot",
+                shape="circularImage",
+                image=foto,
+                color={"border": color,
+                       "highlight": {"border": "#FFFFFF", "background": color + "44"}},
+                borderWidth=4,
                 title=title,
-                font={"size": 10, "color": "#CBD5E1"},
+                font={"size": 11, "color": "#E2E8F0", "face": "Courier New",
+                      "strokeWidth": 3, "strokeColor": "#070B14"},
             )
             parent = row["seccion_nombre"] if show_sec else "PBA"
             edge_color = SECCION_COLOR.get(row["seccion_nombre"], "#334155") + "88"
-            net.add_edge(parent, mun, color={"color": edge_color}, width=1)
+            net.add_edge(parent, mun, color={"color": edge_color}, width=1.5)
 
             # ── Secretarios (ocultos, se revelan al hacer click) ──
             for s in secs_data.get(mun, []):
                 sid = f"sec__{mun}__{s['nombre']}"
                 net.add_node(
                     sid,
-                    label=s["nombre"][:24],
-                    size=12,
+                    label=s["nombre"][:26],
+                    size=14,
                     color={"background": "#0F2044", "border": "#3B82F6",
                            "highlight": {"background": "#1E3A5F", "border": "#60A5FA"}},
                     shape="box",
                     hidden=True,
-                    title=(f"<b style='color:#60A5FA;'>🏛 SECRETARÍA</b><br>"
-                           f"<b>{s['nombre']}</b><br>"
-                           f"<i>{s['cargo']}</i><br>"
-                           f"<span style='color:#475569;'>{mun}</span>"),
-                    font={"size": 9, "color": "#93C5FD", "face": "Courier New"},
+                    title=(f"<div style='font-family:Courier New;'>"
+                           f"<div style='color:#60A5FA;font-weight:700;'>🏛 SECRETARÍA</div>"
+                           f"<div style='color:#E2E8F0;margin-top:4px;'>{s['nombre']}</div>"
+                           f"<div style='color:#94A3B8;font-size:.8rem;'>{s['cargo']}</div>"
+                           f"<div style='color:#475569;font-size:.75rem;margin-top:4px;'>{mun}</div>"
+                           f"</div>"),
+                    font={"size": 10, "color": "#93C5FD", "face": "Courier New"},
+                    borderWidth=2,
                 )
                 net.add_edge(mun, sid,
-                             color={"color": "#3B82F666"}, width=1.5,
+                             color={"color": "#3B82F677"}, width=2,
                              hidden=True, dashes=True)
 
             # ── Concejales top-7 por municipio (ocultos) ──
@@ -367,20 +410,23 @@ with tab1:
                 blq_col = hex_bloque(c.get("bloque", ""))
                 net.add_node(
                     cid,
-                    label=c["nombre"][:24],
-                    size=10,
-                    color={"background": blq_col + "22", "border": blq_col,
-                           "highlight": {"background": blq_col + "44", "border": "#FFFFFF"}},
+                    label=c["nombre"][:26],
+                    size=12,
+                    color={"background": "#0A0F1E", "border": blq_col,
+                           "highlight": {"background": blq_col + "33", "border": "#FFFFFF"}},
                     shape="diamond",
                     hidden=True,
-                    title=(f"<b style='color:{blq_col};'>🗳 CONCEJAL</b><br>"
-                           f"<b>{c['nombre']}</b><br>"
-                           f"Bloque: {c.get('bloque','')}<br>"
-                           f"<span style='color:#475569;'>{mun}</span>"),
-                    font={"size": 9, "color": "#CBD5E1", "face": "Courier New"},
+                    title=(f"<div style='font-family:Courier New;'>"
+                           f"<div style='color:{blq_col};font-weight:700;'>🗳 CONCEJAL</div>"
+                           f"<div style='color:#E2E8F0;margin-top:4px;'>{c['nombre']}</div>"
+                           f"<div style='color:{blq_col};font-size:.8rem;'>{c.get('bloque','')}</div>"
+                           f"<div style='color:#475569;font-size:.75rem;margin-top:4px;'>{mun}</div>"
+                           f"</div>"),
+                    font={"size": 10, "color": "#CBD5E1", "face": "Courier New"},
+                    borderWidth=2,
                 )
                 net.add_edge(mun, cid,
-                             color={"color": blq_col + "55"}, width=1,
+                             color={"color": blq_col + "66"}, width=1.5,
                              hidden=True, dashes=True)
 
         # ── Nodos de legisladores (opcional) ──
@@ -407,76 +453,150 @@ with tab1:
 
         html = net.generate_html()
 
-        # ── Inyectar handler JS: click en municipio → expande/contrae hijos ──
-        click_js = """
+        # ── CSS cinematográfico + JS click-to-expand ──
+        inject = """
+<style>
+body { margin: 0; padding: 0; background: #070B14; overflow: hidden; }
+#mynetwork {
+  background: #070B14 !important;
+  background-image:
+    linear-gradient(rgba(0,255,136,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,136,0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  border: 1px solid #1E3A5F;
+}
+/* Barra de estado inferior */
+#osint-status {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: rgba(7,11,20,0.92);
+  border-top: 1px solid #1E3A5F;
+  padding: 6px 16px;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: #475569;
+  display: flex; gap: 24px; align-items: center;
+  z-index: 999;
+}
+#osint-status .s-highlight { color: #00FF88; font-weight: 700; }
+#osint-status .s-mun { color: #3B82F6; }
+/* Scanline overlay */
+#mynetwork::after {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0,0,0,0.04) 3px,
+    rgba(0,0,0,0.04) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+</style>
+
+<div id="osint-status">
+  <span>🕵 OSINT · RED POLÍTICA PBA</span>
+  <span id="s-selected">— Ningún nodo seleccionado —</span>
+  <span id="s-expanded" class="s-highlight"></span>
+  <span style="margin-left:auto;color:#1E3A5F;">CLICK en intendente para expandir red interna</span>
+</div>
+
 <script type="text/javascript">
 (function() {
-  var expanded = {};   // trackea qué municipios están expandidos
+  var expanded = {};
+
+  function isDetail(id) {
+    var s = String(id);
+    return s.startsWith("sec__") || s.startsWith("conc__");
+  }
+  function isMunicipio(id) {
+    var s = String(id);
+    return s !== "PBA" && !s.startsWith("sec__") && !s.startsWith("conc__")
+           && !s.startsWith("dip_") && s.indexOf("ª") === -1;
+  }
 
   network.on("click", function(params) {
-    if (params.nodes.length === 0) return;
+    if (params.nodes.length === 0) {
+      document.getElementById("s-selected").textContent = "— Ningún nodo seleccionado —";
+      return;
+    }
     var clickedId = String(params.nodes[0]);
+    var node = nodes.get(clickedId);
 
-    // Solo actuar sobre nodos de municipio (no PBA, secciones, sec__, conc__, dip_)
-    if (clickedId === "PBA") return;
-    if (clickedId.startsWith("sec__") || clickedId.startsWith("conc__") || clickedId.startsWith("dip_")) return;
-    // Ignorar nodos de sección (contienen "ª")
-    if (clickedId.indexOf("ª") !== -1) return;
+    // Actualizar barra de estado
+    if (node) {
+      document.getElementById("s-selected").innerHTML =
+        "<span class='s-mun'>" + clickedId + "</span>";
+    }
 
-    var isExpanded = !!expanded[clickedId];
-    expanded[clickedId] = !isExpanded;
+    if (!isMunicipio(clickedId)) return;
 
-    var connectedNodeIds = network.getConnectedNodes(clickedId);
+    var isExp = !!expanded[clickedId];
+    expanded[clickedId] = !isExp;
+
     var nodeUpdates = [];
     var edgeUpdates = [];
 
-    connectedNodeIds.forEach(function(cid) {
-      var cids = String(cid);
-      if (cids.startsWith("sec__") || cids.startsWith("conc__")) {
+    network.getConnectedNodes(clickedId).forEach(function(cid) {
+      if (isDetail(cid)) {
         var n = nodes.get(cid);
-        if (n) nodeUpdates.push({ id: cid, hidden: isExpanded });
+        if (n) nodeUpdates.push({ id: cid, hidden: isExp });
       }
     });
 
-    var connectedEdgeIds = network.getConnectedEdges(clickedId);
-    connectedEdgeIds.forEach(function(eid) {
+    network.getConnectedEdges(clickedId).forEach(function(eid) {
       var e = edges.get(eid);
-      if (e) {
-        var toId = String(e.to);
-        if (toId.startsWith("sec__") || toId.startsWith("conc__")) {
-          edgeUpdates.push({ id: eid, hidden: isExpanded });
-        }
+      if (e && isDetail(e.to)) {
+        edgeUpdates.push({ id: eid, hidden: isExp });
       }
     });
 
     nodes.update(nodeUpdates);
     edges.update(edgeUpdates);
 
-    // Actualizar label del nodo: ⊕ expandir / ⊖ contraer
-    var mainNode = nodes.get(clickedId);
-    if (mainNode) {
-      var newLabel = mainNode.label;
-      if (!isExpanded) {
-        newLabel = newLabel.replace(/^⊕ /, "⊖ ");
-      } else {
-        newLabel = newLabel.replace(/^⊖ /, "⊕ ");
-      }
-      nodes.update([{ id: clickedId, label: newLabel }]);
-    }
+    // Actualizar barra de estado
+    var totalExpanded = Object.keys(expanded).filter(function(k){ return expanded[k]; }).length;
+    document.getElementById("s-expanded").textContent =
+      totalExpanded > 0 ? "▶ " + totalExpanded + " municipio(s) expandido(s)" : "";
 
-    // Foco en el nodo expandido
-    if (!isExpanded) {
-      network.focus(clickedId, { scale: 1.4, animation: { duration: 600, easingFunction: "easeInOutQuad" } });
+    // Animación de zoom al expandir
+    if (!isExp) {
+      network.focus(clickedId, {
+        scale: 1.6,
+        animation: { duration: 700, easingFunction: "easeInOutCubic" }
+      });
+    } else {
+      network.fit({ animation: { duration: 500, easingFunction: "easeInOutQuad" } });
+    }
+  });
+
+  // Doble click → contraer todos
+  network.on("doubleClick", function(params) {
+    if (params.nodes.length === 0) {
+      // Doble click en fondo → contraer todo
+      var nodeUpdates = [], edgeUpdates = [];
+      nodes.get().forEach(function(n) {
+        if (isDetail(n.id)) nodeUpdates.push({ id: n.id, hidden: true });
+      });
+      edges.get().forEach(function(e) {
+        if (isDetail(e.to)) edgeUpdates.push({ id: e.id, hidden: true });
+      });
+      nodes.update(nodeUpdates);
+      edges.update(edgeUpdates);
+      expanded = {};
+      document.getElementById("s-expanded").textContent = "";
+      network.fit({ animation: { duration: 500 } });
     }
   });
 })();
 </script>
 """
-        html = html.replace("</body>", click_js + "\n</body>")
+        html = html.replace("</body>", inject + "\n</body>")
         return html
 
     net_html = build_network_html(sec_sel, blq_sel, show_secciones, show_legislators, physics_on)
-    components.html(net_html, height=670, scrolling=False)
+    components.html(net_html, height=730, scrolling=False)
 
     st.markdown(f"""
     <div style='font-family:monospace;color:#334155;font-size:.72rem;margin-top:8px;'>
