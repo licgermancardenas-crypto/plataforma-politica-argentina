@@ -71,6 +71,7 @@ with st.sidebar:
     - 👥 Demografía CABA
     - ♀ Género & Violencia CABA
     - 🎭 Turismo & Cultura CABA
+    - 🌿 Medio Ambiente CABA
     """)
     st.markdown("---")
     st.markdown("**Fuentes de datos**")

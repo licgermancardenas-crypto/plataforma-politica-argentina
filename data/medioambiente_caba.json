@@ -1,0 +1,1293 @@
+{
+  "estaciones_monitoreo": [
+    {
+      "nombre": "LA BOCA",
+      "lat": -34.6252584813295,
+      "lon": -58.3663735070165,
+      "parametros": "CO, NO, NO2, NOX, PM10",
+      "inicio": "2009-05-01"
+    },
+    {
+      "nombre": "CENTENARIO",
+      "lat": -34.6066080998154,
+      "lon": -58.4320717652753,
+      "parametros": "CO, NO, NO2, NOX, PM10",
+      "inicio": "2005-01-01"
+    },
+    {
+      "nombre": "CORDOBA",
+      "lat": -34.5995643433432,
+      "lon": -58.391552893462,
+      "parametros": "CO, NO, NO2, NOX, PM10",
+      "inicio": "2009-05-01"
+    },
+    {
+      "nombre": "PALERMO",
+      "lat": -34.5834529467442,
+      "lon": -58.4053598727298,
+      "parametros": "CO, NO, NO2, NOX, PM10",
+      "inicio": "2009-01-01"
+    }
+  ],
+  "calidad_aire_anual": [
+    {
+      "year": 2009,
+      "co_centenario": 0.6431206896551724,
+      "no2_centenario": 23.530285035629454,
+      "pm10_centenario": NaN,
+      "co_cordoba": 0.0,
+      "no2_cordoba": 27.48235294117647,
+      "pm10_cordoba": NaN,
+      "co_la_boca": 0.20840909090909088,
+      "no2_la_boca": 21.87935034802784,
+      "pm10_la_boca": NaN,
+      "co_palermo": 0.8486210700496416,
+      "no2_palermo": NaN,
+      "pm10_palermo": NaN
+    },
+    {
+      "year": 2010,
+      "co_centenario": 1.9889970501474925,
+      "no2_centenario": 26.802315824802818,
+      "pm10_centenario": 0.0,
+      "co_cordoba": 0.705151369533878,
+      "no2_cordoba": 30.91083123425693,
+      "pm10_cordoba": 0.0,
+      "co_la_boca": 0.456487747957993,
+      "no2_la_boca": 25.11047245198374,
+      "pm10_la_boca": 0.0,
+      "co_palermo": 1.068994914022766,
+      "no2_palermo": NaN,
+      "pm10_palermo": NaN
+    },
+    {
+      "year": 2011,
+      "co_centenario": 0.6744042663891779,
+      "no2_centenario": 23.289599016746045,
+      "pm10_centenario": 42.23176507736028,
+      "co_cordoba": 0.5650153108773799,
+      "no2_cordoba": 34.344346928239545,
+      "pm10_cordoba": 39.93721350187526,
+      "co_la_boca": 0.28205704541931487,
+      "no2_la_boca": 26.986854917234663,
+      "pm10_la_boca": 38.566159947124916,
+      "co_palermo": NaN,
+      "no2_palermo": NaN,
+      "pm10_palermo": NaN
+    },
+    {
+      "year": 2012,
+      "co_centenario": 0.5911437864209242,
+      "no2_centenario": 17.72284196547145,
+      "pm10_centenario": 33.86316590563166,
+      "co_cordoba": 0.47819442556084296,
+      "no2_cordoba": 36.26624385192855,
+      "pm10_cordoba": 26.94678995115143,
+      "co_la_boca": 0.239542242703533,
+      "no2_la_boca": 28.250997529925897,
+      "pm10_la_boca": 28.000240269101393,
+      "co_palermo": NaN,
+      "no2_palermo": NaN,
+      "pm10_palermo": NaN
+    },
+    {
+      "year": 2013,
+      "co_centenario": 0.5942388596734015,
+      "no2_centenario": 21.8122995661196,
+      "pm10_centenario": 31.342673017652004,
+      "co_cordoba": 0.3812305465074195,
+      "no2_cordoba": 43.26055534423735,
+      "pm10_cordoba": 26.29802890932983,
+      "co_la_boca": 0.15577167630057803,
+      "no2_la_boca": 14.524524214760946,
+      "pm10_la_boca": 26.173135233474834,
+      "co_palermo": NaN,
+      "no2_palermo": NaN,
+      "pm10_palermo": NaN
+    },
+    {
+      "year": 2014,
+      "co_centenario": 0.6589855595667871,
+      "no2_centenario": 17.252454064938334,
+      "pm10_centenario": 24.519383697813122,
+      "co_cordoba": 0.807919749573136,
+      "no2_cordoba": 11.732053422370617,
+      "pm10_cordoba": 21.437986270022883,
+      "co_la_boca": 0.4559951681843524,
+      "no2_la_boca": 14.57919621749409,
+      "pm10_la_boca": 24.23849765258216,
+      "co_palermo": NaN,
+      "no2_palermo": NaN,
+      "pm10_palermo": NaN
+    },
+    {
+      "year": 2015,
+      "co_centenario": 0.4940309683970047,
+      "no2_centenario": 16.225894973181987,
+      "pm10_centenario": 26.375911521633448,
+      "co_cordoba": 0.4886461772923546,
+      "no2_cordoba": 21.69991534988713,
+      "pm10_cordoba": 27.581367611979857,
+      "co_la_boca": 0.2868104896008267,
+      "no2_la_boca": 12.643486777668953,
+      "pm10_la_boca": 23.0544944570589,
+      "co_palermo": NaN,
+      "no2_palermo": NaN,
+      "pm10_palermo": NaN
+    },
+    {
+      "year": 2016,
+      "co_centenario": 0.5351068883610451,
+      "no2_centenario": 15.862703561498742,
+      "pm10_centenario": 26.518498731133967,
+      "co_cordoba": 0.696434456021323,
+      "no2_cordoba": 20.840203685741997,
+      "pm10_cordoba": 26.194055944055943,
+      "co_la_boca": 0.30493631401091764,
+      "no2_la_boca": 10.603075749872902,
+      "pm10_la_boca": 27.319115703472306,
+      "co_palermo": NaN,
+      "no2_palermo": NaN,
+      "pm10_palermo": NaN
+    },
+    {
+      "year": 2017,
+      "co_centenario": 0.5629376736800319,
+      "no2_centenario": 17.571543624161073,
+      "pm10_centenario": 23.173786689915723,
+      "co_cordoba": 0.7696625063678043,
+      "no2_cordoba": 21.79579915485956,
+      "pm10_cordoba": 25.294853038967947,
+      "co_la_boca": 0.5594532531437945,
+      "no2_la_boca": 21.588059295525635,
+      "pm10_la_boca": 32.52332307692308,
+      "co_palermo": NaN,
+      "no2_palermo": NaN,
+      "pm10_palermo": NaN
+    },
+    {
+      "year": 2018,
+      "co_centenario": 0.5976688788812515,
+      "no2_centenario": 16.69847753434831,
+      "pm10_centenario": 21.75418523425268,
+      "co_cordoba": 0.6660701841712294,
+      "no2_cordoba": 17.251510791366908,
+      "pm10_cordoba": 25.110850592679434,
+      "co_la_boca": 0.6913623226484498,
+      "no2_la_boca": 21.021904279564446,
+      "pm10_la_boca": 31.418839873263465,
+      "co_palermo": NaN,
+      "no2_palermo": NaN,
+      "pm10_palermo": NaN
+    },
+    {
+      "year": 2019,
+      "co_centenario": 0.5238641335636155,
+      "no2_centenario": 18.45810421576329,
+      "pm10_centenario": 21.382458233890215,
+      "co_cordoba": 0.6738760145865192,
+      "no2_cordoba": 22.161790418463692,
+      "pm10_cordoba": 26.76707872478855,
+      "co_la_boca": 0.5346374367622261,
+      "no2_la_boca": 21.524325789402358,
+      "pm10_la_boca": 30.03218008762653,
+      "co_palermo": NaN,
+      "no2_palermo": NaN,
+      "pm10_palermo": NaN
+    },
+    {
+      "year": 2020,
+      "co_centenario": 0.444394556240549,
+      "no2_centenario": 15.60276840758404,
+      "pm10_centenario": 19.93912037037037,
+      "co_cordoba": 0.6281167066346922,
+      "no2_cordoba": 23.72706155632985,
+      "pm10_cordoba": 19.029609497925904,
+      "co_la_boca": 0.4672388059701493,
+      "no2_la_boca": 15.155883993307306,
+      "pm10_la_boca": 20.829822097378276,
+      "co_palermo": NaN,
+      "no2_palermo": NaN,
+      "pm10_palermo": NaN
+    },
+    {
+      "year": 2021,
+      "co_centenario": 0.5528374788698383,
+      "no2_centenario": 18.44318566114305,
+      "pm10_centenario": 23.185516983949235,
+      "co_cordoba": 0.5064720600500416,
+      "no2_cordoba": 18.357729941291584,
+      "pm10_cordoba": 19.792814113597245,
+      "co_la_boca": 0.07875,
+      "no2_la_boca": 12.98752425838647,
+      "pm10_la_boca": 22.342596321653915,
+      "co_palermo": NaN,
+      "no2_palermo": NaN,
+      "pm10_palermo": NaN
+    },
+    {
+      "year": 2022,
+      "co_centenario": 0.6439665221939919,
+      "no2_centenario": 18.383494056963446,
+      "pm10_centenario": 26.99148596514567,
+      "co_cordoba": 0.4925069637883009,
+      "no2_cordoba": 13.6441351888668,
+      "pm10_cordoba": 23.5439672801636,
+      "co_la_boca": 0.47106601806810283,
+      "no2_la_boca": 16.81969040247678,
+      "pm10_la_boca": 34.63196934108048,
+      "co_palermo": NaN,
+      "no2_palermo": NaN,
+      "pm10_palermo": NaN
+    },
+    {
+      "year": 2023,
+      "co_centenario": 0.4751585728444004,
+      "no2_centenario": 19.04518859703722,
+      "pm10_centenario": 25.59153400868307,
+      "co_cordoba": 0.5958326470103772,
+      "no2_cordoba": 19.112259276655706,
+      "pm10_cordoba": 27.649305555555557,
+      "co_la_boca": 0.3374794520547945,
+      "no2_la_boca": 30.856234491315135,
+      "pm10_la_boca": 28.515387467556543,
+      "co_palermo": NaN,
+      "no2_palermo": NaN,
+      "pm10_palermo": NaN
+    },
+    {
+      "year": 2024,
+      "co_centenario": 0.3898106115367934,
+      "no2_centenario": 12.462403789224393,
+      "pm10_centenario": 21.039529776514662,
+      "co_cordoba": 0.6430143112701252,
+      "no2_cordoba": 20.859141274238226,
+      "pm10_cordoba": 24.518850317282567,
+      "co_la_boca": 0.4564647239263804,
+      "no2_la_boca": 29.963580998781975,
+      "pm10_la_boca": 23.843151171043292,
+      "co_palermo": NaN,
+      "no2_palermo": NaN,
+      "pm10_palermo": NaN
+    },
+    {
+      "year": 2025,
+      "co_centenario": 0.4657337946103423,
+      "no2_centenario": 15.108817671555315,
+      "pm10_centenario": 21.108713078867854,
+      "co_cordoba": 0.5923397317583363,
+      "no2_cordoba": 18.80739438911671,
+      "pm10_cordoba": 23.884651984774333,
+      "co_la_boca": 0.2990752180232558,
+      "no2_la_boca": 26.573303359863903,
+      "pm10_la_boca": 23.107701897769775,
+      "co_palermo": NaN,
+      "no2_palermo": NaN,
+      "pm10_palermo": NaN
+    },
+    {
+      "year": 2026,
+      "co_centenario": 0.42234163174759676,
+      "no2_centenario": 12.581147946561108,
+      "pm10_centenario": 21.721687060661285,
+      "co_cordoba": 0.5609734299516909,
+      "no2_cordoba": 19.484604105571847,
+      "pm10_cordoba": 27.053724370620294,
+      "co_la_boca": 0.32301550387596906,
+      "no2_la_boca": 24.763360739979444,
+      "pm10_la_boca": 27.17984801576133,
+      "co_palermo": NaN,
+      "no2_palermo": NaN,
+      "pm10_palermo": NaN
+    }
+  ],
+  "gei_anual_por_sector": [
+    {
+      "año": 2000,
+      "Energía": 1322.359,
+      "Residuos": 337.761,
+      "Transporte": 66.93
+    },
+    {
+      "año": 2001,
+      "Energía": 1022.166,
+      "Residuos": 317.043,
+      "Transporte": 51.968
+    },
+    {
+      "año": 2002,
+      "Energía": 904.5250000000001,
+      "Residuos": 316.065,
+      "Transporte": 49.04
+    },
+    {
+      "año": 2003,
+      "Energía": 1106.4879999999998,
+      "Residuos": 320.304,
+      "Transporte": 50.391
+    },
+    {
+      "año": 2004,
+      "Energía": 1323.996,
+      "Residuos": 325.805,
+      "Transporte": 68.448
+    },
+    {
+      "año": 2005,
+      "Energía": 1343.596,
+      "Residuos": 338.81,
+      "Transporte": 74.791
+    },
+    {
+      "año": 2006,
+      "Energía": 1543.632,
+      "Residuos": 343.756,
+      "Transporte": 67.599
+    },
+    {
+      "año": 2007,
+      "Energía": 1660.3580000000002,
+      "Residuos": 356.927,
+      "Transporte": 94.35
+    },
+    {
+      "año": 2008,
+      "Energía": 1654.134,
+      "Residuos": 356.919,
+      "Transporte": 106.926
+    },
+    {
+      "año": 2009,
+      "Energía": 1493.723,
+      "Residuos": 357.242,
+      "Transporte": 100.525
+    },
+    {
+      "año": 2010,
+      "Energía": 806.805,
+      "Residuos": 356.452,
+      "Transporte": 105.305
+    },
+    {
+      "año": 2011,
+      "Energía": 882.598,
+      "Residuos": 357.141,
+      "Transporte": 116.127
+    },
+    {
+      "año": 2012,
+      "Energía": 891.114,
+      "Residuos": 360.656,
+      "Transporte": 113.344
+    },
+    {
+      "año": 2013,
+      "Energía": 920.0840000000001,
+      "Residuos": 364.45099999999996,
+      "Transporte": 95.426
+    },
+    {
+      "año": 2014,
+      "Energía": 1884.779,
+      "Residuos": 377.012,
+      "Transporte": 97.818
+    },
+    {
+      "año": 2015,
+      "Energía": 1722.915,
+      "Residuos": 380.596,
+      "Transporte": 97.256
+    },
+    {
+      "año": 2016,
+      "Energía": 854.786,
+      "Residuos": 374.63399999999996,
+      "Transporte": 72.559
+    },
+    {
+      "año": 2017,
+      "Energía": 893.943,
+      "Residuos": 381.133,
+      "Transporte": 62.448
+    },
+    {
+      "año": 2018,
+      "Energía": 830.654,
+      "Residuos": 367.678,
+      "Transporte": 59.099
+    },
+    {
+      "año": 2019,
+      "Energía": 1610.504,
+      "Residuos": 372.41,
+      "Transporte": 53.827
+    },
+    {
+      "año": 2020,
+      "Energía": 1432.132,
+      "Residuos": 367.764,
+      "Transporte": 48.864
+    },
+    {
+      "año": 2021,
+      "Energía": 1572.222,
+      "Residuos": 383.553,
+      "Transporte": 43.961
+    },
+    {
+      "año": 2022,
+      "Energía": 1534.9879999999998,
+      "Residuos": 391.07399999999996,
+      "Transporte": 40.876
+    },
+    {
+      "año": 2023,
+      "Energía": 1292.605,
+      "Residuos": 389.934,
+      "Transporte": 39.957
+    }
+  ],
+  "gei_sectores": [
+    "Energía",
+    "Residuos",
+    "Transporte"
+  ],
+  "gei_metas": [
+    {
+      "año": 2015,
+      "sector": "energía",
+      "meta": 7564946.18
+    },
+    {
+      "año": 2015,
+      "sector": "transporte",
+      "meta": 3570916.15
+    },
+    {
+      "año": 2015,
+      "sector": "residuos",
+      "meta": 1895954.18
+    },
+    {
+      "año": 2030,
+      "sector": "energía",
+      "meta": 3272333.0
+    },
+    {
+      "año": 2030,
+      "sector": "transporte",
+      "meta": 2192837.0
+    },
+    {
+      "año": 2030,
+      "sector": "residuos",
+      "meta": 614890.0
+    },
+    {
+      "año": 2050,
+      "sector": "energía",
+      "meta": 1319062.0
+    },
+    {
+      "año": 2050,
+      "sector": "transporte",
+      "meta": 317957.0
+    },
+    {
+      "año": 2050,
+      "sector": "residuos",
+      "meta": 266006.0
+    }
+  ],
+  "residuos_recuperados_anual": [
+    {
+      "año": 2021,
+      "ton": 913742.99
+    },
+    {
+      "año": 2022,
+      "ton": 28730266.799999997
+    },
+    {
+      "año": 2023,
+      "ton": 1070457.1
+    },
+    {
+      "año": 2024,
+      "ton": 1026549.77
+    },
+    {
+      "año": 2025,
+      "ton": 591795.0
+    }
+  ],
+  "residuos_por_centro": [
+    {
+      "centro": "Planta de Tratamiento Mecánico Biologico (TMB)",
+      "ton": 28629532.75
+    },
+    {
+      "centro": "Centro de Reciclaje de la Ciudad",
+      "ton": 3393960.9899999998
+    },
+    {
+      "centro": "Centros Verdes de la Ciudad",
+      "ton": 278706.93
+    },
+    {
+      "centro": "Centros de Compostaje",
+      "ton": 30610.99
+    }
+  ],
+  "residuos_dispuestos_anual": [
+    {
+      "año": 2015,
+      "ton": 1153380.5
+    },
+    {
+      "año": 2016,
+      "ton": 1094708.6
+    },
+    {
+      "año": 2017,
+      "ton": 1101202.8
+    },
+    {
+      "año": 2018,
+      "ton": 1071944.3
+    },
+    {
+      "año": 2019,
+      "ton": 994048.5
+    },
+    {
+      "año": 2020,
+      "ton": 819737.9
+    },
+    {
+      "año": 2021,
+      "ton": 798242.8
+    },
+    {
+      "año": 2022,
+      "ton": 828362.0
+    },
+    {
+      "año": 2023,
+      "ton": 821670.8
+    },
+    {
+      "año": 2024,
+      "ton": 822223.5
+    },
+    {
+      "año": 2025,
+      "ton": 548982.0
+    }
+  ],
+  "reciclado_por_clasificacion": [
+    {
+      "clasificacion": "No Separa",
+      "bolsas": 1663
+    },
+    {
+      "clasificacion": "Separa",
+      "bolsas": 661
+    }
+  ],
+  "reciclado_por_comuna": [
+    {
+      "comuna": 1,
+      "pct_separa": 24.352331606217618
+    },
+    {
+      "comuna": 2,
+      "pct_separa": 22.07792207792208
+    },
+    {
+      "comuna": 3,
+      "pct_separa": 29.375
+    },
+    {
+      "comuna": 4,
+      "pct_separa": 27.160493827160494
+    },
+    {
+      "comuna": 5,
+      "pct_separa": 24.836601307189543
+    },
+    {
+      "comuna": 6,
+      "pct_separa": 29.29936305732484
+    },
+    {
+      "comuna": 7,
+      "pct_separa": 30.985915492957744
+    },
+    {
+      "comuna": 8,
+      "pct_separa": 26.41509433962264
+    },
+    {
+      "comuna": 9,
+      "pct_separa": 24.074074074074073
+    },
+    {
+      "comuna": 10,
+      "pct_separa": 28.92561983471074
+    },
+    {
+      "comuna": 11,
+      "pct_separa": 29.53020134228188
+    },
+    {
+      "comuna": 12,
+      "pct_separa": 32.544378698224854
+    },
+    {
+      "comuna": 13,
+      "pct_separa": 30.102040816326532
+    },
+    {
+      "comuna": 14,
+      "pct_separa": 33.33333333333333
+    },
+    {
+      "comuna": 15,
+      "pct_separa": 30.555555555555557
+    }
+  ],
+  "ruido_diurno_por_comuna": [
+    {
+      "comuna": 1,
+      "avg_dba": 52.5,
+      "registros": 2
+    },
+    {
+      "comuna": 2,
+      "avg_dba": 63.75,
+      "registros": 16
+    },
+    {
+      "comuna": 3,
+      "avg_dba": 72.5,
+      "registros": 7
+    },
+    {
+      "comuna": 4,
+      "avg_dba": 60.0,
+      "registros": 12
+    },
+    {
+      "comuna": 5,
+      "avg_dba": 67.5,
+      "registros": 7
+    },
+    {
+      "comuna": 6,
+      "avg_dba": 70.0,
+      "registros": 8
+    },
+    {
+      "comuna": 7,
+      "avg_dba": 62.5,
+      "registros": 13
+    },
+    {
+      "comuna": 8,
+      "avg_dba": 70.0,
+      "registros": 10
+    },
+    {
+      "comuna": 9,
+      "avg_dba": 67.5,
+      "registros": 11
+    },
+    {
+      "comuna": 10,
+      "avg_dba": 71.94444444444444,
+      "registros": 9
+    },
+    {
+      "comuna": 11,
+      "avg_dba": 69.43548387096774,
+      "registros": 31
+    },
+    {
+      "comuna": 12,
+      "avg_dba": 62.5,
+      "registros": 22
+    },
+    {
+      "comuna": 13,
+      "avg_dba": 62.5,
+      "registros": 11
+    },
+    {
+      "comuna": 14,
+      "avg_dba": 67.5,
+      "registros": 9
+    },
+    {
+      "comuna": 15,
+      "avg_dba": 62.5,
+      "registros": 13
+    }
+  ],
+  "ruido_nocturno_por_comuna": [
+    {
+      "comuna": 1,
+      "avg_dba": 67.5,
+      "registros": 9
+    },
+    {
+      "comuna": 2,
+      "avg_dba": 55.833333333333336,
+      "registros": 9
+    },
+    {
+      "comuna": 3,
+      "avg_dba": 67.5,
+      "registros": 7
+    },
+    {
+      "comuna": 4,
+      "avg_dba": 60.0,
+      "registros": 12
+    },
+    {
+      "comuna": 5,
+      "avg_dba": 62.5,
+      "registros": 7
+    },
+    {
+      "comuna": 6,
+      "avg_dba": 62.5,
+      "registros": 7
+    },
+    {
+      "comuna": 7,
+      "avg_dba": 60.0,
+      "registros": 12
+    },
+    {
+      "comuna": 8,
+      "avg_dba": 65.0,
+      "registros": 10
+    },
+    {
+      "comuna": 9,
+      "avg_dba": 65.0,
+      "registros": 10
+    },
+    {
+      "comuna": 10,
+      "avg_dba": 64.0,
+      "registros": 10
+    },
+    {
+      "comuna": 11,
+      "avg_dba": 63.40909090909091,
+      "registros": 11
+    },
+    {
+      "comuna": 12,
+      "avg_dba": 57.5,
+      "registros": 11
+    },
+    {
+      "comuna": 13,
+      "avg_dba": 60.0,
+      "registros": 10
+    },
+    {
+      "comuna": 14,
+      "avg_dba": 65.0,
+      "registros": 8
+    },
+    {
+      "comuna": 15,
+      "avg_dba": 60.0,
+      "registros": 12
+    }
+  ],
+  "precipitaciones_anual": [
+    {
+      "año": 1991,
+      "mm": 1298.5,
+      "dias": 110.0
+    },
+    {
+      "año": 1992,
+      "mm": 1219.0,
+      "dias": 110.0
+    },
+    {
+      "año": 1993,
+      "mm": 1460.7,
+      "dias": 114.0
+    },
+    {
+      "año": 1994,
+      "mm": 1037.1,
+      "dias": 112.0
+    },
+    {
+      "año": 1995,
+      "mm": 865.1999999999999,
+      "dias": 104.0
+    },
+    {
+      "año": 1996,
+      "mm": 921.5,
+      "dias": 103.0
+    },
+    {
+      "año": 1997,
+      "mm": 1255.3,
+      "dias": 127.0
+    },
+    {
+      "año": 1998,
+      "mm": 1017.4,
+      "dias": 117.0
+    },
+    {
+      "año": 1999,
+      "mm": 1083.7,
+      "dias": 130.0
+    },
+    {
+      "año": 2000,
+      "mm": 1635.5,
+      "dias": 142.0
+    },
+    {
+      "año": 2001,
+      "mm": 1751.6000000000001,
+      "dias": 148.0
+    },
+    {
+      "año": 2002,
+      "mm": 1621.8000000000002,
+      "dias": 146.0
+    },
+    {
+      "año": 2003,
+      "mm": 1542.7,
+      "dias": 131.0
+    },
+    {
+      "año": 2004,
+      "mm": 1087.9,
+      "dias": 115.0
+    },
+    {
+      "año": 2005,
+      "mm": 1085.7,
+      "dias": 129.0
+    },
+    {
+      "año": 2006,
+      "mm": 1281.3,
+      "dias": 120.0
+    },
+    {
+      "año": 2007,
+      "mm": 1313.1,
+      "dias": 140.0
+    },
+    {
+      "año": 2008,
+      "mm": 722.1,
+      "dias": 110.0
+    },
+    {
+      "año": 2009,
+      "mm": 1324.3,
+      "dias": 120.0
+    },
+    {
+      "año": 2010,
+      "mm": 1351.4,
+      "dias": 113.0
+    },
+    {
+      "año": 2011,
+      "mm": 926.8,
+      "dias": 105.0
+    },
+    {
+      "año": 2012,
+      "mm": 1650.6,
+      "dias": 127.0
+    },
+    {
+      "año": 2013,
+      "mm": 1145.4,
+      "dias": 97.0
+    },
+    {
+      "año": 2014,
+      "mm": 1983.4,
+      "dias": 128.0
+    },
+    {
+      "año": 2015,
+      "mm": 1156.8,
+      "dias": 97.0
+    },
+    {
+      "año": 2016,
+      "mm": 1224.0,
+      "dias": 101.0
+    },
+    {
+      "año": 2017,
+      "mm": 1192.9,
+      "dias": 98.0
+    },
+    {
+      "año": 2018,
+      "mm": 1472.9,
+      "dias": 104.0
+    },
+    {
+      "año": 2019,
+      "mm": 1207.8,
+      "dias": 98.0
+    },
+    {
+      "año": 2020,
+      "mm": 476.3,
+      "dias": 43.0
+    }
+  ],
+  "puntos_verdes": [
+    {
+      "nombre": "Estación Lugano",
+      "tipo": "Con Atención",
+      "barrio": "Villa Lugano",
+      "comuna_raw": "Comuna 8",
+      "lat": -34.67666632437466,
+      "lon": -58.47612114749537,
+      "materiales": "Aceite vegetal usado (en botellas cerradas) - Bolsas de comida para perro - Botella de AMOR - Cápsul"
+    },
+    {
+      "nombre": "Parque Las Heras",
+      "tipo": "Con Atención",
+      "barrio": "Recoleta",
+      "comuna_raw": "Comuna 2",
+      "lat": -34.58448273224166,
+      "lon": -58.40676659357997,
+      "materiales": "Aceite vegetal usado (en botellas cerradas) - Bolsas de comida para perro - Botella de AMOR - Cápsul"
+    },
+    {
+      "nombre": "Parque Saavedra",
+      "tipo": "Con Atención",
+      "barrio": "Saavedra",
+      "comuna_raw": "Comuna 12",
+      "lat": -34.55178375679957,
+      "lon": -58.48205963517308,
+      "materiales": "Aceite vegetal usado (en botellas cerradas) - Bolsas de comida para perro - Botella de AMOR - Cápsul"
+    },
+    {
+      "nombre": "Parque Santojanni",
+      "tipo": "Con Atención",
+      "barrio": "Liniers",
+      "comuna_raw": "Comuna 9",
+      "lat": -34.65042251639289,
+      "lon": -58.51589050401845,
+      "materiales": "Aceite vegetal usado (en botellas cerradas) - Bolsas de comida para perro - Botella de AMOR - Cápsul"
+    },
+    {
+      "nombre": "Plaza Almagro",
+      "tipo": "Con Atención",
+      "barrio": "Almagro",
+      "comuna_raw": "Comuna 5",
+      "lat": -34.60527986109268,
+      "lon": -58.418357794620604,
+      "materiales": "Aceite vegetal usado (en botellas cerradas) - Bolsas de comida para perro - Botella de AMOR - Cápsul"
+    },
+    {
+      "nombre": "Plaza Benito Nazar",
+      "tipo": "Con Atención",
+      "barrio": "Villa Crespo",
+      "comuna_raw": "Comuna 15",
+      "lat": -34.60489839654926,
+      "lon": -58.444662659712804,
+      "materiales": "Aceite vegetal usado (en botellas cerradas) - Bolsas de comida para perro - Botella de AMOR - Cápsul"
+    },
+    {
+      "nombre": "Plaza Colombia",
+      "tipo": "Con Atención",
+      "barrio": "Barracas",
+      "comuna_raw": "Comuna 4",
+      "lat": -34.63786971772978,
+      "lon": -58.37444211428307,
+      "materiales": "Aceite vegetal usado (en botellas cerradas) - Bolsas de comida para perro - Botella de AMOR - Cápsul"
+    },
+    {
+      "nombre": "Plaza de La Misericordia",
+      "tipo": "Con Atención",
+      "barrio": "Flores",
+      "comuna_raw": "Comuna 7",
+      "lat": -34.63288795950816,
+      "lon": -58.454993640235365,
+      "materiales": "Aceite vegetal usado (en botellas cerradas) - Bolsas de comida para perro - Botella de AMOR - Cápsul"
+    },
+    {
+      "nombre": "Plaza Don Bosco",
+      "tipo": "Con Atención",
+      "barrio": "Monte Castro",
+      "comuna_raw": "Comuna 10",
+      "lat": -34.62682935871767,
+      "lon": -58.508309341820365,
+      "materiales": "Aceite vegetal usado (en botellas cerradas) - Bolsas de comida para perro - Botella de AMOR - Cápsul"
+    },
+    {
+      "nombre": "Plaza Echeverría",
+      "tipo": "Con Atención",
+      "barrio": "Villa Urquiza",
+      "comuna_raw": "Comuna 12",
+      "lat": -34.57272105189643,
+      "lon": -58.48955761728068,
+      "materiales": "Aceite vegetal usado (en botellas cerradas) - Bolsas de comida para perro - Botella de AMOR - Cápsul"
+    },
+    {
+      "nombre": "Plaza Irlanda",
+      "tipo": "Con Atención",
+      "barrio": "Caballito",
+      "comuna_raw": "Comuna 6",
+      "lat": -34.61387671985942,
+      "lon": -58.45942942302662,
+      "materiales": "Aceite vegetal usado (en botellas cerradas) - Bolsas de comida para perro - Botella de AMOR - Cápsul"
+    },
+    {
+      "nombre": "Plaza Manuel Belgrano",
+      "tipo": "Con Atención",
+      "barrio": "Belgrano",
+      "comuna_raw": "Comuna 13",
+      "lat": -34.56184758803644,
+      "lon": -58.453948087391126,
+      "materiales": "Aceite vegetal usado (en botellas cerradas) - Bolsas de comida para perro - Botella de AMOR - Cápsul"
+    },
+    {
+      "nombre": "Plaza Mariano Boedo",
+      "tipo": "Con Atención",
+      "barrio": "Boedo",
+      "comuna_raw": "Comuna 5",
+      "lat": -34.621881152120245,
+      "lon": -58.41244151193153,
+      "materiales": "Aceite vegetal usado (en botellas cerradas) - Bolsas de comida para perro - Botella de AMOR - Cápsul"
+    },
+    {
+      "nombre": "Plaza Monseñor De Andrea",
+      "tipo": "Con Atención",
+      "barrio": "Recoleta",
+      "comuna_raw": "Comuna 2",
+      "lat": -34.59698661481715,
+      "lon": -58.40756368859171,
+      "materiales": "Aceite vegetal usado (en botellas cerradas) - Bolsas de comida para perro - Botella de AMOR - Cápsul"
+    },
+    {
+      "nombre": "Plaza Rivadavia",
+      "tipo": "Con Atención",
+      "barrio": "Caballito",
+      "comuna_raw": "Comuna 6",
+      "lat": -34.61753532697676,
+      "lon": -58.434739712462445,
+      "materiales": "Aceite vegetal usado (en botellas cerradas) - Bolsas de comida para perro - Botella de AMOR - Cápsul"
+    },
+    {
+      "nombre": "Plaza Rosario Vera Peñalozza",
+      "tipo": "Con Atención",
+      "barrio": "San Telmo",
+      "comuna_raw": "Comuna 1",
+      "lat": -34.62200078776617,
+      "lon": -58.375652111778244,
+      "materiales": "Aceite vegetal usado (en botellas cerradas) - Bolsas de comida para perro - Botella de AMOR - Cápsul"
+    },
+    {
+      "nombre": "Plaza Velez Sarsfield",
+      "tipo": "Con Atención",
+      "barrio": "Floresta",
+      "comuna_raw": "Comuna 10",
+      "lat": -34.63055777272983,
+      "lon": -58.48320021310982,
+      "materiales": "Aceite vegetal usado (en botellas cerradas) - Bolsas de comida para perro - Botella de AMOR - Cápsul"
+    }
+  ],
+  "techos_solares_tipo": [
+    {
+      "tipo": "Off-Grid",
+      "cantidad": 54,
+      "gen_mwh": 271.17
+    },
+    {
+      "tipo": "On-Grid",
+      "cantidad": 290,
+      "gen_mwh": 7937.097
+    }
+  ],
+  "techos_solares_pub_priv": [
+    {
+      "tipo": "Privado",
+      "cantidad": 369,
+      "gen_mwh": 10098.339
+    },
+    {
+      "tipo": "Público",
+      "cantidad": 165,
+      "gen_mwh": 4391.483
+    }
+  ],
+  "arbolado_top_especies": [
+    {
+      "especie": "Eucalipto",
+      "cantidad": 4112
+    },
+    {
+      "especie": "Tipa blanca",
+      "cantidad": 4031
+    },
+    {
+      "especie": "Jacarandá",
+      "cantidad": 3255
+    },
+    {
+      "especie": "Palo borracho rosado",
+      "cantidad": 3150
+    },
+    {
+      "especie": "Casuarina",
+      "cantidad": 2719
+    },
+    {
+      "especie": "Fresno americano",
+      "cantidad": 2166
+    },
+    {
+      "especie": "Plátano",
+      "cantidad": 1556
+    },
+    {
+      "especie": "Ciprés",
+      "cantidad": 1467
+    },
+    {
+      "especie": "Ceibo",
+      "cantidad": 1149
+    },
+    {
+      "especie": "Pindó",
+      "cantidad": 1068
+    },
+    {
+      "especie": "Ficus",
+      "cantidad": 1052
+    },
+    {
+      "especie": "Fenix",
+      "cantidad": 1034
+    },
+    {
+      "especie": "Álamo de Italia",
+      "cantidad": 886
+    },
+    {
+      "especie": "Álamo plateado",
+      "cantidad": 793
+    },
+    {
+      "especie": "Tilo",
+      "cantidad": 680
+    },
+    {
+      "especie": "Álamo blanco piramidal",
+      "cantidad": 644
+    },
+    {
+      "especie": "Paraíso",
+      "cantidad": 633
+    },
+    {
+      "especie": "Pata de vaca  (Pezuña de vaca)",
+      "cantidad": 623
+    },
+    {
+      "especie": "Ombú",
+      "cantidad": 590
+    },
+    {
+      "especie": "No Determinable",
+      "cantidad": 586
+    }
+  ],
+  "arbolado_origen": [
+    {
+      "origen": "Exótico",
+      "cantidad": 32660
+    },
+    {
+      "origen": "Nativo/Autóctono",
+      "cantidad": 17047
+    },
+    {
+      "origen": "No Determinado",
+      "cantidad": 1795
+    }
+  ],
+  "arbolado_espacios": [
+    {
+      "espacio": "S/D",
+      "cantidad": 5815
+    },
+    {
+      "espacio": "INDOAMERICANO",
+      "cantidad": 3099
+    },
+    {
+      "espacio": "DE LOS NIÑOS (EX - TRIANGULO DEL ESTE) (Denominaci¢n Propuesta)",
+      "cantidad": 1999
+    },
+    {
+      "espacio": "BASTIDAS, MICAELA",
+      "cantidad": 1400
+    },
+    {
+      "espacio": "MUJERES ARGENTINAS",
+      "cantidad": 1198
+    },
+    {
+      "espacio": "DE LAS VICTORIAS",
+      "cantidad": 1118
+    },
+    {
+      "espacio": "AVELLANEDA, NICOLÁS, Pres.",
+      "cantidad": 1109
+    },
+    {
+      "espacio": "EL ROSEDAL (Sector dentro de Plaza HOLANDA)",
+      "cantidad": 922
+    },
+    {
+      "espacio": "BARRIO GENERAL SAN MARTIN",
+      "cantidad": 864
+    },
+    {
+      "espacio": "CHACABUCO",
+      "cantidad": 827
+    }
+  ],
+  "resumen": {
+    "total_arboles": 51502,
+    "puntos_verdes_total": 17,
+    "techos_solares_total": 534,
+    "estaciones_aire": 4,
+    "precipitacion_promedio_mm": 1243.7566666666667,
+    "gei_ultimo_año": 2023,
+    "ton_recuperadas_ultimo": 591795.0,
+    "ton_dispuestas_ultimo": 548982.0
+  }
+}
