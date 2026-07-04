@@ -5,11 +5,33 @@ Fuente: Datos Abiertos GCBA · Elecciones 2023
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import json
+import json, re
 import streamlit as st
 import folium
 from streamlit_folium import st_folium
 from shapely.geometry import shape
+from branca.element import MacroElement
+from jinja2 import Template
+
+class DoubleClickZoom(MacroElement):
+    _template = Template(u"""
+        {% macro script(this, kwargs) %}
+        (function () {
+            var map = {{ this._parent.get_name() }};
+            function bind(layer) {
+                if (layer.eachLayer) { layer.eachLayer(bind); }
+                else if (layer.getBounds) {
+                    layer.on('dblclick', function (e) {
+                        map.fitBounds(layer.getBounds(), {padding: [50, 50], animate: true});
+                        L.DomEvent.stopPropagation(e);
+                    });
+                }
+            }
+            map.eachLayer(bind);
+            map.on('layeradd', function (e) { bind(e.layer); });
+        })();
+        {% endmacro %}
+    """)
 
 st.set_page_config(
     page_title="CABA – Capital Federal",
@@ -27,8 +49,12 @@ st.markdown("""
 [data-testid="stSidebar"] .stSelectbox label { color:#94A3B8 !important; }
 [data-testid="stHeader"]           { background:transparent; }
 div[data-testid="stMetric"]        { background:#0A1628; border:1px solid #1E293B; border-radius:8px; padding:12px 16px; }
-[data-testid="stStatusWidget"]     { display: none !important; }
-[data-stale="true"]                { opacity: 1 !important; transition: none !important; }
+[data-testid="stStatusWidget"]  { display: none !important; }
+[data-stale="true"]             { opacity: 1 !important; transition: none !important; }
+[data-stale]                    { opacity: 1 !important; }
+[aria-busy="true"]              { opacity: 1 !important; }
+.stApp > *                      { opacity: 1 !important; transition: none !important; }
+iframe                          { opacity: 1 !important; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -90,13 +116,13 @@ def margin_color(ganador, margen):
 
 # ── Session State ─────────────────────────────────────────────────────
 if "sel_comuna" not in st.session_state:
-    st.session_state.sel_comuna = None
-if "zoomed_comuna" not in st.session_state:
-    st.session_state.zoomed_comuna = None
+    st.session_state.sel_comuna  = None  # panel info (clic en mapa o búsqueda)
+if "zoom_comuna" not in st.session_state:
+    st.session_state.zoom_comuna = None  # fit_bounds (solo desde búsqueda)
 if "map_center" not in st.session_state:
-    st.session_state.map_center = [-34.615, -58.443]
+    st.session_state.map_center  = [-34.615, -58.443]
 if "map_zoom" not in st.session_state:
-    st.session_state.map_zoom = 11
+    st.session_state.map_zoom    = 11
 
 # ── Sidebar ────────────────────────────────────────────────────────────
 with st.sidebar:
@@ -109,13 +135,13 @@ with st.sidebar:
     if sel_label != "— ver todas —":
         num = int(sel_label.split()[1])
         if st.session_state.sel_comuna != num:
-            st.session_state.sel_comuna   = num
-            st.session_state.zoomed_comuna = num  # búsqueda = zoom inmediato
+            st.session_state.sel_comuna  = num
+            st.session_state.zoom_comuna = num  # búsqueda = zoom inmediato
             st.rerun()
     elif sel_label == "— ver todas —" and st.session_state.sel_comuna is not None:
         if st.button("Limpiar selección"):
-            st.session_state.sel_comuna    = None
-            st.session_state.zoomed_comuna = None
+            st.session_state.sel_comuna  = None
+            st.session_state.zoom_comuna = None
             st.rerun()
 
     st.markdown("---")
@@ -269,9 +295,9 @@ for col, val, label, color, icon in kpi_cards:
 st.markdown("<div style='height:16px'></div>", unsafe_allow_html=True)
 
 # ── Map ────────────────────────────────────────────────────────────────
-sel         = st.session_state.sel_comuna
-zoomed      = st.session_state.zoomed_comuna
-fit_bounds  = bounds_index.get(zoomed) if zoomed else None
+sel        = st.session_state.sel_comuna
+zoom_c     = st.session_state.zoom_comuna
+fit_bounds = bounds_index.get(zoom_c) if zoom_c else None
 
 m = folium.Map(
     location=st.session_state.map_center,
@@ -287,99 +313,70 @@ folium.TileLayer(
 if fit_bounds:
     m.fit_bounds(fit_bounds, padding=(60, 60))
 
-# Draw comunas
+# Draw comunas — todas igual opacidad, doble clic zoom via JS
 for feat in geojson_data["features"]:
-    props = feat["properties"]
-    c_id  = props["comuna"]
-    e     = elec_by_id.get(c_id, {})
-    ganador = e.get("ganador", "")
-    margen  = e.get("margen", 0)
-
-    is_zoomed = (c_id == zoomed)
-    fill      = margin_color(ganador, margen)
-    border    = PARTIDO_COLOR.get(ganador, "#64748B")
-
-    if zoomed:
-        if is_zoomed:
-            opacity, weight, border = 0.95, 4.0, "#FFFFFF"
-        else:
-            opacity, weight, border = 0.18, 0.5, "#FFFFFF22"
-    else:
-        opacity, weight = 0.58, 1.5
+    props    = feat["properties"]
+    c_id     = props["comuna"]
+    e        = elec_by_id.get(c_id, {})
+    ganador  = e.get("ganador", "")
+    margen   = e.get("margen", 0)
+    fill     = margin_color(ganador, margen)
+    is_sel   = (c_id == sel)
+    border   = "#FFFFFF" if is_sel else PARTIDO_COLOR.get(ganador, "#64748B")
+    opacity  = 0.92 if is_sel else 0.62
+    weight   = 3.5  if is_sel else 1.2
 
     short  = PARTIDO_SHORT.get(ganador, ganador)
-    short2 = PARTIDO_SHORT.get(e.get("segundo",""), e.get("segundo",""))
-    zoom_hint = "<br><span style='color:#6EE7B7;font-size:.65rem;'>🔍 Doble clic para hacer zoom</span>" if (c_id == sel and not is_zoomed) else ""
+    short2 = PARTIDO_SHORT.get(e.get("segundo", ""), e.get("segundo", ""))
     tooltip = (
         f"<b>Comuna {c_id:02d}</b><br>"
-        f"{props.get('barrios','')}<br><br>"
-        f"<b>🏆 {short}</b> {e.get('pct_ganador',0):.1f}%<br>"
-        f"2° {short2} {e.get('pct_segundo',0):.1f}%<br>"
-        f"Margen: {margen:.1f} pp"
-        + zoom_hint
+        f"{props.get('barrios', '')}<br><br>"
+        f"<b>🏆 {short}</b> {e.get('pct_ganador', 0):.1f}%<br>"
+        f"2° {short2} {e.get('pct_segundo', 0):.1f}%<br>"
+        f"Margen: {margen:.1f} pp — doble clic para zoom"
     )
 
     folium.GeoJson(
         feat,
         style_function=lambda f, fc=fill, bc=border, op=opacity, wt=weight: {
-            "fillColor": fc, "color": bc,
-            "weight": wt, "fillOpacity": op,
+            "fillColor": fc, "color": bc, "weight": wt, "fillOpacity": op,
         },
-        highlight_function=lambda f: {"weight": 3, "fillOpacity": 0.85},
+        highlight_function=lambda f: {"weight": 3.5, "fillOpacity": 0.92},
         tooltip=folium.Tooltip(tooltip, sticky=False),
     ).add_to(m)
 
-    # Label
     try:
         centroid = shape(feat["geometry"]).centroid
         folium.Marker(
             location=[centroid.y, centroid.x],
             icon=folium.DivIcon(
                 html=f"<div style='font-size:10px;font-weight:700;color:white;text-shadow:0 1px 3px #000;text-align:center;white-space:nowrap;'>C{c_id:02d}</div>",
-                icon_size=(30, 16),
-                icon_anchor=(15, 8),
+                icon_size=(30, 16), icon_anchor=(15, 8),
             ),
         ).add_to(m)
     except Exception:
         pass
 
+DoubleClickZoom().add_to(m)   # zoom animado al polígono (JS puro, sin rerun)
+
+# Key NO incluye sel_comuna → mapa no se re-renderiza al clickear
 map_result = st_folium(
     m,
     height=620,
     use_container_width=True,
-    returned_objects=["last_object_clicked_tooltip", "center", "zoom"],
-    key=f"caba_map_{zoomed}",
+    returned_objects=["last_object_clicked_tooltip"],
+    key=f"caba_map_{zoom_c}",
 )
 
-# Guardar posición del mapa
-if map_result:
-    if map_result.get("center"):
-        c = map_result["center"]
-        st.session_state.map_center = [c["lat"], c["lng"]]
-    if map_result.get("zoom"):
-        st.session_state.map_zoom = map_result["zoom"]
-
-# 1er clic → sidebar (key del mapa no cambia)
-# Doble clic → zoom + resaltado exclusivo (key cambia)
-if map_result and map_result.get("last_object_clicked_tooltip"):
-    tip = map_result["last_object_clicked_tooltip"]
-    if tip and "Comuna" in tip:
-        try:
-            import re
-            match = re.search(r"Comuna (\d+)", tip)
-            if match:
-                clicked_id = int(match.group(1))
-                if clicked_id == st.session_state.sel_comuna and st.session_state.zoomed_comuna != clicked_id:
-                    # Doble clic → zoom
-                    st.session_state.zoomed_comuna = clicked_id
-                    st.rerun()
-                elif clicked_id != st.session_state.sel_comuna:
-                    # 1er clic → solo sidebar
-                    st.session_state.sel_comuna    = clicked_id
-                    st.session_state.zoomed_comuna = None
-                    st.rerun()
-        except Exception:
-            pass
+# Detectar clic → actualizar panel sidebar (mapa estable, no se mueve)
+_tip = (map_result or {}).get("last_object_clicked_tooltip") or ""
+if _tip and "Comuna" in _tip:
+    _match = re.search(r"Comuna (\d+)", _tip)
+    if _match:
+        _cid = int(_match.group(1))
+        if _cid != st.session_state.sel_comuna:
+            st.session_state.sel_comuna = _cid
+            st.rerun()
 
 # ── Tabla resumen ─────────────────────────────────────────────────────
 st.markdown("---")
