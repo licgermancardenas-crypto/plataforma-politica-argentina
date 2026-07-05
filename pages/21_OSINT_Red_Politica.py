@@ -171,14 +171,29 @@ def load_fotos_concejales():
     with open(path, encoding="utf-8") as f:
         return json.load(f)
 
+@st.cache_data(show_spinner=False)
+def load_fotos_secretarios():
+    base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    path = os.path.join(base, "data", "fotos_secretarios.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
 def foto_concejal(municipio: str, nombre: str, bloque: str = "Otro") -> str:
     """Foto real si existe, SVG avatar si no."""
     key = f"{municipio}::{nombre}"
     return fotos_conc.get(key) or svg_avatar(nombre, bloque)
 
+def foto_secretario(municipio: str, nombre: str) -> str:
+    """Foto real si existe, SVG avatar si no."""
+    key = f"{municipio}::{nombre}"
+    return fotos_secs.get(key) or svg_avatar(nombre, "Otro")
+
 ints, secs_data, conc_data, leg_data, leg_caba = load()
 fotos_ints = load_fotos()
 fotos_conc = load_fotos_concejales()
+fotos_secs = load_fotos_secretarios()
 
 df_int  = pd.DataFrame(ints)
 df_conc = pd.DataFrame(conc_data)
@@ -375,10 +390,10 @@ with tab1:
             ec = SECCION_COLOR.get(row["seccion_nombre"],"#334155") + "77"
             net.add_edge(parent, mun, color={"color":ec}, width=1.5)
 
-            # Secretarios ocultos con foto DiceBear
+            # Secretarios con foto real o avatar
             for s in secs_data.get(mun, []):
                 sid = f"sec__{mun}__{s['nombre']}"
-                sfoto = svg_avatar(s["nombre"], "Otro")
+                sfoto = foto_secretario(mun, s["nombre"])
                 net.add_node(sid, label=s["nombre"][:22],
                              size=22, shape="circularImage", image=sfoto,
                              color={"border":"#3B82F6",
@@ -570,7 +585,7 @@ with tab2:
         # ── Secretarios cards ──
         sec_cards = ""
         for s in mun_secs:
-            sfoto = svg_avatar(s["nombre"], "Otro")
+            sfoto = foto_secretario(mun, s["nombre"])
             sec_cards += make_person_card(
                 s["nombre"], s["cargo"][:30], sfoto, "#3B82F6",
                 size="md"
