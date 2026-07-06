@@ -91,6 +91,34 @@ with tab1:
         use_container_width=True, hide_index=True,
     )
 
+    # Galería de fotos
+    n_con_foto_prov = sum(1 for r in df_dp_f.to_dict("records") if f"diputados_prov::{r['nombre']}" in fotos_legs)
+    st.caption(f"Fotos reales disponibles: {n_con_foto_prov}/{len(df_dp_f)} · Resto: avatares por bloque")
+
+    bloques_prov = {}
+    for r in df_dp_f.to_dict("records"):
+        b = r.get("bloque", "Sin bloque")
+        bloques_prov.setdefault(b, []).append(r)
+
+    for bloque, personas in sorted(bloques_prov.items(), key=lambda x: -len(x[1])):
+        color = _bloque_color(bloque)
+        st.markdown(f"""
+<div style="margin:16px 0 8px;padding:6px 14px;background:{color}22;border-left:3px solid {color};
+     border-radius:4px;font-weight:600;color:{color};font-size:0.9rem;">
+  {bloque} ({len(personas)})
+</div>""", unsafe_allow_html=True)
+        cards_html = '<div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px;">'
+        for p in personas:
+            foto_html = foto_legislador_html("diputados_prov", p["nombre"], p.get("bloque",""))
+            cards_html += f"""
+<div style="width:110px;text-align:center;background:#1E293B;border-radius:10px;padding:12px 6px 8px;
+     border:1px solid #334155;">
+  <div style="display:flex;justify-content:center;margin-bottom:8px;">{foto_html}</div>
+  <div style="font-size:0.65rem;color:#CBD5E1;line-height:1.3;word-break:break-word;">{p['nombre']}</div>
+</div>"""
+        cards_html += "</div>"
+        st.markdown(cards_html, unsafe_allow_html=True)
+
     # Charts
     col_a, col_b = st.columns(2)
     with col_a:
