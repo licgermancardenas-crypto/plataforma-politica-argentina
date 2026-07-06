@@ -190,10 +190,25 @@ def foto_secretario(municipio: str, nombre: str) -> str:
     key = f"{municipio}::{nombre}"
     return fotos_secs.get(key) or svg_avatar(nombre, "Otro")
 
+@st.cache_data(show_spinner=False)
+def load_fotos_legisladores():
+    base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    path = os.path.join(base, "data", "fotos_legisladores.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+def foto_legislador(tipo: str, nombre: str, bloque: str = "Otro") -> str:
+    """Foto real si existe, SVG avatar si no."""
+    key = f"{tipo}::{nombre}"
+    return fotos_legs.get(key) or svg_avatar(nombre, bloque)
+
 ints, secs_data, conc_data, leg_data, leg_caba = load()
 fotos_ints = load_fotos()
 fotos_conc = load_fotos_concejales()
 fotos_secs = load_fotos_secretarios()
+fotos_legs = load_fotos_legisladores()
 
 df_int  = pd.DataFrame(ints)
 df_conc = pd.DataFrame(conc_data)
@@ -435,7 +450,7 @@ with tab1:
             for row in leg_data.get("diputados_prov", []):
                 nid = f"dip_{row['nombre']}"
                 color = hex_bloque(row.get("bloque",""))
-                lfoto = svg_avatar(row["nombre"], row.get("bloque",""))
+                lfoto = foto_legislador("diputados_prov", row["nombre"], row.get("bloque",""))
                 sec_leg = next((s for s in df_int["seccion_nombre"].unique()
                                 if str(row.get("seccion","")) in s), None)
                 net.add_node(nid, label=row["nombre"][:20], size=14,

@@ -2,13 +2,46 @@
 Página 3 – Legisladores de la Provincia de Buenos Aires
 Diputados y senadores provinciales (Honorable Cámara de Diputados y Senado PBA)
 """
-import sys, os
+import sys, os, json, base64, re
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import streamlit as st
 import plotly.express as px
 import pandas as pd
 from core import loader
+
+@st.cache_data(show_spinner=False)
+def load_fotos_legisladores():
+    base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    path = os.path.join(base, "data", "fotos_legisladores.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+def _initials(nombre):
+    words = nombre.split()
+    return (words[0][0] + (words[-1][0] if len(words) > 1 else "")).upper()
+
+def _bloque_color(bloque):
+    b = bloque.lower()
+    if "libertad" in b: return "#8B5CF6"
+    if "patria" in b or "kirchner" in b or "peronist" in b: return "#3B82F6"
+    if "radical" in b or "ucr" in b: return "#EF4444"
+    if "juntos" in b or "cambio" in b or "pro" in b: return "#F59E0B"
+    return "#6B7280"
+
+def foto_legislador_html(tipo, nombre, bloque=""):
+    """Retorna <img> con foto real o <div> con iniciales."""
+    key = f"{tipo}::{nombre}"
+    fotos = load_fotos_legisladores()
+    if key in fotos:
+        return f'<img src="{fotos[key]}" style="width:80px;height:80px;border-radius:50%;object-fit:cover;">'
+    color = _bloque_color(bloque)
+    ini = _initials(nombre)
+    return f'<div style="width:80px;height:80px;border-radius:50%;background:{color};display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;color:white;">{ini}</div>'
+
+fotos_legs = load_fotos_legisladores()
 
 st.set_page_config(page_title="Legisladores PBA", page_icon="📊", layout="wide")
 st.markdown("""
@@ -31,7 +64,7 @@ k2.metric("Senadores provinciales", len(df_sp))
 k3.metric("Total legisladores PBA", len(df_dp) + len(df_sp))
 k4.metric("Secciones electorales", 8)
 
-tab1, tab2, tab3 = st.tabs(["🏛 Diputados Provinciales", "📜 Senadores Provinciales", "📈 Análisis comparativo"])
+tab1, tab2, tab3, tab4 = st.tabs(["🏛 Diputados Provinciales", "📜 Senadores Provinciales", "📈 Análisis comparativo", "📸 Diputados Nacionales (PBA)"])
 
 # ══════════════════════════════════════════════════════════════════════
 # TAB 1: DIPUTADOS PROVINCIALES
@@ -152,3 +185,39 @@ with tab3:
     summary.columns = ['Bloque', 'Intendencias', 'Dip.Prov.', 'Sen.Prov.']
     summary = summary.sort_values('Intendencias', ascending=False)
     st.dataframe(summary, use_container_width=True, hide_index=True)
+
+# ══════════════════════════════════════════════════════════════════════
+# TAB 4: DIPUTADOS NACIONALES CON FOTOS
+# ══════════════════════════════════════════════════════════════════════
+with tab4:
+    st.subheader("Diputados Nacionales por Buenos Aires – 70 representantes")
+    dip_nac = loader.get_diputados_nac_df().to_dict("records")
+    n_con_foto = sum(1 for p in dip_nac if f"diputados_nac::{p['nombre']}" in fotos_legs)
+    st.caption(f"Fotos reales disponibles: {n_con_foto}/{len(dip_nac)} · Resto: avatares por bloque")
+
+    # Group by bloque
+    bloques = {}
+    for p in dip_nac:
+        b = p.get("bloque", "Sin bloque")
+        bloques.setdefault(b, []).append(p)
+
+    for bloque, personas in sorted(bloques.items(), key=lambda x: -len(x[1])):
+        color = _bloque_color(bloque)
+        st.markdown(f"""
+<div style="margin:16px 0 8px;padding:6px 14px;background:{color}22;border-left:3px solid {color};
+     border-radius:4px;font-weight:600;color:{color};font-size:0.9rem;">
+  {bloque} ({len(personas)})
+</div>""", unsafe_allow_html=True)
+
+        cards_html = '<div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px;">'
+        for p in personas:
+            foto_html = foto_legislador_html("diputados_nac", p["nombre"], p.get("bloque",""))
+            nombre_corto = p["nombre"]
+            cards_html += f"""
+<div style="width:110px;text-align:center;background:#1E293B;border-radius:10px;padding:12px 6px 8px;
+     border:1px solid #334155;">
+  <div style="display:flex;justify-content:center;margin-bottom:8px;">{foto_html}</div>
+  <div style="font-size:0.65rem;color:#CBD5E1;line-height:1.3;word-break:break-word;">{nombre_corto}</div>
+</div>"""
+        cards_html += "</div>"
+        st.markdown(cards_html, unsafe_allow_html=True)
